@@ -1,266 +1,288 @@
 import {
-    mobile,
-    backend,
-    creator,
-    web,
-    javascript,
-    typescript,
-    html,
-    css,
-    reactjs,
-    redux,
-    tailwind,
-    nodejs,
-    mongodb,
-    git,
-    figma,
-    docker,
-    meta,
-    starbucks,
-    tesla,
-    shopify,
-    carrent,
-    jobit,
-    tripguide,
-    threejs,
-  } from "../assets";
-  
-  export const navLinks = [
-    {
-      id: "about",
-      title: "About",
-    },
-    {
-      id: "work",
-      title: "Work",
-    },
-    {
-      id: "contact",
-      title: "Contact",
-    },
-  ];
-  
-  const services = [
-    {
-      title: "Web Developer",
-      icon: web,
-    },
-    {
-      title: "React Native Developer",
-      icon: mobile,
-    },
-    {
-      title: "Backend Developer",
-      icon: backend,
-    },
-    {
-      title: "Content Creator",
-      icon: creator,
-    },
-  ];
-  
-  const technologies = [
-    {
-      name: "HTML 5",
-      icon: html,
-    },
-    {
-      name: "CSS 3",
-      icon: css,
-    },
-    {
-      name: "JavaScript",
-      icon: javascript,
-    },
-    {
-      name: "TypeScript",
-      icon: typescript,
-    },
-    {
-      name: "React JS",
-      icon: reactjs,
-    },
-    {
-      name: "Redux Toolkit",
-      icon: redux,
-    },
-    {
-      name: "Tailwind CSS",
-      icon: tailwind,
-    },
-    {
-      name: "Node JS",
-      icon: nodejs,
-    },
-    {
-      name: "MongoDB",
-      icon: mongodb,
-    },
-    {
-      name: "Three JS",
-      icon: threejs,
-    },
-    {
-      name: "git",
-      icon: git,
-    },
-    {
-      name: "figma",
-      icon: figma,
-    },
-    {
-      name: "docker",
-      icon: docker,
-    },
-  ];
-  
-  const experiences = [
-    {
-      title: "React.js Developer",
-      company_name: "Starbucks",
-      icon: starbucks,
-      iconBg: "#383E56",
-      date: "March 2020 - April 2021",
-      points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
-      ],
-    },
-    {
-      title: "React Native Developer",
-      company_name: "Tesla",
-      icon: tesla,
-      iconBg: "#E6DEDD",
-      date: "Jan 2021 - Feb 2022",
-      points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
-      ],
-    },
-    {
-      title: "Web Developer",
-      company_name: "Shopify",
-      icon: shopify,
-      iconBg: "#383E56",
-      date: "Jan 2022 - Jan 2023",
-      points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
-      ],
-    },
-    {
-      title: "Full stack Developer",
-      company_name: "Meta",
-      icon: meta,
-      iconBg: "#E6DEDD",
-      date: "Jan 2023 - Present",
-      points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
-      ],
-    },
-  ];
-  
-  const testimonials = [
-    {
-      testimonial:
-        "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-      name: "Sara Lee",
-      designation: "CFO",
-      company: "Acme Co",
-      image: "https://randomuser.me/api/portraits/women/4.jpg",
-    },
-    {
-      testimonial:
-        "I've never met a web developer who truly cares about their clients' success like Rick does.",
-      name: "Chris Brown",
-      designation: "COO",
-      company: "DEF Corp",
-      image: "https://randomuser.me/api/portraits/men/5.jpg",
-    },
-    {
-      testimonial:
-        "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-      name: "Lisa Wang",
-      designation: "CTO",
-      company: "456 Enterprises",
-      image: "https://randomuser.me/api/portraits/women/6.jpg",
-    },
-  ];
-  
-  const projects = [
-    {
-      name: "Car Rent",
-      description:
-        "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
-      tags: [
-        {
-          name: "react",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "mongodb",
-          color: "green-text-gradient",
-        },
-        {
-          name: "tailwind",
-          color: "pink-text-gradient",
-        },
-      ],
-      image: carrent,
-      source_code_link: "https://github.com/",
-    },
-    {
-      name: "Job IT",
-      description:
-        "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
-      tags: [
-        {
-          name: "react",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "restapi",
-          color: "green-text-gradient",
-        },
-        {
-          name: "scss",
-          color: "pink-text-gradient",
-        },
-      ],
-      image: jobit,
-      source_code_link: "https://github.com/",
-    },
-    {
-      name: "Trip Guide",
-      description:
-        "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
-      tags: [
-        {
-          name: "nextjs",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "supabase",
-          color: "green-text-gradient",
-        },
-        {
-          name: "css",
-          color: "pink-text-gradient",
-        },
-      ],
-      image: tripguide,
-      source_code_link: "https://github.com/",
-    },
-  ];
-  
-  export { services, technologies, experiences, testimonials, projects };
-  
+  py,
+  cpp,
+  anl,
+  mobile,
+  backend,
+  creator,
+  web,
+  javascript,
+  typescript,
+  html,
+  css,
+  reactjs,
+  redux,
+  tailwind,
+  nodejs,
+  mongodb,
+  git,
+  figma,
+  docker,
+  meta,
+  starbucks,
+  tesla,
+  shopify,
+  carrent,
+  jobit,
+  tripguide,
+  threejs,
+  berk,
+  llnl,
+  sql,
+  arid,
+  onlybikes,
+  wvw,
+  vreader,
+  pcc,
+  calpoly,
+  dvc,
+  clark,
+} from "../assets";
+
+export const navLinks = [
+  {
+    id: "about",
+    title: "About",
+  },
+  {
+    id: "work",
+    title: "Work",
+  },
+
+];
+
+const services = [
+
+];
+
+const technologies = [
+  {
+    name: "Python",
+    icon: py,
+  },
+  {
+    name: "C/C++",
+    icon: cpp,
+  },
+  {
+    name: "MongoDB",
+    icon: mongodb,
+  },
+  {
+    name: "git",
+    icon: git,
+  },
+  {
+    name: "figma",
+    icon: figma,
+  },
+  {
+    name: "docker",
+    icon: docker,
+  },
+];
+
+const experiences = [
+  {
+    title: "Computing Intern",
+    company_name: "Argonne National Laboratory",
+    icon: anl,
+    iconBg: "#E6DEDD",
+    date: "June 2022 - August 2022",
+    points: [
+      "Developed a standalone application that geolocated and simulated critical infrastructures.",
+      "Utilized cytoscape, deck.gl, heroku, and python in order to display a 3D arc/heat render of dataset.",
+      "Implemented data scraping location data using beautifulsoup as well as manual user input stored in PostgreSQL.",
+      "Codesigned unity 3D simulation of infrastructure connections."
+    ],
+  },
+  {
+    title: "Cybersecurity Analyst Intern",
+    company_name: "Lawrence Berkeley National Laboratory",
+    icon: berk,
+    iconBg: "#E6DEDD",
+    date: "June 2023 - August 2023",
+    points: [
+      "Analyzed security risks of networks and local machines with the Endpoint Management team.",
+      "Optimized unsecured machines to fit compliance standards.",
+      "Utilized in-house ticketing system in order to complete tasks and resolve issues."
+    ],
+  },
+  {
+    title: "Computing Intern",
+    company_name: "Lawrence Livermore National Laboratory",
+    icon: llnl,
+    iconBg: "#E6DEDD",
+    date: "June 2023 - August 2023",
+    points: [
+      "Assisted in the development the full stack web application, the Data Archive, through bug fixes and feature implementation.",
+      "Participated in the requirements definition, analysis, design, implementation, debugging, testing of Docker containers.",
+      "Attended research planning and analyzed data and information in support of scientific research."
+    ],
+  },
+
+];
+
+const testimonials = [
+
+];
+
+const projects = [
+  {
+    name: "SQL From Scratch",
+    description:
+      "Developed a program that can read and write data into txt files in SQL format using SQL commands. Features standard SQL commands; select, create, update, insert, drop. Integrated automatic batch line processor as well as manual command input.",
+
+    tags: [
+      {
+        name: "C++",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Git",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Google Test",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: sql,
+    source_code_link: "https://github.com/TeachMeTW/SQL-from-Scratch",
+  },
+  {
+    name: "ARID",
+    description:
+      "Experimental AR Projection using ARUCO codes with a web interface.",
+    tags: [
+      {
+        name: "Python",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "OpenCV",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Django",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: arid,
+    source_code_link: "https://github.com/TeachMeTW/ARID",
+  },
+  {
+    name: "OnlyBikes",
+    description:
+      "A Bike Rental Platform that utilizes Tensorflow Machine Learning and MapQuest API to detect bikes, returns, and rentals.",
+    tags: [
+      {
+        name: "Python | Django",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Tensorflow | OpenCV",
+        color: "green-text-gradient",
+      },
+      {
+        name: "MapQuest | Twillio | Auth0",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: onlybikes,
+    source_code_link: "https://github.com/TeachMeTW/TigerHacks2022",
+  },
+  {
+    name: "VReader",
+    description:
+      "A Virtual Reality Book Reader with a mission of sparking reading interest for younger individuals.",
+    tags: [
+      {
+        name: "Lua",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Project Gutenberg | Gutendex API",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Oculus Quest",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: vreader,
+    source_code_link: "https://github.com/TeachMeTW/VReader",
+  },
+  {
+    name: "WorldView Wanderer",
+    description:
+      "Destination Viewer with local cuisine and music.",
+    tags: [
+      {
+        name: "Python | Pygame",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Tkinter",
+        color: "green-text-gradient",
+      },
+    ],
+    image: wvw,
+    source_code_link: "https://github.com/TeachMeTW/WorldView-Wanderer",
+  },
+
+];
+
+const clubs = [
+  {
+    title: "High School Student - Industrial and Manufacturing Engineering",
+    company_name: "Clark Magnet High School",
+    icon: clark,
+    iconBg: "#FFFFFF",
+    date: "August 2016 - June 2020",
+    points: [
+      "Focused on mainly manufacturing and robotics: Team696.",
+      "Worked with HAAS CNC Machines including Routers, Lathes, Mills.",
+      "Utilzed machinery such as bandsaws, TIG Welders, Laser Cutters, and programmed in G-Code."
+    ],
+  },
+  {
+    title: "Undergrad - Aerospace Engineering",
+    company_name: "Pasadena City College",
+    icon: pcc,
+    iconBg: "#E6DEDD",
+    date: "August 2020 - June 2022",
+    points: [
+      "Original Major, wanted to work with planes and rocketry systems.",
+      "Located near JPL, toured the facility and studied in a class under Erick Sturm -- Cassini Saturn Space Probe Mission Planner.",
+      "Decided to switch majors for flexibility and to encompass all of my interests."
+    ],
+  },
+  {
+    title: "Undergrad - Computer Engineering",
+    company_name: "Diablo Valley College",
+    icon: dvc,
+    iconBg: "#E6DEDD",
+    date: "August 2022 - May 2023",
+    points: [
+      "Continued my undergraduate studies at DVC due to a sudden relocation.",
+      "Got Involved in many student associations revolving my field, specifically Deep Learning Society (DLS).",
+      "Completed most required classes after switching majors."
+    ],
+  },
+  {
+    title: "Bachelors and Masters - Computer Engineering",
+    company_name: "California Polytechnic State San Luis Obispo",
+    icon: calpoly,
+    iconBg: "#E6DEDD",
+    date: "August 2023 - June 2026",
+    points: [
+      "Continue studying Computer Engineering at CalPoly SLO through the 'Learn by Doing' philosophy.",
+      "Looking to double major in Aerospace/Astro and complete masters in CS."
+    ],
+  },
+
+];
+
+
+export { services, technologies, experiences, testimonials, projects, clubs };

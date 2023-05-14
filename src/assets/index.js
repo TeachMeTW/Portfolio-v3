@@ -7,6 +7,7 @@ import github from "./github.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
 
+import anl from "./company/ANL.png";
 import css from "./tech/css.png";
 import docker from "./tech/docker.png";
 import figma from "./tech/figma.png";
@@ -29,8 +30,34 @@ import tesla from "./company/tesla.png";
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
+import berk from "./company/berkley.png"
+import llnl from "./company/llnl.png";
+import py from "./tech/py.png";
+import cpp from "./tech/cpp.png";
+import sql from "./sql.png";
+import arid from "./arid.png";
+import onlybikes from "./onlybikes.png";
+import wvw from "./worldview.png";
+import vreader from "./vreader.png";
+import pcc from "./company/pcc.png";
+import dvc from "./company/dvc.png";
+import clark from "./company/clark.png";
+import calpoly from "./company/calpoly.png";
 
 export {
+  pcc,
+  dvc,
+  clark,
+  calpoly,
+  wvw,
+  vreader,
+  onlybikes,
+  arid,
+  sql,
+  py,
+  cpp,
+  llnl,
+  berk,
   logo,
   backend,
   creator,
@@ -59,4 +86,5 @@ export {
   carrent,
   jobit,
   tripguide,
+  anl,
 };

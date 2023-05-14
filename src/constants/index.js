@@ -1,4 +1,6 @@
 import {
+  dl,
+  pb,
   py,
   cpp,
   anl,
@@ -37,6 +39,10 @@ import {
   calpoly,
   dvc,
   clark,
+  cycf,
+  mesa,
+  ctc,
+  dls,
 } from "../assets";
 
 export const navLinks = [
@@ -285,4 +291,72 @@ const clubs = [
 ];
 
 
-export { services, technologies, experiences, testimonials, projects, clubs };
+
+const involv = [
+  {
+    name: "Deep Learning Society (DLS) - Vice President",
+    description:
+      "Machine Learning focued organization with weekly lectures and workshops based on different algorithms and use cases.",
+
+    tags: [
+
+    ],
+    image: dls,
+
+  },
+  {
+    name: "Project Bracket - Project Lead",
+    description:
+      "Multiskill club that focused on creating projects throughout the semester surrounding different fields like Web Dev, Game Dev, or Machine Learning.",
+    tags: [
+
+    ],
+    image: pb,
+
+  },
+  {
+    name: "Code for Your Future - Co President",
+    description:
+      "A club focused on resume building, interview preparation, and opportunity sharing to help fellow students secure internships.",
+    tags: [
+
+    ],
+    image: cycf,
+   
+  },
+  {
+    name: "Code the Change  - Project Lead",
+    description:
+      "A club focused on assisting Non-Profits through website and service creation.",
+    tags: [
+
+    ],
+    image: ctc,
+  
+  },
+  {
+    name: "MESA",
+    description:
+      "Academic Enrichment Organization of underrepresented students majoring in STEM.",
+    tags: [
+
+    ],
+    image: mesa,
+ 
+  },
+  {
+    name: "DLSLO - President",
+    description:
+      "Upcoming DLS branch at Cal Poly SLO.",
+
+    tags: [
+
+    ],
+    image: dl,
+
+  },
+
+];
+
+
+export { services, technologies, experiences, testimonials, projects, clubs, involv };

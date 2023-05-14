@@ -43,8 +43,20 @@ import pcc from "./company/pcc.png";
 import dvc from "./company/dvc.png";
 import clark from "./company/clark.png";
 import calpoly from "./company/calpoly.png";
+import ctc from "./codethechange.png";
+import cycf from "./cycf.png";
+import dls from "./DLS_Banner.png";
+import mesa from "./mesa.png";
+import pb from "./project.png";
+import dl from "./dl.png";
 
 export {
+  dl,
+  pb,
+  ctc,
+  cycf,
+  dls,
+  mesa,
   pcc,
   dvc,
   clark,

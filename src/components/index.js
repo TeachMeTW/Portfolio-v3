@@ -9,6 +9,7 @@ import Feedbacks from "./Feedbacks";
 import Contact from "./Contact";
 import CanvasLoader from "./Loader";
 import OtherExperience from './OtherExperience';
+import Extra from './Extra';
 
 
 export {
@@ -20,6 +21,7 @@ export {
   OtherExperience,
   Works,
   Feedbacks,
+  Extra,
   Contact,
   CanvasLoader,
   EarthCanvas, 

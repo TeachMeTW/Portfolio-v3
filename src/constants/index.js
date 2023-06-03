@@ -244,6 +244,15 @@ const projects = [
     image: wvw,
     source_code_link: "https://github.com/TeachMeTW/WorldView-Wanderer",
   },
+  {
+    name: "DLS Repo",
+    description:
+      "Holds DLS meetings and info",
+    tags: [
+    ],
+    image: dls,
+    source_code_link: "https://github.com/DVC-DeepLearningSociety",
+  },
 
 ];
 

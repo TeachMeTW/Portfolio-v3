@@ -83,4 +83,4 @@ const OtherExperience = () => {
   );
 };
 
-export default SectionWrapper(OtherExperience, "extra");
+export default SectionWrapper(OtherExperience, "edu");

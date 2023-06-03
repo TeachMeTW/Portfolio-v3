@@ -54,6 +54,14 @@ export const navLinks = [
     id: "work",
     title: "Work",
   },
+  {
+    id: "edu",
+    title: "Education",
+  },
+  {
+    id: "extra",
+    title: "Extracurriculars",
+  },
 
 ];
 

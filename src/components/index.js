@@ -10,10 +10,12 @@ import Contact from "./Contact";
 import CanvasLoader from "./Loader";
 import OtherExperience from './OtherExperience';
 import Extra from './Extra';
+import Cursor from './Cursor';
 
 
 export {
   Hero,
+  Cursor,
   Navbar,
   About,
   Tech,

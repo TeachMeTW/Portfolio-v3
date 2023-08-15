@@ -150,15 +150,15 @@ const projects = [
     tags: [
       {
         name: "C++",
-        color: "#FFDAB9",
+        color: "#FF4500",
       },
       {
         name: "Git",
-        color: "#FFB085",
+        color: "#FF6A00",
       },
       {
         name: "Google Test",
-        color: "#FFC4A1",
+        color: "#FF8C00",
       },
     ],
     image: sql,
@@ -171,15 +171,15 @@ const projects = [
     tags: [
       {
         name: "Python",
-        color: "blue-text-gradient",
+        color: "#FF4500",
       },
       {
         name: "OpenCV",
-        color: "green-text-gradient",
+        color: "#FF6A00",
       },
       {
         name: "Django",
-        color: "pink-text-gradient",
+        color: "#FF8C00",
       },
     ],
     image: arid,
@@ -192,15 +192,15 @@ const projects = [
     tags: [
       {
         name: "Python | Django",
-        color: "blue-text-gradient",
+        color: "#FF4500",
       },
       {
         name: "Tensorflow | OpenCV",
-        color: "green-text-gradient",
+        color: "#FF6A00",
       },
       {
         name: "MapQuest | Twillio | Auth0",
-        color: "pink-text-gradient",
+        color: "#FF8C00",
       },
     ],
     image: onlybikes,
@@ -213,15 +213,15 @@ const projects = [
     tags: [
       {
         name: "Lua",
-        color: "blue-text-gradient",
+        color: "#FF4500",
       },
       {
         name: "Project Gutenberg | Gutendex API",
-        color: "green-text-gradient",
+        color: "#FF6A00",
       },
       {
         name: "Oculus Quest",
-        color: "pink-text-gradient",
+        color: "#FF8C00",
       },
     ],
     image: vreader,
@@ -234,11 +234,11 @@ const projects = [
     tags: [
       {
         name: "Python | Pygame",
-        color: "blue-text-gradient",
+        color: "#FF4500",
       },
       {
         name: "Tkinter",
-        color: "green-text-gradient",
+        color: "#FF6A00",
       },
     ],
     image: wvw,

@@ -26,18 +26,17 @@ const ProjectCard = ({
         }}
         className='bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full'
       >
-        <div className='relative w-full h-[230px]'>
+        <div className='relative w-full h-[230px] flex justify-center items-center'> {/* Added flex, justify-center, and items-center */}
           <img
             src={image}
             alt='project_image'
-            className='w-full h-full object-cover rounded-2xl'
+            className='w-full h-full object-contain rounded-2xl'
           />
-
         </div>
 
         <div className='mt-5'>
-          <h3 className='text-white font-bold text-[24px]'>{name}</h3>
-          <p className='mt-2 text-secondary text-[14px]'>{description}</p>
+        <h3 className='text-[#FF4500] font-bold text-[24px]'>{name}</h3>
+        <p className='mt-2 text-[#FFFFFF] text-[14px]'>{description}</p>
         </div>
 
         <div className='mt-4 flex flex-wrap gap-2'>
@@ -50,7 +49,7 @@ const ProjectCard = ({
             </p>
           ))}
         </div>
-      </Tilt>
+        </Tilt>
     </motion.div>
   );
 };
@@ -59,8 +58,7 @@ const Works = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText} `}>Extracurriculars</p>
-        <h2 className={`${styles.sectionHeadText}`}>Clubs and Organizations</h2>
+        <h2 className={`${styles.sectionHeadText} text-left text-[#FF4500] text-[40px] font-bold`}>Clubs and Organizations</h2>
       </motion.div>
 
       <div className='mt-20 flex flex-wrap gap-7'>

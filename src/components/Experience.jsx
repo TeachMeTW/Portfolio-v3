@@ -15,10 +15,14 @@ import { textVariant } from "../utils/motion";
 const ExperienceCard = ({ experience }) => {
   return (
     <VerticalTimelineElement
-      contentStyle={{
-        background: "#1d1836",
-        color: "#fff",
-      }}
+contentStyle={{
+    background: "#1a1a1a", 
+    boxShadow: "0 4px 6px 0 rgba(0, 0, 0, 0.07)", 
+    border: "1px solid #FF4500", 
+    backgroundImage: "linear-gradient(to bottom right, #1a1a1a, #2a2a2a)",
+    color: "#fff"
+}}
+
       contentArrowStyle={{ borderRight: "7px solid  #232631" }}
       date={experience.date}
       iconStyle={{ background: experience.iconBg }}
@@ -33,9 +37,10 @@ const ExperienceCard = ({ experience }) => {
       }
     >
       <div>
-        <h3 className='text-white text-[24px] font-bold'>{experience.title}</h3>
+      <h3 className='text-secondary text-[24px] font-bold'>{experience.title}</h3>
+
         <p
-          className='text-secondary text-[16px] font-semibold'
+          className='text-white-100 text-[16px] font-semibold'
           style={{ margin: 0 }}
         >
           {experience.company_name}
@@ -46,7 +51,7 @@ const ExperienceCard = ({ experience }) => {
         {experience.points.map((point, index) => (
           <li
             key={`experience-point-${index}`}
-            className='text-white-100 text-[14px] pl-1 tracking-wider'
+            className='text-white-100-100 text-[14px] pl-1 tracking-wider'
           >
             {point}
           </li>
@@ -60,10 +65,7 @@ const Experience = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText} text-center`}>
-          My Journey
-        </p>
-        <h2 className={`${styles.sectionHeadText} text-center`}>
+        <h2 className={`${styles.sectionHeadText} text-center text-[#FF4500] text-[40px] font-bold`}>
           Experience
         </h2>
       </motion.div>

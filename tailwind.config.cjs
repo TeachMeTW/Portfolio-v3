@@ -9,11 +9,11 @@ module.exports = {
         pointer: 'url(src\assets\cursor.png), pointer',
       },
       colors: {
-        primary: "#050816",
-        secondary: "#aaa6c3",
-        tertiary: "#151030",
-        "black-100": "#100d25",
-        "black-200": "#090325",
+        primary: "#1a1a1a",  // Almost black background
+        secondary: "#FF4500",  // Warm glowing orange for Nixie tube effect
+        tertiary: "#2a2a2a",  // Slightly lighter shade for secondary backgrounds or UI elements
+        "black-100": "#0d0d0d",
+        "black-200": "#090909",
         "white-100": "#f3f3f3",
       },
       boxShadow: {

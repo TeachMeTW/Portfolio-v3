@@ -117,9 +117,9 @@ const experiences = [
     iconBg: "#E6DEDD",
     date: "June 2023 - August 2023",
     points: [
-      "Analyzed security risks of networks and local machines with the Endpoint Management team.",
-      "Optimized unsecured machines to fit compliance standards.",
-      "Utilized in-house ticketing system in order to complete tasks and resolve issues."
+      "Assisted the IT team via ServiceNow and Crowdstrike in updating 5000 outdated and out-of-compliance systems in the laboratory’s network.",
+      "Supported the HelpDesk and Endpoint Management Team with troubleshooting, on-boarding, and maintenance tickets throughout all 22 laboratory departments.",
+      "Collaborated on a team of 3 fellow interns under the OMNI Program to research cybersecurity vulnerabilities presentable to the Department of Energy."
     ],
   },
   {
@@ -129,9 +129,9 @@ const experiences = [
     iconBg: "#E6DEDD",
     date: "June 2023 - August 2023",
     points: [
-      "Assisted in the development the full stack web application, the Data Archive, through bug fixes and feature implementation.",
-      "Participated in the requirements definition, analysis, design, implementation, debugging, testing of Docker containers.",
-      "Attended research planning and analyzed data and information in support of scientific research."
+      "Contributed to the laboratory’s Data Archive codebase through the development of new features, unit and integration, test creation, bug fixes, and code reviews on a team of 7.",
+      "Utilzed an Angular Frontend and Python Backend consisting of FASTAPI, MongoDB, and ElasticSearch to develop a document repository for scientist and engineering departments.",
+      "Participated in Agile methodology consisting of weekly Scrum and Sprint meetings to ensure streamlined development processes, ticket assignment, and deployment process."
     ],
   },
 
@@ -150,15 +150,15 @@ const projects = [
     tags: [
       {
         name: "C++",
-        color: "blue-text-gradient",
+        color: "#FFDAB9",
       },
       {
         name: "Git",
-        color: "green-text-gradient",
+        color: "#FFB085",
       },
       {
         name: "Google Test",
-        color: "pink-text-gradient",
+        color: "#FFC4A1",
       },
     ],
     image: sql,
@@ -294,14 +294,14 @@ const clubs = [
     ],
   },
   {
-    title: "Bachelors and Masters - Computer Engineering",
+    title: "Bachelors and Masters - Computer Engineering w/ Minor in Astronomy",
     company_name: "California Polytechnic State San Luis Obispo",
     icon: calpoly,
     iconBg: "#E6DEDD",
     date: "August 2023 - June 2026",
     points: [
       "Continue studying Computer Engineering at CalPoly SLO through the 'Learn by Doing' philosophy.",
-      "Looking to double major in Aerospace/Astro and complete masters in CS."
+      "Pursuing a minor in Astronomy/Astrophysics."
     ],
   },
 
@@ -318,7 +318,7 @@ const involv = [
     tags: [
 
     ],
-    image: dls,
+    image: dl,
 
   },
   {
@@ -360,17 +360,6 @@ const involv = [
     ],
     image: mesa,
  
-  },
-  {
-    name: "DLSLO - President",
-    description:
-      "Upcoming DLS branch at Cal Poly SLO.",
-
-    tags: [
-
-    ],
-    image: dl,
-
   },
 
 ];

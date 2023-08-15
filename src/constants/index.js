@@ -111,26 +111,28 @@ const experiences = [
     ],
   },
   {
-    title: "Cybersecurity Analyst Intern",
+    title: "Information Technology and Cyber Intern",
     company_name: "Lawrence Berkeley National Laboratory",
     icon: berk,
     iconBg: "#E6DEDD",
     date: "June 2023 - August 2023",
     points: [
+      "Participated in file analysis, file carving, malware decomposition, network traffic analysis, and host forensics.",
       "Assisted the IT team via ServiceNow and Crowdstrike in updating 5000 outdated and out-of-compliance systems in the laboratory’s network.",
       "Supported the HelpDesk and Endpoint Management Team with troubleshooting, on-boarding, and maintenance tickets throughout all 22 laboratory departments.",
       "Collaborated on a team of 3 fellow interns under the OMNI Program to research cybersecurity vulnerabilities presentable to the Department of Energy."
     ],
   },
   {
-    title: "Computing Intern",
+    title: "Software Engineer Intern",
     company_name: "Lawrence Livermore National Laboratory",
     icon: llnl,
     iconBg: "#E6DEDD",
     date: "June 2023 - August 2023",
     points: [
-      "Contributed to the laboratory’s Data Archive codebase through the development of new features, unit and integration, test creation, bug fixes, and code reviews on a team of 7.",
-      "Utilzed an Angular Frontend and Python Backend consisting of FASTAPI, MongoDB, and ElasticSearch to develop a document repository for scientist and engineering departments.",
+      "Contributed to the laboratory’s Data Archive codebase through the development of new features, RESTful API endpoints, unit and integration test creation, bug fixes, and code reviews on a team of 7.",
+      "Designed, implemented, and deployed a full stack web application utilizing Python, Angular, FastAPI, MongoDB, Docker, and Gitlab CI.",
+      "Assisted in the migration from MarkLogic to MongoDB and ElasticSearch database stack, improving search speeds.",
       "Participated in Agile methodology consisting of weekly Scrum and Sprint meetings to ensure streamlined development processes, ticket assignment, and deployment process."
     ],
   },

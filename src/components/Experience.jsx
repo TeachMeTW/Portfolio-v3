@@ -15,14 +15,11 @@ import { textVariant } from "../utils/motion";
 const ExperienceCard = ({ experience }) => {
   return (
     <VerticalTimelineElement
-contentStyle={{
-    background: "#1a1a1a", 
-    boxShadow: "0 4px 6px 0 rgba(0, 0, 0, 0.07)", 
-    border: "1px solid #FF4500", 
-    backgroundImage: "linear-gradient(to bottom right, #1a1a1a, #2a2a2a)",
-    color: "#fff"
-}}
-
+      contentStyle={{
+        background: "transparent",
+        boxShadow: "none",
+        border: "none",
+      }}
       contentArrowStyle={{ borderRight: "7px solid  #232631" }}
       date={experience.date}
       iconStyle={{ background: experience.iconBg }}
@@ -36,30 +33,45 @@ contentStyle={{
         </div>
       }
     >
-      <div>
-      <h3 className='text-secondary text-[24px] font-bold'>{experience.title}</h3>
-
-        <p
-          className='text-white-100 text-[16px] font-semibold'
-          style={{ margin: 0 }}
-        >
-          {experience.company_name}
-        </p>
+      {/* PDF Thumbnail above the text box */}
+      <div className="mb-4 rounded-lg flex-grow border-2 border-orange-500">
+        <a href={experience.link} target="_blank" rel="noopener noreferrer">
+          <img
+            src={experience.proj}
+            alt={`Thumbnail for ${experience.title}`}
+            className='w-full object-contain rounded cursor-pointer'
+            title="Click to view/download PDF"
+          />
+        </a>
       </div>
 
-      <ul className='mt-5 list-disc ml-5 space-y-2'>
-        {experience.points.map((point, index) => (
-          <li
-            key={`experience-point-${index}`}
-            className='text-white-100-100 text-[14px] pl-1 tracking-wider'
-          >
-            {point}
-          </li>
-        ))}
-      </ul>
+      {/* Experience box */}
+      <div
+        style={{
+          background: "#1a1a1a",
+          boxShadow: "0 4px 6px 0 rgba(0, 0, 0, 0.07)",
+          border: "2px solid #FF4500",
+          backgroundImage: "linear-gradient(to bottom right, #1a1a1a, #2a2a2a)",
+        }}
+        className="p-4 rounded-lg flex-grow"
+      >
+        <h3 className='text-secondary text-[24px] font-bold'>{experience.title}</h3>
+        <p className='text-white-100 text-[16px] font-semibold mt-2'>{experience.company_name}</p>
+        <ul className='mt-5 list-disc ml-5 space-y-2'>
+          {experience.points.map((point, index) => (
+            <li
+              key={`experience-point-${index}`}
+              className='text-white-100-100 text-[14px] pl-1 tracking-wider'
+            >
+              {point}
+            </li>
+          ))}
+        </ul>
+      </div>
     </VerticalTimelineElement>
   );
 };
+
 
 const Experience = () => {
   return (

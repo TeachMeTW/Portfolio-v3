@@ -49,8 +49,20 @@ import dls from "./DLS_Banner.png";
 import mesa from "./mesa.png";
 import pb from "./project.png";
 import dl from "./dl.png";
+import omni from "./omni.png"
+import DARC from "./darc.png"
+import omnipdf from "./omnipdf.pdf"
+import darcpdf from "./darcpdf.pdf"
+import cybercity from "./cybercity.png"
+import cyberdoc from "./cyberdoc.pdf"
 
 export {
+  cyberdoc,
+  cybercity,
+  omnipdf,
+  darcpdf,
+  DARC,
+  omni,
   dl,
   pb,
   ctc,

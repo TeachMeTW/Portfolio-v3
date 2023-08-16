@@ -43,6 +43,12 @@ import {
   mesa,
   ctc,
   dls,
+  darcpdf,
+  DARC,
+  omni,
+  omnipdf,
+  cybercity,
+  cyberdoc,
 } from "../assets";
 
 export const navLinks = [
@@ -102,6 +108,8 @@ const experiences = [
     company_name: "Argonne National Laboratory",
     icon: anl,
     iconBg: "#E6DEDD",
+    proj: cybercity,
+    link: cyberdoc,
     date: "June 2022 - August 2022",
     points: [
       "Developed a standalone application that geolocated and simulated critical infrastructures.",
@@ -115,6 +123,8 @@ const experiences = [
     company_name: "Lawrence Berkeley National Laboratory",
     icon: berk,
     iconBg: "#E6DEDD",
+    proj: omni,
+    link: omnipdf,
     date: "June 2023 - August 2023",
     points: [
       "Participated in file analysis, file carving, malware decomposition, network traffic analysis, and host forensics.",
@@ -128,6 +138,8 @@ const experiences = [
     company_name: "Lawrence Livermore National Laboratory",
     icon: llnl,
     iconBg: "#E6DEDD",
+    proj: DARC,
+    link: darcpdf,
     date: "June 2023 - August 2023",
     points: [
       "Contributed to the laboratory’s Data Archive codebase through the development of new features, RESTful API endpoints, unit and integration test creation, bug fixes, and code reviews on a team of 7.",

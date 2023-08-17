@@ -8,6 +8,7 @@ This portfolio showcases the work, skills, and experiences of me. Designed with 
 - Nixie tube-inspired design for a unique user experience.
 - Animated transitions for enhanced user engagement.
 - Responsive design ensuring compatibility with various device sizes.
+- LAGGY MODEL :D (Going to fix eventually)
 
 ## Technologies Used
 - React

@@ -55,8 +55,14 @@ import omnipdf from "./omnipdf.pdf"
 import darcpdf from "./darcpdf.pdf"
 import cybercity from "./cybercity.png"
 import cyberdoc from "./cyberdoc.pdf"
+import whointed from "./WhoIntedMe.png"
+import portfolio from "./portfolio.png"
+import lau from "./kan.png"
 
 export {
+  portfolio,
+  lau,
+  whointed,
   cyberdoc,
   cybercity,
   omnipdf,

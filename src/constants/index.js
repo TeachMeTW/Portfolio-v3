@@ -49,6 +49,9 @@ import {
   omnipdf,
   cybercity,
   cyberdoc,
+  whointed,
+  portfolio,
+  lau
 } from "../assets";
 
 export const navLinks = [
@@ -156,6 +159,68 @@ const testimonials = [
 ];
 
 const projects = [
+  {
+    name: "Who Inted Me",
+    description:
+      "A fullstack app for League of Legends enthusiasts. Using machine learning and data analysis, we pinpoint who jeopardized your ranked games. Base your arguments on solid FACTS and LOGIC.",
+
+    tags: [
+      {
+        name: "Python Flask",
+        color: "#FF4500",
+      },
+      {
+        name: "React Javascript",
+        color: "#FF6A00",
+      },
+      {
+        name: "RESTFUL | CRUD | SQLite",
+        color: "#FF8C00",
+      },
+    ],
+    image: whointed,
+    source_code_link: "https://github.com/TeachMeTW/WhoIntedMe",
+  },
+  {
+    name: "Portfolio V3",
+    description:
+      "This portfolio showcases the work, skills, and experiences of me. Designed with a modern user interface, it provides a comprehensive view of projects, tech stack, and other professional engagements. ",
+
+    tags: [
+      {
+        name: "Vite React Javascript",
+        color: "#FF4500",
+      },
+      {
+        name: "HTML CSS TAILWIND",
+        color: "#FF6A00",
+      },
+    ],
+    image: portfolio,
+    source_code_link: "https://robinttw.com",
+  },
+  {
+    name: "Kon Academy",
+    description:
+      "Interactive video lesson generator: Upload PDFs, ask questions, and receive accurate video answers using streamlit, MindsDB, LangChain, and Pinecone. ",
+
+    tags: [
+      {
+        name: "Python",
+        color: "#FF4500",
+      },
+      {
+        name: "Langchain",
+        color: "#FF6A00",
+      },
+      {
+        name: "MindsDB",
+        color: "#FF8C00",
+      },
+    ],
+    image: lau,
+    source_code_link: "https://devpost.com/software/kon-academy",
+  },
   {
     name: "SQL From Scratch",
     description:

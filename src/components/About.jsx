@@ -27,9 +27,9 @@ const ServiceCard = ({ index, title, icon }) => (
           className='w-16 h-16 object-contain'
         />
 
-        <h3 className='text-white text-[20px] font-bold text-center'>
+        <div className="typing-effect"><h3 className='text-white text-[20px] font-bold text-center'>
           {title}
-        </h3>
+        </h3></div>
       </div>
     </motion.div>
   </Tilt>
@@ -39,19 +39,20 @@ const About = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <h2 className="text-[#FF4500] text-[50px] font-bold">Overview.</h2>
-
+        <p className={styles.sectionSubText}>Introduction</p>
+        <h2 className={styles.sectionHeadText}>Overview.</h2>
       </motion.div>
 
       <motion.p
-    variants={fadeIn("", "", 0.1, 1)}
-    className='mt-4 text-[#FFFFFF] text-[17px] max-w-3xl leading-[30px]'
->
+        variants={fadeIn("", "", 0.1, 1)}
+        className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
+      >
         I'm a Computer Engineer studying at California Polytechnic State San Luis Obispo.
         My main techstack would be Python, but I have used C++ and Java in the past.
         Currently working on Circuitry and Embedded C, and looking to learn about things I get my hands on.
         My goals for the future is to work on space technologies or computer hardware.
       </motion.p>
+
     </>
   );
 };

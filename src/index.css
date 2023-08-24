@@ -211,3 +211,29 @@ html, body {
 body, h1, h2, h3, h4, h5, h6, p, span, a, li {
   font-family: 'Nixie One', sans-serif;
 }
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: black; }
+}
+
+.typing-effect {
+  overflow: hidden;
+  display: inline-block;  /* This will ensure the container fits the content width */
+  border-right: .15em solid black;
+  white-space: nowrap; 
+  width: 0;  /* Start with a width of 0 to ensure text is hidden initially */
+  animation: 
+    typing 3s steps(40, end) forwards,  /* "forwards" ensures the end state remains after animation */
+    blink-caret .75s step-end infinite;
+}
+
+.typing-effect-finished {
+  animation: none;  /* Remove animations */
+  border-right: none;  /* Remove the typing cursor */
+}

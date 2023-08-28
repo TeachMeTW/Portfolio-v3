@@ -1,6 +1,6 @@
 import { BrowserRouter } from "react-router-dom";
 
-import { About, Contact,Cursor, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas, OtherExperience, Extra } from "./components";
+import { About, Contact,Cursor, Experience, Feedbacks, Hero, Navbar, Tech, Works, OtherExperience, Extra } from "./components";
 
 const App = () => {
   return (

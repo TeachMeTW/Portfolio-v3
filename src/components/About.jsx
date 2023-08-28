@@ -38,20 +38,24 @@ const ServiceCard = ({ index, title, icon }) => (
 const About = () => {
   return (
     <>
-      <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>Introduction</p>
-        <h2 className={styles.sectionHeadText}>Overview.</h2>
-      </motion.div>
 
-      <motion.p
-        variants={fadeIn("", "", 0.1, 1)}
-        className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
-      >
-        I'm a Computer Engineer studying at California Polytechnic State San Luis Obispo.
+    <motion.div variants={textVariant()}>
+
+    <h2 className={`${styles.sectionHeadText} font-bold`} style={{ color: '#FF4500', fontSize: '40px' }}>Overview</h2>
+
+    </motion.div>
+
+    <div className='w-full flex'>
+    <motion.p
+      variants={fadeIn("", "", 0.1, 1)}
+      className='mt-4 text-[#FFFFFF] text-[17px] max-w-3xl leading-[30px]'
+    >
+      I'm a Computer Engineer studying at California Polytechnic State San Luis Obispo.
         My main techstack would be Python, but I have used C++ and Java in the past.
         Currently working on Circuitry and Embedded C, and looking to learn about things I get my hands on.
         My goals for the future is to work on space technologies or computer hardware.
-      </motion.p>
+    </motion.p>
+    </div>
 
     </>
   );

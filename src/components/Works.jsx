@@ -74,7 +74,8 @@ const Works = () => {
     <>
       <motion.div variants={textVariant()}>
 
-        <h2 className={`${styles.sectionHeadText} text-[#FF4500] text-[40px] font-bold` }>Projects.</h2>
+      <h2 className={`${styles.sectionHeadText} font-bold`} style={{ color: '#FF4500', fontSize: '40px' }}>Projects</h2>
+
       </motion.div>
 
       <div className='w-full flex'>

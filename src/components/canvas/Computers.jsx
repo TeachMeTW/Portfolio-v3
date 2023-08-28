@@ -1,28 +1,26 @@
-import React, { Suspense, useEffect, useState } from "react";
+import React, { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
+import CanvasLoader from "../Loader";  // Ensure this path is correct
 
-import CanvasLoader from "../Loader";
-
-const Computers = ({ isMobile }) => {
-  const computer = useGLTF("./dv_meterr/scene.gltf");
+const Computers = () => {
+  const { scene } = useGLTF("./dv_meterr/compressed.glb");
 
   return (
     <mesh>
-      <hemisphereLight intensity={0.15} groundColor='black' />
+      <hemisphereLight intensity={0.1} groundColor='black' />
       <spotLight
         position={[-20, 50, 10]}
         angle={0.12}
         penumbra={1}
-        intensity={1}
+        intensity={0.8}
         castShadow
-        shadow-mapSize={1024}
+        shadow-mapSize={512}
       />
-      <pointLight intensity={1} />
       <primitive
-        object={computer.scene}
-        scale={isMobile ? 15 : 15.25}
-        position={isMobile ? [0, -2, 0] : [0, -2, 0]}
+        object={scene}
+        scale={15}
+        position={[0, -2, 0]}
         rotation={[0, 1.1, 0]}
       />
     </mesh>
@@ -30,36 +28,13 @@ const Computers = ({ isMobile }) => {
 };
 
 const ComputersCanvas = () => {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    // Add a listener for changes to the screen size
-    const mediaQuery = window.matchMedia("(max-width: 500px)");
-
-    // Set the initial value of the `isMobile` state variable
-    setIsMobile(mediaQuery.matches);
-
-    // Define a callback function to handle changes to the media query
-    const handleMediaQueryChange = (event) => {
-      setIsMobile(event.matches);
-    };
-
-    // Add the callback function as a listener for changes to the media query
-    mediaQuery.addEventListener("change", handleMediaQueryChange);
-
-    // Remove the listener when the component is unmounted
-    return () => {
-      mediaQuery.removeEventListener("change", handleMediaQueryChange);
-    };
-  }, []);
-
   return (
     <Canvas
       frameloop='demand'
       shadows
-      dpr={[1, 2]}
+      dpr={[0.5, 1.5]}
       camera={{ position: [20, 3, 5], fov: 25 }}
-      gl={{ preserveDrawingBuffer: true }}
+      gl={{ preserveDrawingBuffer: false }}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
@@ -68,7 +43,7 @@ const ComputersCanvas = () => {
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
         />
-        <Computers isMobile={isMobile} />
+        <Computers />
       </Suspense>
 
       <Preload all />

@@ -77,9 +77,10 @@ const Experience = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <h2 className={`${styles.sectionHeadText} text-center text-[#FF4500] text-[40px] font-bold`}>
-          Experience
-        </h2>
+      <h2 className={`${styles.sectionHeadText} text-center text-[40px] font-bold`} style={{ color: '#FF4500' }}>
+    Experience
+</h2>
+
       </motion.div>
 
       <div className='mt-20 flex flex-col'>

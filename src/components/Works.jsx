@@ -26,44 +26,37 @@ const ProjectCard = ({
         }}
         className='bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full'
       >
-        <div className='relative w-full h-[230px]'>
-          <img
-            src={image}
-            alt='project_image'
-            className='w-full h-full object-contain rounded-2xl'
-          />
-
-          <div className='absolute inset-0 flex justify-end m-3 card-img_hover'>
-            <div
-              onClick={() => window.open(source_code_link, "_blank")}
-              className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
-            >
-              <img
-                src={github}
-                alt='source code'
-                className='w-1/2 h-1/2 object-contain'
-              />
-            </div>
+        <a 
+          href={source_code_link} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="block w-full text-decoration-none"
+        >
+          <div className='relative w-full h-[230px]'>
+            <img
+              src={image}
+              alt='project_image'
+              className='w-full h-full object-contain rounded-2xl'
+            />
           </div>
-        </div>
 
-        <div className='mt-5'>
-        <h3 className='text-[#FF4500] font-bold text-[24px]'>{name}</h3>
-        <p className='mt-2 text-[#FFFFFF] text-[14px]'>{description}</p>
+          <div className='mt-5'>
+            <h3 className='text-[#FF4500] font-bold text-[24px]'>{name}</h3>
+            <p className='mt-2 text-[#FFFFFF] text-[14px]'>{description}</p>
+          </div>
 
-        </div>
-
-        <div className='mt-4 flex flex-wrap gap-2'>
-        {tags.map((tag) => (
-    <p
-        key={`${name}-${tag.name}`}
-        style={{ color: tag.color }}
-        className="text-[14px] font-bold"
-    >
-        #{tag.name}
-    </p>
-))}
-        </div>
+          <div className='mt-4 flex flex-wrap gap-2'>
+            {tags.map((tag) => (
+              <p
+                key={`${name}-${tag.name}`}
+                style={{ color: tag.color }}
+                className="text-[14px] font-bold"
+              >
+                #{tag.name}
+              </p>
+            ))}
+          </div>
+        </a>
       </Tilt>
     </motion.div>
   );

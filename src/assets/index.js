@@ -58,8 +58,16 @@ import cyberdoc from "./cyberdoc.pdf"
 import whointed from "./WhoIntedMe.png"
 import portfolio from "./portfolio.png"
 import lau from "./kan.png"
+import neet from "./neet.gif"
+import csai from "./csai.png"
+import cpss from "./cpss.jpg"
+import slocc from "./slocc.png"
 
 export {
+  csai,
+  cpss,
+  slocc,
+  neet,
   portfolio,
   lau,
   whointed,

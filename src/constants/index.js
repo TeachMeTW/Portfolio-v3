@@ -51,7 +51,11 @@ import {
   cyberdoc,
   whointed,
   portfolio,
-  lau
+  lau,
+  neet,
+  cpss,
+  csai,
+  slocc,
 } from "../assets";
 
 export const navLinks = [
@@ -160,66 +164,26 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Who Inted Me",
+    name: "Neethub",
     description:
-      "A fullstack app for League of Legends enthusiasts. Using machine learning and data analysis, we pinpoint who jeopardized your ranked games. Base your arguments on solid FACTS and LOGIC.",
+      "Neethub offers fans of the popular multiplayer online battle arena game, League of Legends, an immersive video experience inspired by platforms like Netflix and YouTube. With its sleek design and user-friendly interface, Neethub stands out as the go-to destination for players and enthusiasts looking for game highlights, tutorials, strategies, and more.",
 
     tags: [
       {
-        name: "Python Flask",
+        name: "Typescript",
         color: "#FF4500",
       },
       {
-        name: "React Javascript",
+        name: "Next.JS",
         color: "#FF6A00",
       },
       {
-        name: "RESTFUL | CRUD | SQLite",
+        name: "MongoDB",
         color: "#FF8C00",
       },
     ],
-    image: whointed,
-    source_code_link: "https://github.com/TeachMeTW/WhoIntedMe",
-  },
-  {
-    name: "Portfolio V3",
-    description:
-      "This portfolio showcases the work, skills, and experiences of me. Designed with a modern user interface, it provides a comprehensive view of projects, tech stack, and other professional engagements. ",
-
-    tags: [
-      {
-        name: "Vite React Javascript",
-        color: "#FF4500",
-      },
-      {
-        name: "HTML CSS TAILWIND",
-        color: "#FF6A00",
-      },
-    ],
-    image: portfolio,
-    source_code_link: "https://robinttw.com",
-  },
-  {
-    name: "Kon Academy",
-    description:
-      "Interactive video lesson generator: Upload PDFs, ask questions, and receive accurate video answers using streamlit, MindsDB, LangChain, and Pinecone. ",
-
-    tags: [
-      {
-        name: "Python",
-        color: "#FF4500",
-      },
-      {
-        name: "Langchain",
-        color: "#FF6A00",
-      },
-      {
-        name: "MindsDB",
-        color: "#FF8C00",
-      },
-    ],
-    image: lau,
-    source_code_link: "https://devpost.com/software/kon-academy",
+    image: neet,
+    source_code_link: "https://neethub.vercel.app/",
   },
   {
     name: "SQL From Scratch",
@@ -243,6 +207,69 @@ const projects = [
     image: sql,
     source_code_link: "https://github.com/TeachMeTW/SQL-from-Scratch",
   },
+  {
+    name: "Portfolio V3",
+    description:
+      "This portfolio showcases the work, skills, and experiences of me. Designed with a modern user interface, it provides a comprehensive view of projects, tech stack, and other professional engagements. ",
+
+    tags: [
+      {
+        name: "Vite React Javascript",
+        color: "#FF4500",
+      },
+      {
+        name: "HTML CSS TAILWIND",
+        color: "#FF6A00",
+      },
+    ],
+    image: portfolio,
+    source_code_link: "https://robinttw.com",
+  },
+  {
+    name: "Who Inted Me",
+    description:
+      "A fullstack app for League of Legends enthusiasts. Using machine learning and data analysis, we pinpoint who jeopardized your ranked games. Base your arguments on solid FACTS and LOGIC.",
+
+    tags: [
+      {
+        name: "Python Flask",
+        color: "#FF4500",
+      },
+      {
+        name: "React Javascript",
+        color: "#FF6A00",
+      },
+      {
+        name: "RESTFUL | CRUD | SQLite",
+        color: "#FF8C00",
+      },
+    ],
+    image: whointed,
+    source_code_link: "https://github.com/TeachMeTW/WhoIntedMe",
+  },
+  {
+    name: "Kon Academy",
+    description:
+      "Interactive video lesson generator: Upload PDFs, ask questions, and receive accurate video answers using streamlit, MindsDB, LangChain, and Pinecone. ",
+
+    tags: [
+      {
+        name: "Python",
+        color: "#FF4500",
+      },
+      {
+        name: "Langchain",
+        color: "#FF6A00",
+      },
+      {
+        name: "MindsDB",
+        color: "#FF8C00",
+      },
+    ],
+    image: lau,
+    source_code_link: "https://devpost.com/software/kon-academy",
+  },
+
   {
     name: "ARID",
     description:
@@ -390,6 +417,42 @@ const clubs = [
 
 const involv = [
   {
+    name: "SLO Climate Coalition",
+    description:
+      "SLO Climate Coalition is a local non-profit organization dedicated to champion high impact regional climate solutions. Its members include environmental advocates, climate and energy professionals, and San Luis Obispo City liaisons.",
+
+    tags: [
+
+    ],
+    image: slocc,
+    source_code_link: "https://sites.google.com/sloclimatecoalition.org/slocc-college-corps/home?authuser=0",
+
+  },
+  {
+    name: "CSAI",
+    description:
+      "Cal Poly's premier computer science and artificial intelligence club. We are a group of students who are passionate about learning and applying AI to solve real-world problems. Host workshops, projects, and competitions to help students learn about AI and its applications",
+
+    tags: [
+
+    ],
+    image: csai,
+    source_code_link: "https://csaicalpoly.com/",
+
+  },
+  {
+    name: "Cal Poly Space Systems",
+    description:
+      "Cal Poly Space Systems (CPSS) is a dynamic club that offers hands-on training in all areas of rocketry design including propulsion, structures, controls, and electronics.",
+
+    tags: [
+
+    ],
+    image: cpss,
+    source_code_link: "https://www.calpolyspacesystems.com/",
+
+  },
+  {
     name: "Deep Learning Society (DLS) - Vice President",
     description:
       "Machine Learning focued organization with weekly lectures and workshops based on different algorithms and use cases.",
@@ -398,6 +461,7 @@ const involv = [
 
     ],
     image: dl,
+    source_code_link: "https://github.com/DVC-DeepLearningSociety",
 
   },
   {
@@ -408,6 +472,7 @@ const involv = [
 
     ],
     image: pb,
+    source_code_link: "https://projectbracket.webflow.io/",
 
   },
   {
@@ -418,6 +483,7 @@ const involv = [
 
     ],
     image: cycf,
+    source_code_link: "https://www.instagram.com/codeforyourfuturedvc/?hl=en",
    
   },
   {
@@ -428,6 +494,7 @@ const involv = [
 
     ],
     image: ctc,
+    source_code_link: "https://www.instagram.com/codethechange_dvc/?hl=en",
   
   },
   {
@@ -438,6 +505,7 @@ const involv = [
 
     ],
     image: mesa,
+    source_code_link: "https://www.dvc.edu/current/learning-community/mesa/",
  
   },
 

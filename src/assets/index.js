@@ -62,8 +62,12 @@ import neet from "./neet.gif"
 import csai from "./csai.png"
 import cpss from "./cpss.jpg"
 import slocc from "./slocc.png"
+import hackfor from "./hackfor.png"
+import lsst from "./lsst.jpg" 
 
 export {
+  lsst,
+  hackfor,
   csai,
   cpss,
   slocc,

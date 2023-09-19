@@ -7,6 +7,12 @@ import { services } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+
+import resume from "../assets/resume.pdf"
+
+
 const ServiceCard = ({ index, title, icon }) => (
   <Tilt className='xs:w-[250px] w-full'>
     <motion.div
@@ -56,6 +62,18 @@ const About = () => {
         My goals for the future is to work on space technologies or computer hardware.
     </motion.p>
     </div>
+    <div className="mt-5 flex space-x-4">
+      <a href="https://github.com/teachmetw" target="_blank" rel="noopener noreferrer">
+        <FontAwesomeIcon icon={faGithub} className="text-white hover:text-[#FF4500] transition-colors w-6 h-6" />
+      </a>
+      <a href="https://www.linkedin.com/in/rsimpsontw/" target="_blank" rel="noopener noreferrer">
+        <FontAwesomeIcon icon={faLinkedin} className="text-white hover:text-[#FF4500] transition-colors w-6 h-6" />
+      </a>
+      <a href={resume} target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#FF4500] transition-colors">
+        View Resume
+      </a>
+    </div>
+
 
     </>
   );

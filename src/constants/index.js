@@ -56,6 +56,8 @@ import {
   cpss,
   csai,
   slocc,
+  hackfor,
+  lsst,
 } from "../assets";
 
 export const navLinks = [
@@ -155,7 +157,23 @@ const experiences = [
       "Participated in Agile methodology consisting of weekly Scrum and Sprint meetings to ensure streamlined development processes, ticket assignment, and deployment process."
     ],
   },
-
+  {
+    title: "Undergraduate Researcher",
+    company_name: "Cal Poly COSAM",
+    icon: calpoly,
+    proj: lsst,
+    iconBg: "#E6DEDD",
+    date: "September 2023 - Present",
+    points: [
+      "Conducting in-depth research on galaxies and cosmology utilizing datasets from the LSST (Legacy Survey of Space and Time) provided by the Rubin Observatory.",
+      "Leveraging Python for advanced data analysis, enhancing the precision of findings.",
+      "Implementing machine learning algorithms to identify patterns and draw meaningful insights from vast astronomic data",
+      "Utilizing state-of-the-art visualization tools to effectively represent complex celestial phenomena.",
+      "Collaborating with a team of astronomers and scientists to analyze and interpret results, driving forward the understanding of our universe.",
+      "Staying updated with the latest in cosmological research, ensuring the application of cutting-edge methodologies in all projects."
+    
+    ],
+  },      
 ];
 
 const testimonials = [
@@ -362,6 +380,7 @@ const projects = [
 
 ];
 
+// I know this is not the right name; too lazy to refactor/change right now
 const clubs = [
   {
     title: "High School Student - Industrial and Manufacturing Engineering",
@@ -417,6 +436,19 @@ const clubs = [
 
 const involv = [
   {
+    name: "Hack4Impact",
+    description:
+      "A student-run organization that empowers engineers, designers, activists, and humanitarians to create lasting social change by developing projects for local nonprofits.",
+
+    tags: [
+
+    ],
+    current: true,
+    image: hackfor,
+    source_code_link: "https://calpoly.hack4impact.org/",
+
+  },
+  {
     name: "SLO Climate Coalition",
     description:
       "SLO Climate Coalition is a local non-profit organization dedicated to champion high impact regional climate solutions. Its members include environmental advocates, climate and energy professionals, and San Luis Obispo City liaisons.",
@@ -424,6 +456,7 @@ const involv = [
     tags: [
 
     ],
+    current: true,
     image: slocc,
     source_code_link: "https://sites.google.com/sloclimatecoalition.org/slocc-college-corps/home?authuser=0",
 
@@ -436,6 +469,7 @@ const involv = [
     tags: [
 
     ],
+    current: true,
     image: csai,
     source_code_link: "https://csaicalpoly.com/",
 
@@ -448,6 +482,7 @@ const involv = [
     tags: [
 
     ],
+    current: true,
     image: cpss,
     source_code_link: "https://www.calpolyspacesystems.com/",
 
@@ -460,6 +495,7 @@ const involv = [
     tags: [
 
     ],
+    current: false,
     image: dl,
     source_code_link: "https://github.com/DVC-DeepLearningSociety",
 
@@ -471,6 +507,7 @@ const involv = [
     tags: [
 
     ],
+    current: false,
     image: pb,
     source_code_link: "https://projectbracket.webflow.io/",
 
@@ -482,6 +519,7 @@ const involv = [
     tags: [
 
     ],
+    current: false,
     image: cycf,
     source_code_link: "https://www.instagram.com/codeforyourfuturedvc/?hl=en",
    
@@ -493,6 +531,7 @@ const involv = [
     tags: [
 
     ],
+    current: false,
     image: ctc,
     source_code_link: "https://www.instagram.com/codethechange_dvc/?hl=en",
   
@@ -504,6 +543,7 @@ const involv = [
     tags: [
 
     ],
+    current: false,
     image: mesa,
     source_code_link: "https://www.dvc.edu/current/learning-community/mesa/",
  

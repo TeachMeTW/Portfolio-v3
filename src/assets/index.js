@@ -64,8 +64,26 @@ import cpss from "./cpss.jpg"
 import slocc from "./slocc.png"
 import hackfor from "./hackfor.png"
 import lsst from "./lsst.jpg" 
+import dlsgroup from "./dlsgroup.png"
+import pbg from "./pb.jpg"
+import ctcg from "./ctc.jpg" 
+import mesag from "./mesa.jpg"
+import sloccg from "./sloccg.jpg"
+import csaig from "./csaig.jpg"
+import cpssg from "./cpssg.png"
+import cfyfg from "./cfyfg.jpg"
+import h4ig from "./h4ig.jpg"
 
 export {
+  h4ig,
+  cfyfg,
+  sloccg,
+  csaig,
+  cpssg,
+  mesag,
+  ctcg,
+  pbg,
+  dlsgroup,
   lsst,
   hackfor,
   csai,

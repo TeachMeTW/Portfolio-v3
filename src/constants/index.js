@@ -58,6 +58,15 @@ import {
   slocc,
   hackfor,
   lsst,
+  dlsgroup,
+  ctcg,
+  pbg,
+  mesag,
+  cpssg,
+  csaig,
+  sloccg,
+  cfyfg,
+  h4ig,
 } from "../assets";
 
 export const navLinks = [
@@ -243,28 +252,7 @@ const projects = [
     image: portfolio,
     source_code_link: "https://robinttw.com",
   },
-  {
-    name: "Who Inted Me",
-    description:
-      "A fullstack app for League of Legends enthusiasts. Using machine learning and data analysis, we pinpoint who jeopardized your ranked games. Base your arguments on solid FACTS and LOGIC.",
 
-    tags: [
-      {
-        name: "Python Flask",
-        color: "#FF4500",
-      },
-      {
-        name: "React Javascript",
-        color: "#FF6A00",
-      },
-      {
-        name: "RESTFUL | CRUD | SQLite",
-        color: "#FF8C00",
-      },
-    ],
-    image: whointed,
-    source_code_link: "https://github.com/TeachMeTW/WhoIntedMe",
-  },
   {
     name: "Kon Academy",
     description:
@@ -437,119 +425,103 @@ const clubs = [
 const involv = [
   {
     name: "Hack4Impact",
-    description:
+    position: "", 
+    activities:
       "A student-run organization that empowers engineers, designers, activists, and humanitarians to create lasting social change by developing projects for local nonprofits.",
-
-    tags: [
-
-    ],
+    tags: [],
     current: true,
     image: hackfor,
+    galleryImages: [h4ig], // Placeholder for gallery images
     source_code_link: "https://calpoly.hack4impact.org/",
-
   },
   {
     name: "SLO Climate Coalition",
-    description:
+    position: "Fellow/Platform Specialist",
+    activities:
       "SLO Climate Coalition is a local non-profit organization dedicated to champion high impact regional climate solutions. Its members include environmental advocates, climate and energy professionals, and San Luis Obispo City liaisons.",
-
-    tags: [
-
-    ],
+    tags: [],
     current: true,
     image: slocc,
+    galleryImages: [sloccg], // Placeholder for gallery images
     source_code_link: "https://sites.google.com/sloclimatecoalition.org/slocc-college-corps/home?authuser=0",
-
   },
   {
     name: "CSAI",
-    description:
+    position: "Member", 
+    activities:
       "Cal Poly's premier computer science and artificial intelligence club. We are a group of students who are passionate about learning and applying AI to solve real-world problems. Host workshops, projects, and competitions to help students learn about AI and its applications",
-
-    tags: [
-
-    ],
+    tags: [],
     current: true,
     image: csai,
+    galleryImages: [csaig], 
     source_code_link: "https://csaicalpoly.com/",
-
   },
   {
     name: "Cal Poly Space Systems",
-    description:
+    position: "Software and Hardware Systems Team",
+    activities:
       "Cal Poly Space Systems (CPSS) is a dynamic club that offers hands-on training in all areas of rocketry design including propulsion, structures, controls, and electronics.",
-
-    tags: [
-
-    ],
+    tags: [],
     current: true,
     image: cpss,
+    galleryImages: [cpssg], // Placeholder for gallery images
     source_code_link: "https://www.calpolyspacesystems.com/",
-
   },
   {
-    name: "Deep Learning Society (DLS) - Vice President",
-    description:
-      "Machine Learning focued organization with weekly lectures and workshops based on different algorithms and use cases.",
-
-    tags: [
-
-    ],
+    name: "Deep Learning Society (DLS)",
+    position: "Vice President",
+    activities:
+      "Machine Learning focused organization with weekly lectures and workshops based on different algorithms and use cases.",
+    tags: [],
     current: false,
     image: dl,
+    galleryImages: [dlsgroup], // Placeholder for gallery images
     source_code_link: "https://github.com/DVC-DeepLearningSociety",
-
   },
   {
-    name: "Project Bracket - Project Lead",
-    description:
+    name: "Project Bracket",
+    position: "Project Lead",
+    activities:
       "Multiskill club that focused on creating projects throughout the semester surrounding different fields like Web Dev, Game Dev, or Machine Learning.",
-    tags: [
-
-    ],
+    tags: [],
     current: false,
     image: pb,
+    galleryImages: [pbg], // Placeholder for gallery images
     source_code_link: "https://projectbracket.webflow.io/",
-
   },
   {
-    name: "Code for Your Future - Co President",
-    description:
+    name: "Code for Your Future",
+    position: "Co-President",
+    activities:
       "A club focused on resume building, interview preparation, and opportunity sharing to help fellow students secure internships.",
-    tags: [
-
-    ],
+    tags: [],
     current: false,
     image: cycf,
+    galleryImages: [cfyfg], // Placeholder for gallery images
     source_code_link: "https://www.instagram.com/codeforyourfuturedvc/?hl=en",
-   
   },
   {
-    name: "Code the Change  - Project Lead",
-    description:
+    name: "Code the Change",
+    position: "Project Lead",
+    activities:
       "A club focused on assisting Non-Profits through website and service creation.",
-    tags: [
-
-    ],
+    tags: [],
     current: false,
     image: ctc,
+    galleryImages: [ctcg], // Placeholder for gallery images
     source_code_link: "https://www.instagram.com/codethechange_dvc/?hl=en",
-  
   },
   {
     name: "MESA",
-    description:
+    position: "", // No specific position mentioned for this one
+    activities:
       "Academic Enrichment Organization of underrepresented students majoring in STEM.",
-    tags: [
-
-    ],
+    tags: [],
     current: false,
     image: mesa,
+    galleryImages: [mesag], // Placeholder for gallery images
     source_code_link: "https://www.dvc.edu/current/learning-community/mesa/",
- 
   },
-
 ];
-
 
 export { services, technologies, experiences, testimonials, projects, clubs, involv };

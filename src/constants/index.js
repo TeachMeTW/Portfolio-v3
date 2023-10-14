@@ -456,17 +456,7 @@ const involv = [
     galleryImages: [csaig], 
     source_code_link: "https://csaicalpoly.com/",
   },
-  {
-    name: "Cal Poly Space Systems",
-    position: "Software and Hardware Systems Team",
-    activities:
-      "Cal Poly Space Systems (CPSS) is a dynamic club that offers hands-on training in all areas of rocketry design including propulsion, structures, controls, and electronics.",
-    tags: [],
-    current: true,
-    image: cpss,
-    galleryImages: [cpssg], // Placeholder for gallery images
-    source_code_link: "https://www.calpolyspacesystems.com/",
-  },
+
   {
     name: "Deep Learning Society (DLS)",
     position: "Vice President",

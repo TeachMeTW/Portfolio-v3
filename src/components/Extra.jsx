@@ -43,8 +43,8 @@ const ClubCard = ({
         <div className='w-1/3 h-[230px] flex flex-col justify-center items-start p-4'>
             <h3 className="text-2xl font-bold mb-3 text-nixie">{name}</h3> {/* Adjusted for the nixie tube color */}
             <p className="text-base mb-2">{position}</p>
-            <p className="text-sm mb-2 overflow-hidden" style={{ maxHeight: '2.5rem' }}>{description}</p>
-            <p className="text-sm overflow-hidden" style={{ maxHeight: '2.5rem' }}>{activities}</p>
+            <p className="text-sm mb-2 overflow-hidden" >{description}</p>
+            <p className="text-sm overflow-hidden">{activities}</p>
         </div>
 
         {/* Right Section - Gallery Image */}
@@ -72,13 +72,13 @@ const ClubCarousel = ({ clubs }) => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    adaptiveHeight: true,
+    adaptiveHeight: false,
     centerMode: true,
     centerPadding: '0'
   };
 
   return (
-    <div style={{ width: '80%', margin: '0 auto' }}>
+    <div style={{ width: '50%', margin: '0 auto'}}>
       <Slider {...settings}>
         {clubs.map((club, index) => (
           <ClubCard key={`club-${index}`} index={index} {...club} />

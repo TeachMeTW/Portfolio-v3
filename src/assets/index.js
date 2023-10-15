@@ -73,8 +73,32 @@ import csaig from "./csaig.jpg"
 import cpssg from "./cpssg.png"
 import cfyfg from "./cfyfg.jpg"
 import h4ig from "./h4ig.jpg"
+import makeuc from "./makeuc.jpg"
+import makeucl from "./makeucl.png"
+import lahacks from "./lahacks.png"
+import lahacksl from "./lahacksl.png"
+import tigerhacks from "./tigerhacks.jpg"
+import tigerhacksl from "./tigerhacksl.png"
+import treehacks from "./treehacks.png"
+import treehacksl from "./treehacksl.png"
+import calhacks_ai from "./calhacks_ai.jpg"
+import calhacks_ail from "./calhacks_ail.png"
+import mcvr from "./mcvr.jpg"
+import mcvrl from "./mcvrl.jpg"
 
 export {
+  mcvr,
+  mcvrl,
+  makeuc,
+  makeucl,
+  lahacks,
+  lahacksl,
+  tigerhacks,
+  tigerhacksl,
+  treehacks,
+  treehacksl,
+  calhacks_ai,
+  calhacks_ail,
   h4ig,
   cfyfg,
   sloccg,

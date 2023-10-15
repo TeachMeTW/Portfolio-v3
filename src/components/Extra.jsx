@@ -15,55 +15,40 @@ const ClubCard = ({
   description,
   position,
   activities,
-  image,
+  image,  // This is the logo image
   galleryImages,
   source_code_link,
 }) => {
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)} style={{ width: '100%', display: 'flex' }}>
-      <a href={source_code_link} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', width: '100%', display: 'flex' }}>
-        <Tilt
-          options={{
-            max: 45,
-            scale: 1,
-            speed: 450,
-          }}
-          className='bg-tertiary p-5 rounded-2xl w-full flex'
-        >
-        {/* Left Section - Main Image */}
-        <div className='w-1/3 h-[230px] flex justify-center items-center p-4'>
+    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)} style={{ display: 'flex', flexDirection: 'row', width: '100%' }}>
+      
+      <div style={{ width: '50%', display: 'flex', flexDirection: 'column' }}>
+        <div className='p-4' style={{ backgroundColor: '#333', textAlign: 'center', flex: 1 }}>
+          <img
+              src={image}
+              alt='club_logo'
+              className='object-cover rounded-md'
+              style={{ width: '100%', height: '100%' }} // Logo will stretch to fill the container
+          />
+        </div>
+        <div className='p-4' style={{ backgroundColor: '#333', textAlign: 'center', flex: 2 }}>
+          <p className="text-base mb-2">{activities}</p>
+        </div>
+      </div>
+
+      <a href={source_code_link} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', width: '50%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        {galleryImages && galleryImages.length > 0 && (
             <img
-                src={image}
+                src={galleryImages[0]}
                 alt='club_main_image'
-                className='max-w-full max-h-full object-contain rounded-md shadow-md'
+                className='object-cover rounded-md shadow-md'
+                style={{ width: '100%', height: '100%' }} // Main image will also stretch to fill the container
             />
-        </div>
-
-        {/* Middle Section - Details */}
-        <div className='w-1/3 h-[230px] flex flex-col justify-center items-start p-4'>
-            <h3 className="text-2xl font-bold mb-3 text-nixie">{name}</h3> {/* Adjusted for the nixie tube color */}
-            <p className="text-base mb-2">{position}</p>
-            <p className="text-sm mb-2 overflow-hidden" >{description}</p>
-            <p className="text-sm overflow-hidden">{activities}</p>
-        </div>
-
-        {/* Right Section - Gallery Image */}
-        <div className='w-1/3 h-[230px] flex justify-center items-center p-4'>
-            {galleryImages && galleryImages.length > 0 && (
-                <img
-                    src={galleryImages[0]}
-                    alt='club_gallery_image'
-                    className='w-full h-full object-contain rounded-md shadow-md'
-                />
-            )}
-        </div>
-
-        </Tilt>
+        )}
       </a>
     </motion.div>
   );
 };
-
 
 const ClubCarousel = ({ clubs }) => {
   const settings = {
@@ -96,16 +81,16 @@ const Works = () => {
 
   return (
     <>
-      <motion.div variants={textVariant()}>
+      {/* <motion.div variants={textVariant()}>
         <h2 className={`${styles.sectionHeadText} text-center text-[40px] font-bold`} style={{ color: '#FF4500' }}>
           Current Clubs and Organizations
         </h2>
       </motion.div>
-      <ClubCarousel clubs={currentClubs} />
+      <ClubCarousel clubs={currentClubs} /> */}
 
       <motion.div className="mt-10" variants={textVariant()}>
         <h2 className={`${styles.sectionHeadText} text-center text-[40px] font-bold`} style={{ color: '#FF4500' }}>
-          Previous Clubs and Organizations
+          Clubs, Organizations, and Extracurriculars
         </h2>
       </motion.div>
       <ClubCarousel clubs={previousClubs} />

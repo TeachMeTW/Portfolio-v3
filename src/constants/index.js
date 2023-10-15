@@ -67,6 +67,19 @@ import {
   sloccg,
   cfyfg,
   h4ig,
+  lahacks,
+  lahacksl,
+  calhacks_ai,
+  calhacks_ail,
+  treehacks,
+  treehacksl,
+  makeuc,
+  makeucl,
+  tigerhacks,
+  tigerhacksl,
+  mcvr,
+  mcvrl,
+
 } from "../assets";
 
 export const navLinks = [
@@ -491,26 +504,81 @@ const involv = [
     source_code_link: "https://www.instagram.com/codeforyourfuturedvc/?hl=en",
   },
   {
-    name: "Code the Change",
-    position: "Project Lead",
-    activities:
-      "A club focused on assisting Non-Profits through website and service creation.",
-    tags: [],
-    current: false,
-    image: ctc,
-    galleryImages: [ctcg], // Placeholder for gallery images
-    source_code_link: "https://www.instagram.com/codethechange_dvc/?hl=en",
-  },
-  {
     name: "MESA",
     position: "", // No specific position mentioned for this one
     activities:
-      "Academic Enrichment Organization of underrepresented students majoring in STEM.",
+      "At MESA, we were all about helping each other out and leveling the playing field for underrepresented STEM students. I spent my time tutoring my peers, sharing knowledge, and getting my hands dirty organizing cool events like Leetcode competitions and hackathons. It was all about creating a space where we could all learn, grow, and have a bit of fun along the way.",
     tags: [],
     current: false,
     image: mesa,
     galleryImages: [mesag], // Placeholder for gallery images
     source_code_link: "https://www.dvc.edu/current/learning-community/mesa/",
+  },
+  {
+    name: "MakeUC",
+    position: "", // No specific position mentioned for this one
+    activities:
+      "MakeUC was the first hackathon I ever attended. I learned a heap about what it means to work in a team and how to navigate through the chaos of coding under pressure.",
+    tags: [],
+    current: false,
+    image: makeucl,
+    galleryImages: [makeuc], // Placeholder for gallery images
+    source_code_link: "",
+  },
+  {
+    name: "TigerHacks",
+    position: "", // No specific position mentioned for this one
+    activities:
+      "TigerHacks was hackathon round two for me. This time, armed with the lessons from my first, we actually got a working prototype up and running! It was a bike recognition and rental system that we were all pretty chuffed with. Building something that worked from scratch in such a short time was a real win for us.",
+    tags: [],
+    current: false,
+    image: tigerhacksl,
+    galleryImages: [tigerhacks], // Placeholder for gallery images
+    source_code_link: "",
+  },
+  {
+    name: "TreeHacks",
+    position: "", // No specific position mentioned for this one
+    activities:
+      "At TreeHacks, I got to play around with AR and QR Projection. Being at Stanford, messing around with tech, and imagining all the crazy possibilities was just plain fun and super inspiring.",
+    tags: [],
+    current: false,
+    image: treehacksl,
+    galleryImages: [treehacks], // Placeholder for gallery images
+    source_code_link: "",
+  },
+  {
+    name: "MCVR Hackathon",
+    position: "", // No specific position mentioned for this one
+    activities:
+      "MCVR Hackathon was where we turned virtual into reality. We created a VR game that turned bland PDFs into actual books you could flip through in a virtual space. ",
+    tags: [],
+    current: false,
+    image: mcvrl,
+    galleryImages: [mcvr], // Placeholder for gallery images
+    source_code_link: "",
+  },
+  {
+    name: "LAHacks",
+    position: "", // No specific position mentioned for this one
+    activities:
+      "Delved into pygame and game development at UCLA's LAHacks. Although we did not achieve what we were hoping for, we learned a lot about the process of game development and the importance of planning.",
+    tags: [],
+    current: false,
+    image: lahacksl,
+    galleryImages: [lahacks], // Placeholder for gallery images
+    source_code_link: "",
+  },
+  {
+    name: "CalHacks AI",
+    position: "", // No specific position mentioned for this one
+    activities:
+      "Experimented with LLMs, NLP, and AIs at UC Berkeley. We created an automatic lesson generator -- from images to text to video. It was a great experience to learn about the latest in AI and how to apply it to real-world problems.",
+    tags: [],
+    current: false,
+    image: calhacks_ail,
+    galleryImages: [calhacks_ai], // Placeholder for gallery images
+    source_code_link: "",
   },
 ];
 

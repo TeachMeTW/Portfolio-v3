@@ -79,6 +79,11 @@ import {
   tigerhacksl,
   mcvr,
   mcvrl,
+  nasal,
+  nasa,
+  cla,
+  calhacks10,
+  calhacksp,
 
 } from "../assets";
 
@@ -195,7 +200,36 @@ const experiences = [
       "Staying updated with the latest in cosmological research, ensuring the application of cutting-edge methodologies in all projects."
     
     ],
-  },      
+  }, 
+  {
+    title: "Undergraduate Researcher",
+    company_name: "Cal Poly CLA",
+    icon: calpoly,
+    proj: cla,
+    iconBg: "#E6DEDD",
+    date: "October 2023 - Present",
+    points: [
+      "Supporting the research team in performing keyword searches and web scraping to aggregate a substantial image dataset, facilitating the identification of robotic functional areas in the hospitality industry. ",
+      "Aiding in training and validating machine-learning models by utilizing Python and various open-source libraries, ensuring precise identification and analysis of functional areas where robots can collaborate in the hospitality sector. ",
+      "Working alongside industry-leading annotators like Scale AI, assisting in the development of labeling frameworks and ensuring accurate data labeling for subsequent analysis. ",
+      "Preparing to author a research paper for submission to the 2024 National Conference on Undergraduate Research (NCUR), with an invaluable opportunity to present findings, network with professionals, and enhance research and professional skills.",
+    ],
+  },  
+  {
+    title: "Incoming Data & Analytics Intern",
+    company_name: "NASA",
+    icon: nasa,
+    proj: nasal,
+    iconBg: "#E6DEDD",
+    date: "January 2024 - May 2024",
+    points: [
+      "Empower decision making by leveraging data assets within AETC and designing tools to enhance capabilities for business analytics and data driven solutions.",
+      "Steamline data and communication pipelines for AETC's facilities and workforce.",
+      "Optimitze workflow for portfolio management.",
+      "Improve evaluation and test data access within the organization.",
+      "Ensure data security and facilitate appropriate data access for designated personnel both within and outside of organization."
+    ],
+  },       
 ];
 
 const testimonials = [
@@ -578,6 +612,17 @@ const involv = [
     current: false,
     image: calhacks_ail,
     galleryImages: [calhacks_ai], // Placeholder for gallery images
+    source_code_link: "",
+  },
+  {
+    name: "CalHacks 10",
+    position: "", // No specific position mentioned for this one
+    activities:
+      "Explored python based frameworks such as Taipy and Reflex to create a `dating` app for study groups called StudBud. StudBud was set to feature group and individual matching based on major, year, classes, and study group sizes.",
+    tags: [],
+    current: false,
+    image: calhacks10,
+    galleryImages: [calhacksp], // Placeholder for gallery images
     source_code_link: "",
   },
 ];

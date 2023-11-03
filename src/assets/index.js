@@ -85,8 +85,18 @@ import calhacks_ai from "./calhacks_ai.jpg"
 import calhacks_ail from "./calhacks_ail.png"
 import mcvr from "./mcvr.jpg"
 import mcvrl from "./mcvrl.jpg"
+import nasal from "./nasal.png"
+import nasa from "./nasa.png"
+import cla from "./cla.png"
+import calhacks10 from "./calhacks10.png"
+import calhacksp from "./calhacksp.png"
 
 export {
+  calhacks10,
+  calhacksp,
+  nasa,
+  nasal,
+  cla,
   mcvr,
   mcvrl,
   makeuc,

@@ -70,7 +70,7 @@ const Hero = () => {
   const shadesOfOrange = generateOrangeShades(text.length);
 
   return (
-    <section className={`relative w-full h-[35vh] mx-auto bg-primary`}>
+    <section className={`relative w-full h-screen mx-auto bg-primary`}>
       <div
         className={`absolute inset-0 top-[120px] max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5 mb-0`}
       >

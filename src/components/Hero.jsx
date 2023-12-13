@@ -19,9 +19,17 @@ const Hero = () => {
   const [delta, setDelta] = useState(100);
   const toRotate = [
     "Computer Engineering Student",
-    "Aspiring Software Developer",
-    "Space Enthusiast",
     "Astrophysics Enjoyer",
+    "Literally Okabe Rintarou",
+    "Literally Aatrox",
+    "Division 2 Top Laner for SLO Esports (Peaked Iron)",
+    "El Psy Congroo",
+    "This is the choice of Steins Gate",
+    "Initial D Enthusiast (I had a honda civic (manual))",
+    "Sushi addict",
+    "I order ramen but dont eat the noodles",
+    "Avid Eurobeat Listener",
+    "Python Supremacy",
   ];
   const period = 1500;
 

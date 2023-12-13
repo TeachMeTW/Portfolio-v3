@@ -24,12 +24,13 @@ const Hero = () => {
     "Literally Aatrox",
     "Division 2 Top Laner for SLO Esports (Peaked Iron)",
     "El Psy Congroo",
-    "This is the choice of Steins Gate",
-    "Initial D Enthusiast (I had a honda civic (manual))",
+    "Initial D Enthusiast (I had a manual honda civic)",
     "Sushi addict",
     "I order ramen but dont eat the noodles",
     "Avid Eurobeat Listener",
     "Python Supremacy",
+    "This is the choice of Steins Gate",
+    "Why are you still reading this",
   ];
   const period = 1500;
 

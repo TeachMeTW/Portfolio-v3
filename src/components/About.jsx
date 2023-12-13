@@ -57,9 +57,7 @@ const About = () => {
       className='mt-4 text-[#FFFFFF] text-[17px] max-w-3xl leading-[30px]'
     >
       I'm a Computer Engineer studying at California Polytechnic State San Luis Obispo.
-        My main techstack would be Python, but I have used C++ and Java in the past.
-        Currently working on Circuitry and Embedded C, and looking to learn about things I get my hands on.
-        My goals for the future is to work on space technologies or computer hardware.
+        My main techstack would be Python, but I have used C++ and Java in the past. Feel free to click on my experiences and projects to learn more about my works and see source code!
     </motion.p>
     </div>
     <div className="mt-5 flex space-x-4">

@@ -90,8 +90,14 @@ import nasa from "./nasa.png"
 import cla from "./cla.png"
 import calhacks10 from "./calhacks10.png"
 import calhacksp from "./calhacksp.png"
+import cosam from "./cosam.pdf"
+import clas from "./cla.pdf"
+import javap from "./javaprj.gif"
 
 export {
+  javap,
+  cosam,
+  clas,
   calhacks10,
   calhacksp,
   nasa,

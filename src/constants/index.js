@@ -84,6 +84,9 @@ import {
   cla,
   calhacks10,
   calhacksp,
+  cosam,
+  clas,
+  javap
 
 } from "../assets";
 
@@ -189,12 +192,12 @@ const experiences = [
     company_name: "Cal Poly COSAM",
     icon: calpoly,
     proj: lsst,
+    link: cosam,
     iconBg: "#E6DEDD",
-    date: "September 2023 - Present",
+    date: "September 2023 - December 2023",
     points: [
       "Conducting in-depth research on galaxies and cosmology utilizing datasets from the LSST (Legacy Survey of Space and Time) provided by the Rubin Observatory.",
       "Leveraging Python for advanced data analysis, enhancing the precision of findings.",
-      "Implementing machine learning algorithms to identify patterns and draw meaningful insights from vast astronomic data",
       "Utilizing state-of-the-art visualization tools to effectively represent complex celestial phenomena.",
       "Collaborating with a team of astronomers and scientists to analyze and interpret results, driving forward the understanding of our universe.",
       "Staying updated with the latest in cosmological research, ensuring the application of cutting-edge methodologies in all projects."
@@ -206,6 +209,7 @@ const experiences = [
     company_name: "Cal Poly CLA",
     icon: calpoly,
     proj: cla,
+    link: clas,
     iconBg: "#E6DEDD",
     date: "October 2023 - Present",
     points: [
@@ -299,7 +303,24 @@ const projects = [
     image: portfolio,
     source_code_link: "https://robinttw.com",
   },
+  {
+    name: "Virtual World",
+    description:
+      "Developed an innovative Java OOP project for CSC203, featuring the integration of the iconic character Dio from 'JoJo's Bizarre Adventure' into a virtual world. Implemented advanced features like time-stopping ability, A* pathfinding, and interactive gameplay with 'Among Us' crewmates, demonstrating strong proficiency in Java and object-oriented design principles.",
 
+    tags: [
+      {
+        name: "Java",
+        color: "#FF4500",
+      },
+      {
+        name: "TTD",
+        color: "#FF6A00",
+      },
+    ],
+    image: javap,
+    source_code_link: "https://github.com/TeachMeTW/Dio-Project",
+  },
   {
     name: "Kon Academy",
     description:

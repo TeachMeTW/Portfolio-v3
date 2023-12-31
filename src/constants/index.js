@@ -86,8 +86,13 @@ import {
   calhacksp,
   cosam,
   clas,
-  javap
-
+  javap,
+  fs,
+  ee215,
+  ieee215,
+  ieeesc,
+  basys3,
+  cpe133,
 } from "../assets";
 
 export const navLinks = [
@@ -107,12 +112,9 @@ export const navLinks = [
     id: "extra",
     title: "Extracurriculars",
   },
-
 ];
 
-const services = [
-
-];
+const services = [];
 
 const technologies = [
   {
@@ -154,7 +156,7 @@ const experiences = [
       "Developed a standalone application that geolocated and simulated critical infrastructures.",
       "Utilized cytoscape, deck.gl, heroku, and python in order to display a 3D arc/heat render of dataset.",
       "Implemented data scraping location data using beautifulsoup as well as manual user input stored in PostgreSQL.",
-      "Codesigned unity 3D simulation of infrastructure connections."
+      "Codesigned unity 3D simulation of infrastructure connections.",
     ],
   },
   {
@@ -169,7 +171,7 @@ const experiences = [
       "Participated in file analysis, file carving, malware decomposition, network traffic analysis, and host forensics.",
       "Assisted the IT team via ServiceNow and Crowdstrike in updating 5000 outdated and out-of-compliance systems in the laboratory’s network.",
       "Supported the HelpDesk and Endpoint Management Team with troubleshooting, on-boarding, and maintenance tickets throughout all 22 laboratory departments.",
-      "Collaborated on a team of 3 fellow interns under the OMNI Program to research cybersecurity vulnerabilities presentable to the Department of Energy."
+      "Collaborated on a team of 3 fellow interns under the OMNI Program to research cybersecurity vulnerabilities presentable to the Department of Energy.",
     ],
   },
   {
@@ -184,7 +186,7 @@ const experiences = [
       "Contributed to the laboratory’s Data Archive codebase through the development of new features, RESTful API endpoints, unit and integration test creation, bug fixes, and code reviews on a team of 7.",
       "Designed, implemented, and deployed a full stack web application utilizing Python, Angular, FastAPI, MongoDB, Docker, and Gitlab CI.",
       "Assisted in the migration from MarkLogic to MongoDB and ElasticSearch database stack, improving search speeds.",
-      "Participated in Agile methodology consisting of weekly Scrum and Sprint meetings to ensure streamlined development processes, ticket assignment, and deployment process."
+      "Participated in Agile methodology consisting of weekly Scrum and Sprint meetings to ensure streamlined development processes, ticket assignment, and deployment process.",
     ],
   },
   {
@@ -200,10 +202,9 @@ const experiences = [
       "Leveraging Python for advanced data analysis, enhancing the precision of findings.",
       "Utilizing state-of-the-art visualization tools to effectively represent complex celestial phenomena.",
       "Collaborating with a team of astronomers and scientists to analyze and interpret results, driving forward the understanding of our universe.",
-      "Staying updated with the latest in cosmological research, ensuring the application of cutting-edge methodologies in all projects."
-    
+      "Staying updated with the latest in cosmological research, ensuring the application of cutting-edge methodologies in all projects.",
     ],
-  }, 
+  },
   {
     title: "Undergraduate Researcher",
     company_name: "Cal Poly CLA",
@@ -218,7 +219,7 @@ const experiences = [
       "Working alongside industry-leading annotators like Scale AI, assisting in the development of labeling frameworks and ensuring accurate data labeling for subsequent analysis. ",
       "Preparing to author a research paper for submission to the 2024 National Conference on Undergraduate Research (NCUR), with an invaluable opportunity to present findings, network with professionals, and enhance research and professional skills.",
     ],
-  },  
+  },
   {
     title: "Incoming Data & Analytics Intern",
     company_name: "NASA",
@@ -231,18 +232,17 @@ const experiences = [
       "Steamline data and communication pipelines for AETC's facilities and workforce.",
       "Optimitze workflow for portfolio management.",
       "Improve evaluation and test data access within the organization.",
-      "Ensure data security and facilitate appropriate data access for designated personnel both within and outside of organization."
+      "Ensure data security and facilitate appropriate data access for designated personnel both within and outside of organization.",
     ],
-  },       
+  },
 ];
 
-const testimonials = [
-
-];
+const testimonials = [];
 
 const projects = [
   {
     name: "Neethub",
+    category: "CS",
     description:
       "Neethub offers fans of the popular multiplayer online battle arena game, League of Legends, an immersive video experience inspired by platforms like Netflix and YouTube. With its sleek design and user-friendly interface, Neethub stands out as the go-to destination for players and enthusiasts looking for game highlights, tutorials, strategies, and more.",
 
@@ -265,6 +265,7 @@ const projects = [
   },
   {
     name: "SQL From Scratch",
+    category: "CS",
     description:
       "Developed a program that can read and write data into txt files in SQL format using SQL commands. Features standard SQL commands; select, create, update, insert, drop. Integrated automatic batch line processor as well as manual command input.",
 
@@ -287,6 +288,7 @@ const projects = [
   },
   {
     name: "Portfolio V3",
+    category: "CS",
     description:
       "This portfolio showcases the work, skills, and experiences of me. Designed with a modern user interface, it provides a comprehensive view of projects, tech stack, and other professional engagements. ",
 
@@ -305,6 +307,7 @@ const projects = [
   },
   {
     name: "Virtual World",
+    category: "CS",
     description:
       "Developed an innovative Java OOP project for CSC203, featuring the integration of the iconic character Dio from 'JoJo's Bizarre Adventure' into a virtual world. Implemented advanced features like time-stopping ability, A* pathfinding, and interactive gameplay with 'Among Us' crewmates, demonstrating strong proficiency in Java and object-oriented design principles.",
 
@@ -323,6 +326,7 @@ const projects = [
   },
   {
     name: "Kon Academy",
+    category: "CS",
     description:
       "Interactive video lesson generator: Upload PDFs, ask questions, and receive accurate video answers using streamlit, MindsDB, LangChain, and Pinecone. ",
 
@@ -346,6 +350,7 @@ const projects = [
 
   {
     name: "ARID",
+    category: "CS",
     description:
       "Experimental AR Projection using ARUCO codes with a web interface.",
     tags: [
@@ -367,6 +372,7 @@ const projects = [
   },
   {
     name: "OnlyBikes",
+    category: "CS",
     description:
       "A Bike Rental Platform that utilizes Tensorflow Machine Learning and MapQuest API to detect bikes, returns, and rentals.",
     tags: [
@@ -388,6 +394,7 @@ const projects = [
   },
   {
     name: "VReader",
+    category: "CS",
     description:
       "A Virtual Reality Book Reader with a mission of sparking reading interest for younger individuals.",
     tags: [
@@ -409,8 +416,8 @@ const projects = [
   },
   {
     name: "WorldView Wanderer",
-    description:
-      "Destination Viewer with local cuisine and music.",
+    category: "CS",
+    description: "Destination Viewer with local cuisine and music.",
     tags: [
       {
         name: "Python | Pygame",
@@ -425,15 +432,32 @@ const projects = [
     source_code_link: "https://github.com/TeachMeTW/WorldView-Wanderer",
   },
   {
-    name: "DLS Repo",
+    name: "Simple FSK IR Communication System",
+    category: "EE",
     description:
-      "Holds DLS meetings and info",
-    tags: [
-    ],
-    image: dls,
-    source_code_link: "https://github.com/DVC-DeepLearningSociety",
+      "As the culmination of our explorations in EE 245: Electrical and Electronic Circuits II Laboratory, this report details the design, implementation, and testing of a simple Frequency-Shift Keying (FSK) Infrared (IR) Communication System. This project, conducted over the final three weeks of the quarter, required the integration of a variety of electronic components and principles, culminating in a functional transmitter and receiver pair.",
+    tags: [],
+    image: fs,
+    source_code_link: ee215,
   },
-
+  {
+    name: "IEEE Formatted Report",
+    category: "EE",
+    description:
+      "This lab report, formatted as a conference paper, showcases my ability to conduct in-depth scientific research and present findings in a structured and professional manner. Tasked with an experiment assigned during class, I crafted a detailed and analytical paper, demonstrating both my technical expertise and writing proficiency. This report serves as a polished example of my work, suitable for sharing with future employers as evidence of my skills in research, analysis, and communication.",
+    tags: [],
+    image: ieeesc,
+    source_code_link: ieee215,
+  },
+  {
+    name: "Basys3 Morse Translator",
+    category: "CPE",
+    description:
+      "This project features an innovative system designed to translate and teach Morse code using a hardware interface. It operates in two modes: translation and learning. In translation mode, users input Morse code via buttons, which is then converted into alphanumeric characters (A-E, 0-3) and displayed on a Seven Segment Display. The learning mode challenges users to input correct Morse code for randomly displayed characters, with correct answers indicated by an LED. This interactive system not only aids in learning Morse code but also demonstrates the application of binary accumulators and translation logic in a user-friendly interface.",
+    tags: [],
+    image: basys3,
+    source_code_link: cpe133,
+  },
 ];
 
 // I know this is not the right name; too lazy to refactor/change right now
@@ -447,7 +471,7 @@ const clubs = [
     points: [
       "Focused on mainly manufacturing and robotics: Team696.",
       "Worked with HAAS CNC Machines including Routers, Lathes, Mills.",
-      "Utilzed machinery such as bandsaws, TIG Welders, Laser Cutters, and programmed in G-Code."
+      "Utilzed machinery such as bandsaws, TIG Welders, Laser Cutters, and programmed in G-Code.",
     ],
   },
   {
@@ -459,7 +483,7 @@ const clubs = [
     points: [
       "Original Major, wanted to work with planes and rocketry systems.",
       "Located near JPL, toured the facility and studied in a class under Erick Sturm -- Cassini Saturn Space Probe Mission Planner.",
-      "Decided to switch majors for flexibility and to encompass all of my interests."
+      "Decided to switch majors for flexibility and to encompass all of my interests.",
     ],
   },
   {
@@ -471,7 +495,7 @@ const clubs = [
     points: [
       "Continued my undergraduate studies at DVC due to a sudden relocation.",
       "Got Involved in many student associations revolving my field, specifically Deep Learning Society (DLS).",
-      "Completed most required classes after switching majors."
+      "Completed most required classes after switching majors.",
     ],
   },
   {
@@ -482,18 +506,15 @@ const clubs = [
     date: "August 2023 - June 2026",
     points: [
       "Continue studying Computer Engineering at CalPoly SLO through the 'Learn by Doing' philosophy.",
-      "Pursuing a minor in Astronomy/Astrophysics."
+      "Pursuing a minor in Astronomy/Astrophysics.",
     ],
   },
-
 ];
-
-
 
 const involv = [
   {
     name: "Hack4Impact",
-    position: "", 
+    position: "",
     activities:
       "A student-run organization that empowers engineers, designers, activists, and humanitarians to create lasting social change by developing projects for local nonprofits.",
     tags: [],
@@ -511,17 +532,18 @@ const involv = [
     current: true,
     image: slocc,
     galleryImages: [sloccg], // Placeholder for gallery images
-    source_code_link: "https://sites.google.com/sloclimatecoalition.org/slocc-college-corps/home?authuser=0",
+    source_code_link:
+      "https://sites.google.com/sloclimatecoalition.org/slocc-college-corps/home?authuser=0",
   },
   {
     name: "CSAI",
-    position: "Member", 
+    position: "Member",
     activities:
       "Cal Poly's premier computer science and artificial intelligence club. We are a group of students who are passionate about learning and applying AI to solve real-world problems. Host workshops, projects, and competitions to help students learn about AI and its applications",
     tags: [],
     current: true,
     image: csai,
-    galleryImages: [csaig], 
+    galleryImages: [csaig],
     source_code_link: "https://csaicalpoly.com/",
   },
 
@@ -648,4 +670,12 @@ const involv = [
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects, clubs, involv };
+export {
+  services,
+  technologies,
+  experiences,
+  testimonials,
+  projects,
+  clubs,
+  involv,
+};

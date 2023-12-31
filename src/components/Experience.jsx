@@ -14,7 +14,6 @@ import { textVariant } from "../utils/motion";
 
 const ExperienceCard = ({ experience }) => {
   return (
-    
     <VerticalTimelineElement
       contentStyle={{
         background: "transparent",
@@ -25,11 +24,11 @@ const ExperienceCard = ({ experience }) => {
       date={experience.date}
       iconStyle={{ background: experience.iconBg }}
       icon={
-        <div className='flex justify-center items-center w-full h-full'>
+        <div className="flex justify-center items-center w-full h-full">
           <img
             src={experience.icon}
             alt={experience.company_name}
-            className='w-[60%] h-[60%] object-contain'
+            className="w-[60%] h-[60%] object-contain"
           />
         </div>
       }
@@ -40,7 +39,7 @@ const ExperienceCard = ({ experience }) => {
           <img
             src={experience.proj}
             alt={`Thumbnail for ${experience.title}`}
-            className='w-full object-contain rounded cursor-pointer'
+            className="w-full object-contain rounded cursor-pointer"
             title="Click to view/download PDF"
           />
         </a>
@@ -56,13 +55,17 @@ const ExperienceCard = ({ experience }) => {
         }}
         className="p-4 rounded-lg flex-grow"
       >
-        <h3 className='text-secondary text-[24px] font-bold'>{experience.title}</h3>
-        <p className='text-white-100 text-[16px] font-semibold mt-2'>{experience.company_name}</p>
-        <ul className='mt-5 list-disc ml-5 space-y-2'>
+        <h3 className="text-secondary text-[24px] font-bold">
+          {experience.title}
+        </h3>
+        <p className="text-white-100 text-[16px] font-semibold mt-2">
+          {experience.company_name}
+        </p>
+        <ul className="mt-5 list-disc ml-5 space-y-2">
           {experience.points.map((point, index) => (
             <li
               key={`experience-point-${index}`}
-              className='text-white-100-100 text-[14px] pl-1 tracking-wider'
+              className="text-white-100-100 text-[14px] pl-1 tracking-wider"
             >
               {point}
             </li>
@@ -73,19 +76,30 @@ const ExperienceCard = ({ experience }) => {
   );
 };
 
-
 const Experience = () => {
+  // Ensure textVariant is defined correctly and returns an object for animations
+  const textVariant = () => {
+    // Example variant, adjust as needed
+    return {
+      hidden: { opacity: 0 },
+      visible: { opacity: 1 },
+    };
+  };
+
   return (
     <>
       {/* Render the motion.div with h2 first */}
-      <motion.div variants={textVariant()}>
-  <h2 className="text-center text-[40px] font-bold" style={{ color: '#FF4500' }}>
-    Experience
-  </h2>
-</motion.div>
+      <motion.div initial="hidden" animate="visible" variants={textVariant()}>
+        <h2
+          className="text-center text-[40px] font-bold"
+          style={{ color: "#FF4500" }}
+        >
+          Experience
+        </h2>
+      </motion.div>
 
       {/* Then render the timeline */}
-      <div className='mt-20 flex flex-col'>
+      <div className="mt-20 flex flex-col">
         <VerticalTimeline>
           {experiences.map((experience, index) => (
             <ExperienceCard

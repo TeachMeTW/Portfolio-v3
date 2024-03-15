@@ -99,8 +99,12 @@ import ieeesc from "./IEEE_SC.png";
 import ieee215 from "./EE215_IEEE.pdf";
 import cpe133 from "./cpe133.pdf";
 import basys3 from "./basys3.png";
+import ee315 from "./315_Final.pdf";
+import act from "./act.png";
 
 export {
+  act,
+  ee315,
   cpe133,
   basys3,
   ieee215,

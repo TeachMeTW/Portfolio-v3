@@ -97,18 +97,18 @@ const Works = () => {
   });
   return (
     <>
-      <motion.div variants={textVariant()}>
+      <div>
         <h2
           className={`${styles.sectionHeadText} font-bold`}
           style={{ color: "#FF4500", fontSize: "40px" }}
         >
           Projects
         </h2>
-      </motion.div>
+      </div>
 
       <div className="w-full flex">
-        <motion.p
-          variants={fadeIn("", "", 0.1, 1)}
+        <p
+         
           className="mt-4 mb-6 text-[#FFFFFF] text-[17px] max-w-3xl leading-[30px]"
         >
           Following projects showcase my skills and experience through
@@ -117,7 +117,7 @@ const Works = () => {
           solve complex problems, work with different technologies, and manage
           projects effectively. Please select whether you'd like to view CS, EE,
           CPE, or all projects!
-        </motion.p>
+        </p>
       </div>
 
       {/* Dropdown for selecting categories */}

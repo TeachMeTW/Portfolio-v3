@@ -60,6 +60,7 @@ import {
   lsst,
   dlsgroup,
   ctcg,
+  act,
   pbg,
   mesag,
   cpssg,
@@ -89,6 +90,7 @@ import {
   javap,
   fs,
   ee215,
+  ee315,
   ieee215,
   ieeesc,
   basys3,
@@ -325,6 +327,42 @@ const projects = [
     source_code_link: "https://github.com/TeachMeTW/Dio-Project",
   },
   {
+    name: "Frequency Controlled Locking System",
+    category: "EE",
+    description:
+      "This project develops a secure, frequency-triggered lock system using an Arduino Uno R3, designed to unlock only when a specific acoustic frequency is detected. It combines a microphone, amplifier, comparator, and a solenoid actuator, showcasing an innovative approach to keyless entry systems. Includes demo video.",
+    tags: [],
+    image: act,
+    source_code_link: ee315,
+  },
+  {
+    name: "Simple FSK IR Communication System",
+    category: "EE",
+    description:
+      "As the culmination of our explorations in EE 245: Electrical and Electronic Circuits II Laboratory, this report details the design, implementation, and testing of a simple Frequency-Shift Keying (FSK) Infrared (IR) Communication System. This project, conducted over the final three weeks of the quarter, required the integration of a variety of electronic components and principles, culminating in a functional transmitter and receiver pair.",
+    tags: [],
+    image: fs,
+    source_code_link: ee215,
+  },
+  {
+    name: "IEEE Formatted Report - Oscillators",
+    category: "EE",
+    description:
+      "This lab report, formatted as a conference paper, showcases my ability to conduct in-depth scientific research and present findings in a structured and professional manner. Tasked with an experiment assigned during class, I crafted a detailed and analytical paper, demonstrating both my technical expertise and writing proficiency. This report serves as a polished example of my work, suitable for sharing with future employers as evidence of my skills in research, analysis, and communication.",
+    tags: [],
+    image: ieeesc,
+    source_code_link: ieee215,
+  },
+  {
+    name: "Basys3 Morse Translator",
+    category: "CPE",
+    description:
+      "This project features an innovative system designed to translate and teach Morse code using a hardware interface. It operates in two modes: translation and learning. In translation mode, users input Morse code via buttons, which is then converted into alphanumeric characters (A-E, 0-3) and displayed on a Seven Segment Display. The learning mode challenges users to input correct Morse code for randomly displayed characters, with correct answers indicated by an LED. This interactive system not only aids in learning Morse code but also demonstrates the application of binary accumulators and translation logic in a user-friendly interface.",
+    tags: [],
+    image: basys3,
+    source_code_link: cpe133,
+  },
+  {
     name: "Kon Academy",
     category: "CS",
     description:
@@ -431,33 +469,7 @@ const projects = [
     image: wvw,
     source_code_link: "https://github.com/TeachMeTW/WorldView-Wanderer",
   },
-  {
-    name: "Simple FSK IR Communication System",
-    category: "EE",
-    description:
-      "As the culmination of our explorations in EE 245: Electrical and Electronic Circuits II Laboratory, this report details the design, implementation, and testing of a simple Frequency-Shift Keying (FSK) Infrared (IR) Communication System. This project, conducted over the final three weeks of the quarter, required the integration of a variety of electronic components and principles, culminating in a functional transmitter and receiver pair.",
-    tags: [],
-    image: fs,
-    source_code_link: ee215,
-  },
-  {
-    name: "IEEE Formatted Report",
-    category: "EE",
-    description:
-      "This lab report, formatted as a conference paper, showcases my ability to conduct in-depth scientific research and present findings in a structured and professional manner. Tasked with an experiment assigned during class, I crafted a detailed and analytical paper, demonstrating both my technical expertise and writing proficiency. This report serves as a polished example of my work, suitable for sharing with future employers as evidence of my skills in research, analysis, and communication.",
-    tags: [],
-    image: ieeesc,
-    source_code_link: ieee215,
-  },
-  {
-    name: "Basys3 Morse Translator",
-    category: "CPE",
-    description:
-      "This project features an innovative system designed to translate and teach Morse code using a hardware interface. It operates in two modes: translation and learning. In translation mode, users input Morse code via buttons, which is then converted into alphanumeric characters (A-E, 0-3) and displayed on a Seven Segment Display. The learning mode challenges users to input correct Morse code for randomly displayed characters, with correct answers indicated by an LED. This interactive system not only aids in learning Morse code but also demonstrates the application of binary accumulators and translation logic in a user-friendly interface.",
-    tags: [],
-    image: basys3,
-    source_code_link: cpe133,
-  },
+
 ];
 
 // I know this is not the right name; too lazy to refactor/change right now

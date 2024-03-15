@@ -21,16 +21,36 @@ const Hero = () => {
     "Computer Engineering Student",
     "Astrophysics Enjoyer",
     "Literally Okabe Rintarou",
-    "Literally Aatrox",
+    "I am the World Ender (Aatrox)",
     "Division 2 Top Laner for SLO Esports (Peaked Iron)",
     "El Psy Congroo",
-    "Initial D Enthusiast (I had a manual honda civic)",
-    "Sushi addict",
-    "I order ramen but dont eat the noodles",
-    "Avid Eurobeat Listener",
+    "I like Initial D (Also MF Ghost)",
+    "Sushi addict -- Eel is the best",
+    "I order ramen but dont eat the noodles (unless its udon)",
+    "...con lentitud poderosa",
     "Python Supremacy",
     "This is the choice of Steins Gate",
     "Why are you still reading this",
+    "Yes I work(ed) for NASA",
+    "Love Joji's music (depressionmaxx)",
+    "My spotify playlist covers are all from Metal Gear",
+    "Vivy is the best anime of 2021",
+    "PSYQUI goes hard",
+    "Bling-Bang-Bang-Born",
+    "I just want a GT86 (or an AE86)",
+    "Used to be top 50 World in For Honor",
+    "I wish time travel was real -- I'd go back to 2020",
+    "Ixion is my favorite space game",
+    "Kassadin looks so cool",
+    "I should start reading more books -- like 'The Art of Living A Meaningless Existence'",
+    "A masterchef in theory",
+    "This site is nixie tube themed",
+    "Did I mention I love mechs?",
+    "Armored Core VI was pretty cool",
+    "I should really stop now",
+    "I used to be good at osu!",
+    "Check out my linkedin recommendations -- its true",
+    "🤫🧏‍♂️"
   ];
   const period = 1500;
 
@@ -70,28 +90,27 @@ const Hero = () => {
   const shadesOfOrange = generateOrangeShades(text.length);
 
   return (
-    <section className={`relative w-full h-screen mx-auto bg-primary`}>
-      <div
-        className={`absolute inset-0 top-[120px] max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5 mb-0`}
-      >
-        <div className='flex flex-col justify-center items-center mt-5'>
-          <div className='w-5 h-5 rounded-full bg-[#FFFFFF]' />
-          <div className='w-1 sm:h-80 h-40 bg-[#FFFFFF]' />
-        </div>
-        <div>
-          <h1 className={`${styles.heroHeadText} text-secondary`}>
-            Hi, I'm <span className='text-secondary'>Robin</span>
-          </h1>
-          <span className='typing text-secondary' style={{ fontSize: "69px" }}>
-            {text.split('').map((char, index) => (
-              <span key={index} style={{ color: shadesOfOrange[index] }}>
-                {char}
-              </span>
-            ))}
+<section className="relative w-full mx-auto bg-primary" style={{ height: '50vh' }}>
+  <div
+    className={`absolute inset-0 top-[120px] max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5 mb-0`}
+  >
+
+
+    <div>
+      <h1 className={`${styles.heroHeadText} text-secondary`}>
+        Hi, I'm <span className='text-secondary'>Robin</span>
+      </h1>
+      <span className='typing text-secondary' style={{ fontSize: "4.3vw" }}>
+        {text.split('').map((char, index) => (
+          <span key={index} style={{ color: shadesOfOrange[index] }}>
+            {char}
           </span>
-        </div>
-      </div>
-    </section>
+        ))}
+      </span>
+    </div>
+  </div>
+</section>
+
   );
 };
 

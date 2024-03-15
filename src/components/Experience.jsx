@@ -89,14 +89,13 @@ const Experience = () => {
   return (
     <>
       {/* Render the motion.div with h2 first */}
-      <motion.div initial="hidden" animate="visible" variants={textVariant()}>
-        <h2
-          className="text-center text-[40px] font-bold"
-          style={{ color: "#FF4500" }}
-        >
-          Experience
-        </h2>
-      </motion.div>
+      <div>
+
+    <h2 className={`${styles.sectionHeadText} text-center text-[40px] font-bold`} style={{ color: '#FF4500' }}>
+    Experience
+    </h2>
+
+    </div>
 
       {/* Then render the timeline */}
       <div className="mt-20 flex flex-col">

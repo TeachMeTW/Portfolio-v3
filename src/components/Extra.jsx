@@ -20,35 +20,38 @@ const ClubCard = ({
   source_code_link,
 }) => {
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)} style={{ display: 'flex', flexDirection: 'row', width: '100%' }}>
+    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)} 
+      className="flex flex-col sm:flex-row w-full">
       
-      <div style={{ width: '50%', display: 'flex', flexDirection: 'column' }}>
-        <div className='p-4' style={{ backgroundColor: '#333', textAlign: 'center', flex: 1 }}>
+      {/* Image Container */}
+      <div className="w-full sm:w-1/2">
+        <div className="p-4 bg-[#333] text-center">
           <img
-              src={image}
-              alt='club_logo'
-              className='object-cover rounded-md'
-              style={{ width: '100%', height: '100%' }} // Logo will stretch to fill the container
+              src={galleryImages}
+              alt="club_logo"
+              className="object-cover rounded-md w-full"
+              style={{ height: 'auto', aspectRatio: '1 / 1' }} // Adjust aspect ratio as needed
           />
         </div>
-        <div className='p-4' style={{ backgroundColor: '#333', textAlign: 'center', flex: 2 }}>
-          <p className="text-base mb-2">{activities}</p>
-        </div>
       </div>
-
-      <a href={source_code_link} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', width: '50%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        {galleryImages && galleryImages.length > 0 && (
+      
+      {/* Text Content Container */}
+      <div className="w-full sm:w-1/2 flex flex-col justify-center p-4 bg-[#333]">
+        <a href={source_code_link} target="_blank" rel="noopener noreferrer" 
+          className="text-base mb-2 text-white no-underline hover:underline">
             <img
-                src={galleryImages[0]}
-                alt='club_main_image'
-                className='object-cover rounded-md shadow-md'
-                style={{ width: '100%', height: '100%' }} // Main image will also stretch to fill the container
-            />
-        )}
-      </a>
+              src={image}
+              alt="club_logo"
+              className="object-cover rounded-md w-full"
+              style={{ height: 'auto', aspectRatio: 'auto' }} // Adjust aspect ratio as needed
+          />
+          {activities}
+        </a>
+      </div>
     </motion.div>
   );
 };
+
 
 const ClubCarousel = ({ clubs }) => {
   const settings = {

@@ -1,7 +1,7 @@
 # Portfolio Project
 
 ## Description
-This portfolio showcases the work, skills, and experiences of me. Designed with a modern user interface, it provides a comprehensive view of projects, tech stack, and other professional engagements. I did fork this from a tutorial so not everything is original but I made quite a fair bit of changes.
+This portfolio showcases the work, skills, and experiences of me. Designed with a modern user interface, it provides a comprehensive view of projects, tech stack, and other professional engagements. 
 
 ## Features
 - Dynamic projects display with details.

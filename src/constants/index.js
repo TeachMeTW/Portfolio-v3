@@ -95,6 +95,13 @@ import {
   ieeesc,
   basys3,
   cpe133,
+  ieee315,
+  vca,
+  basys3clock,
+  basys3man,
+  arc,
+  lanl,
+  lanllogo,
 } from "../assets";
 
 export const navLinks = [
@@ -223,10 +230,11 @@ const experiences = [
     ],
   },
   {
-    title: "Incoming Data & Analytics Intern",
+    title: "Data & Analytics Intern",
     company_name: "NASA",
     icon: nasa,
     proj: nasal,
+    link: "https://drive.google.com/drive/folders/1SpY1z_YahDgJQeNj4_7G-3rXh3OjTFPW?usp=sharing",
     iconBg: "#E6DEDD",
     date: "January 2024 - May 2024",
     points: [
@@ -235,6 +243,19 @@ const experiences = [
       "Optimitze workflow for portfolio management.",
       "Improve evaluation and test data access within the organization.",
       "Ensure data security and facilitate appropriate data access for designated personnel both within and outside of organization.",
+    ],
+  },
+  {
+    title: "Incoming Supercomputing Intern",
+    company_name: "Los Alamos National Laboratory",
+    icon: lanllogo,
+    proj: lanl,
+    iconBg: "#E6DEDD",
+    date: "June 2024 - August  2024",
+    points: [
+      "Assist in the research, design, and implementation of HPC solutions to solve complex scientific and engineering problems.",
+      "Gain hands-on experience with LANL's supercomputing resources, including parallel programming, optimization, and debugging.",
+      "Implement and evaluate performance enhancements for existing HPC software and tools."
     ],
   },
 ];
@@ -331,27 +352,95 @@ const projects = [
     category: "EE",
     description:
       "This project develops a secure, frequency-triggered lock system using an Arduino Uno R3, designed to unlock only when a specific acoustic frequency is detected. It combines a microphone, amplifier, comparator, and a solenoid actuator, showcasing an innovative approach to keyless entry systems. Includes demo video.",
-    tags: [],
+    tags: [
+      {
+        name: "Arduino R3",
+        color: "#FF4500",
+      },
+      {
+        name: "Signal Processing",
+        color: "#FF6A00",
+      },
+      {
+        name: "Frequency Analysis",
+        color: "#FF8C00",
+      },
+
+    ],
     image: act,
     source_code_link: ee315,
   },
   {
-    name: "Simple FSK IR Communication System",
+    name: "FSK IR Communication System",
     category: "EE",
     description:
-      "As the culmination of our explorations in EE 245: Electrical and Electronic Circuits II Laboratory, this report details the design, implementation, and testing of a simple Frequency-Shift Keying (FSK) Infrared (IR) Communication System. This project, conducted over the final three weeks of the quarter, required the integration of a variety of electronic components and principles, culminating in a functional transmitter and receiver pair.",
-    tags: [],
+      "As the culmination of our explorations in EE 245: Electrical and Electronic Circuits II Laboratory, this report details the design, implementation, and testing of a Frequency-Shift Keying (FSK) Infrared (IR) Communication System. This project, conducted over the final three weeks of the quarter, required the integration of a variety of electronic components and principles, culminating in a functional transmitter and receiver pair.",
+    tags: [
+      {
+        name: "Hardware Design",
+        color: "#FF4500",
+      },
+      {
+        name: "Signal Processing",
+        color: "#FF6A00",
+      },
+      {
+        name: "Frequency Analysis",
+        color: "#FF8C00",
+      },
+    ],
     image: fs,
     source_code_link: ee215,
+  },
+  {
+    name: "IEEE Formatted Report - Voltage Controlled Attenuators and Amplifiers",
+    category: "EE",
+    description:
+      "This report presents an in-depth analysis of voltage-controlled attenuators (VCAs), which are pivotal in managing signal levels within electronic systems. Prepared in line with IEEE guidelines, the study examines the architecture, operational mechanisms, and application spectrum of VCAs, highlighting their role in telecommunications, audio engineering, and signal processing. ",
+    tags: [
+    ],
+    image: vca,
+    source_code_link: ieee315,
   },
   {
     name: "IEEE Formatted Report - Oscillators",
     category: "EE",
     description:
-      "This lab report, formatted as a conference paper, showcases my ability to conduct in-depth scientific research and present findings in a structured and professional manner. Tasked with an experiment assigned during class, I crafted a detailed and analytical paper, demonstrating both my technical expertise and writing proficiency. This report serves as a polished example of my work, suitable for sharing with future employers as evidence of my skills in research, analysis, and communication.",
+      "In this comprehensive report, I delved into the world of oscillators, essential components in electronic devices that generate repetitive signals. The document, adhering to IEEE standards, covers various types of oscillators, including but not limited to sinusoidal, square wave, and triangular wave oscillators. ",
     tags: [],
     image: ieeesc,
     source_code_link: ieee215,
+  },
+  {
+    name: "Microcontroller Unit from Scratch",
+    category: "CPE",
+    description:
+      "This project showcases the creation of a custom microcontroller unit (MCU) from scratch, utilizing SystemVerilog for hardware description and RISC-V as the architecture. The schematic outlines the intricate components of the MCU, including the control unit, arithmetic logic unit (ALU), register file, memory, and I/O control",
+    tags: [
+      {
+        name: "Microcontrollers",
+        color: "#FF4500",
+      },
+      {
+        name: "SystemVerilog",
+        color: "#FF6A00",
+      },
+      {
+        name: "RISC-V",
+        color: "#FF8C00",
+      },
+    ],
+    image: arc,
+    source_code_link: "https://drive.google.com/drive/folders/1ViZY9HVluKxznHpp8NVJi9oHcXKc6xMM?usp=drive_link",
+  },
+  {
+    name: "Basys3 Clock",
+    category: "CPE",
+    description:
+      "I developed a digital clock program in RISC-V assembly language for a self-designed microcontroller unit. This project demonstrates my proficiency in low-level programming and embedded system design. The digital clock features functionalities such as displaying time, setting time manually, and controls for pausing, fast forwarding, and reversing time. ",
+    tags: [],
+    image: basys3man,
+    source_code_link: basys3clock,
   },
   {
     name: "Basys3 Morse Translator",

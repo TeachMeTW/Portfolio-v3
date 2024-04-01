@@ -101,8 +101,23 @@ import cpe133 from "./cpe133.pdf";
 import basys3 from "./basys3.png";
 import ee315 from "./315_Final.pdf";
 import act from "./act.png";
+import vca from "./vca.png";
+import ieee315 from "./IEEE315.pdf";
+import basys3clock from "./basys3clock.pdf";
+import basys3man from "./bsys3man.png";
+import arc from "./arc.png";
+import lanl from "./lanl.png";
+import lanllogo from "./lanllogo.jpg";
+
 
 export {
+  lanl,
+  lanllogo,
+  ieee315,
+  arc,
+  basys3clock,
+  basys3man,
+  vca,
   act,
   ee315,
   cpe133,

@@ -102,6 +102,7 @@ import {
   arc,
   lanl,
   lanllogo,
+  nasafinal,
 } from "../assets";
 
 export const navLinks = [
@@ -199,42 +200,11 @@ const experiences = [
     ],
   },
   {
-    title: "Undergraduate Researcher",
-    company_name: "Cal Poly COSAM",
-    icon: calpoly,
-    proj: lsst,
-    link: cosam,
-    iconBg: "#E6DEDD",
-    date: "September 2023 - December 2023",
-    points: [
-      "Conducting in-depth research on galaxies and cosmology utilizing datasets from the LSST (Legacy Survey of Space and Time) provided by the Rubin Observatory.",
-      "Leveraging Python for advanced data analysis, enhancing the precision of findings.",
-      "Utilizing state-of-the-art visualization tools to effectively represent complex celestial phenomena.",
-      "Collaborating with a team of astronomers and scientists to analyze and interpret results, driving forward the understanding of our universe.",
-      "Staying updated with the latest in cosmological research, ensuring the application of cutting-edge methodologies in all projects.",
-    ],
-  },
-  {
-    title: "Undergraduate Researcher",
-    company_name: "Cal Poly CLA",
-    icon: calpoly,
-    proj: cla,
-    link: clas,
-    iconBg: "#E6DEDD",
-    date: "October 2023 - Present",
-    points: [
-      "Supporting the research team in performing keyword searches and web scraping to aggregate a substantial image dataset, facilitating the identification of robotic functional areas in the hospitality industry. ",
-      "Aiding in training and validating machine-learning models by utilizing Python and various open-source libraries, ensuring precise identification and analysis of functional areas where robots can collaborate in the hospitality sector. ",
-      "Working alongside industry-leading annotators like Scale AI, assisting in the development of labeling frameworks and ensuring accurate data labeling for subsequent analysis. ",
-      "Preparing to author a research paper for submission to the 2024 National Conference on Undergraduate Research (NCUR), with an invaluable opportunity to present findings, network with professionals, and enhance research and professional skills.",
-    ],
-  },
-  {
     title: "Data & Analytics Intern",
     company_name: "NASA",
     icon: nasa,
     proj: nasal,
-    link: "https://drive.google.com/drive/folders/1SpY1z_YahDgJQeNj4_7G-3rXh3OjTFPW?usp=sharing",
+    link: nasafinal,
     iconBg: "#E6DEDD",
     date: "January 2024 - May 2024",
     points: [
@@ -246,7 +216,7 @@ const experiences = [
     ],
   },
   {
-    title: "Incoming Supercomputing Intern",
+    title: "High Performance Computing Intern",
     company_name: "Los Alamos National Laboratory",
     icon: lanllogo,
     proj: lanl,
@@ -600,11 +570,11 @@ const clubs = [
     ],
   },
   {
-    title: "Bachelors and Masters - Computer Engineering w/ Minor in Astronomy",
+    title: "Bachelors - Computer Engineering w/ Minor in Astronomy",
     company_name: "California Polytechnic State San Luis Obispo",
     icon: calpoly,
     iconBg: "#E6DEDD",
-    date: "August 2023 - June 2026",
+    date: "August 2023 - June 2025",
     points: [
       "Continue studying Computer Engineering at CalPoly SLO through the 'Learn by Doing' philosophy.",
       "Pursuing a minor in Astronomy/Astrophysics.",

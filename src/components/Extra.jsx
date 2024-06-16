@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-
+import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
 import { involv } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
@@ -66,7 +66,7 @@ const ClubCarousel = ({ clubs }) => {
   };
 
   return (
-    <div style={{ width: '50%', margin: '0 auto'}}>
+    <div style={{ width: '80%', margin: '0 auto'}}>
       <Slider {...settings}>
         {clubs.map((club, index) => (
           <ClubCard key={`club-${index}`} index={index} {...club} />
@@ -100,5 +100,4 @@ const Works = () => {
     </>
   );
 };
-
-export default Works;
+export default SectionWrapper(Works, "extra");

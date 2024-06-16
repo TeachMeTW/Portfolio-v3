@@ -108,9 +108,11 @@ import basys3man from "./bsys3man.png";
 import arc from "./arc.png";
 import lanl from "./lanl.png";
 import lanllogo from "./lanllogo.jpg";
+import nasafinal from "./document.pdf";
 
 
 export {
+  nasafinal,
   lanl,
   lanllogo,
   ieee315,

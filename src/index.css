@@ -227,3 +227,54 @@ body, h1, h2, h3, h4, h5, h6, p, span, a, li {
   font-size: 24px
   }
 
+
+  .proj-imgbx {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    transition: transform 0.3s;
+  }
+  
+  .proj-imgbx img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .proj-imgbx .proj-txtx {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 0.3s;
+    opacity: 0;
+  }
+  
+  .proj-imgbx:hover .proj-txtx {
+    opacity: 1;
+  }
+  
+  .proj-imgbx:hover {
+    transform: scale(1.05);
+  }
+  
+  .proj-txtx h4 {
+    margin: 0;
+    color: #FF4500;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .proj-txtx span {
+    color: #FFFFFF;
+    display: block;
+    margin-top: 5px;
+  }
+  
+  .tags span {
+    display: inline-block;
+    margin-right: 5px;
+  }
+  

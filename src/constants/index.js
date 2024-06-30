@@ -363,25 +363,6 @@ const projects = [
     source_code_link: ee215,
   },
   {
-    name: "IEEE Formatted Report - Voltage Controlled Attenuators and Amplifiers",
-    category: "EE",
-    description:
-      "This report presents an in-depth analysis of voltage-controlled attenuators (VCAs), which are pivotal in managing signal levels within electronic systems. Prepared in line with IEEE guidelines, the study examines the architecture, operational mechanisms, and application spectrum of VCAs, highlighting their role in telecommunications, audio engineering, and signal processing. ",
-    tags: [
-    ],
-    image: vca,
-    source_code_link: ieee315,
-  },
-  {
-    name: "IEEE Formatted Report - Oscillators",
-    category: "EE",
-    description:
-      "In this comprehensive report, I delved into the world of oscillators, essential components in electronic devices that generate repetitive signals. The document, adhering to IEEE standards, covers various types of oscillators, including but not limited to sinusoidal, square wave, and triangular wave oscillators. ",
-    tags: [],
-    image: ieeesc,
-    source_code_link: ieee215,
-  },
-  {
     name: "Microcontroller Unit from Scratch",
     category: "CPE",
     description:
@@ -416,57 +397,12 @@ const projects = [
     name: "Basys3 Morse Translator",
     category: "CPE",
     description:
-      "This project features an innovative system designed to translate and teach Morse code using a hardware interface. It operates in two modes: translation and learning. In translation mode, users input Morse code via buttons, which is then converted into alphanumeric characters (A-E, 0-3) and displayed on a Seven Segment Display. The learning mode challenges users to input correct Morse code for randomly displayed characters, with correct answers indicated by an LED. This interactive system not only aids in learning Morse code but also demonstrates the application of binary accumulators and translation logic in a user-friendly interface.",
+      "It operates in two modes: translation and learning. In translation mode, users input Morse code via buttons, which is then converted into alphanumeric characters (A-E, 0-3) and displayed on a Seven Segment Display. The learning mode challenges users to input correct Morse code for randomly displayed characters, with correct answers indicated by an LED.",
     tags: [],
     image: basys3,
     source_code_link: cpe133,
   },
-  {
-    name: "Kon Academy",
-    category: "CS",
-    description:
-      "Interactive video lesson generator: Upload PDFs, ask questions, and receive accurate video answers using streamlit, MindsDB, LangChain, and Pinecone. ",
 
-    tags: [
-      {
-        name: "Python",
-        color: "#FF4500",
-      },
-      {
-        name: "Langchain",
-        color: "#FF6A00",
-      },
-      {
-        name: "MindsDB",
-        color: "#FF8C00",
-      },
-    ],
-    image: lau,
-    source_code_link: "https://devpost.com/software/kon-academy",
-  },
-
-  {
-    name: "ARID",
-    category: "CS",
-    description:
-      "Experimental AR Projection using ARUCO codes with a web interface.",
-    tags: [
-      {
-        name: "Python",
-        color: "#FF4500",
-      },
-      {
-        name: "OpenCV",
-        color: "#FF6A00",
-      },
-      {
-        name: "Django",
-        color: "#FF8C00",
-      },
-    ],
-    image: arid,
-    source_code_link: "https://github.com/TeachMeTW/ARID",
-  },
   {
     name: "OnlyBikes",
     category: "CS",
@@ -511,23 +447,7 @@ const projects = [
     image: vreader,
     source_code_link: "https://github.com/TeachMeTW/VReader",
   },
-  {
-    name: "WorldView Wanderer",
-    category: "CS",
-    description: "Destination Viewer with local cuisine and music.",
-    tags: [
-      {
-        name: "Python | Pygame",
-        color: "#FF4500",
-      },
-      {
-        name: "Tkinter",
-        color: "#FF6A00",
-      },
-    ],
-    image: wvw,
-    source_code_link: "https://github.com/TeachMeTW/WorldView-Wanderer",
-  },
+
 
 ];
 

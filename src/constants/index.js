@@ -108,20 +108,29 @@ import {
 export const navLinks = [
   {
     id: "about",
-    title: "About",
+    title: "Home",
+    path: '/'
   },
   {
     id: "work",
     title: "Work",
+    path: '/#work'
   },
   {
     id: "edu",
     title: "Education",
+    path: '/#edu'
   },
   {
     id: "extra",
     title: "Extracurriculars",
+    path: '/#extra'
   },
+  {
+    id: "personal",
+    title: "Personal",
+    path: '/personal'
+  }
 ];
 
 const services = [];

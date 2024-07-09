@@ -44,11 +44,6 @@ const HardcodedProjectCard = () => {
   );
 };
 
-
-
-
-
-
 function TextBlock() {
     return (
         <div id="textblock">
@@ -68,6 +63,76 @@ function TextBlock() {
     );
 }
 
+const HardcodedProjectCard2 = () => {
+  const title = 'Divergence Meter';
+  const description = 'I\'m in the wrong world line.';
+  const imgUrl = './public/divergence.gif';
+  const tags = [
+
+  ];
+  const githubUrl = 'https://www.op.gg/summoners/na/EyelessGlasses-NA1';
+
+  return (
+    <div className="custom-center-container-2">
+      <div className="project-card">
+        <a
+          href={githubUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ textDecoration: 'none', color: 'inherit' }}
+        >
+          <div className="c-proj-imgbx animate__animated animate__fadeIn">
+            <img src={imgUrl} alt={title} />
+            <div className="c-proj-txtx">
+              <h4>{title}</h4>
+              <span>{description}</span>
+              <div className="tags">
+                {tags.map((tag, index) => (
+                  <span key={index} style={{ color: tag.color }}>
+                    #{tag.name}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  );
+};
+
+function TextBlock2() {
+    return (
+        <div id="textblock-2">
+            <div id="textblock-container">
+                <h1 id="textblock-title">Yes I like Steins;Gate</h1>
+                <p id="textblock-content">
+                I literally am Okabe Rintarou<br/><br/>
+
+
+                WIP PAGE
+                </p>
+            </div>
+            
+        </div>
+    );
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const CombinedComponent = () => {
   return (
     <div className="combined-container" style={{ display: 'flex' }}>
@@ -80,6 +145,20 @@ const CombinedComponent = () => {
     </div>
   );
 };
+
+const CombinedComponent2 = () => {
+  return (
+    <div className="combined-container" style={{ display: 'flex' }}>
+      <div className="image-container" style={{ flex: 1 }}>
+        <HardcodedProjectCard2 />
+      </div>
+      <div className="text-container" style={{ flex: 1 }}>
+        <TextBlock2 />
+      </div>
+    </div>
+  );
+};
+
 
 
 const MainPage = () => {
@@ -107,6 +186,8 @@ const Sub = () => {
     <div>
     <Personal/>
     <CombinedComponent/>
+    <Aki/>
+    <CombinedComponent2/>
     </div>
   );
 };

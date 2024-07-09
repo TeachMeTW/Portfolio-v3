@@ -2,6 +2,11 @@
     background-color: #1B0034; /* Dark purple theme */
     height: 100vh;
   }
+
+  #textblock-2 {
+    background-color: #4f2d22; /* Dark purple theme */
+    height: 100vh;
+  }
   
   #textblock-container {
     width: 50%;
@@ -78,4 +83,21 @@
   #bot {
     background-image: url(/image-bottom.png);
   }
+  
+  #aki-background {
+    background-image: url(/back.png);
+  }
+  
+  #aki-main {
+    background-image: url(/aki-main.png);
+  }
+  
+  #aki-side {
+    background-image: url(/aki-back.png);
+  }
+
+  #aki-sat {
+    background-image: url(/aki.png);
+  }
+  
   

@@ -99,13 +99,24 @@
     }
 }
 
+.custom-center-container-2 {
+    display: flex;
+    background-color: #4f2d22;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Adjust this if needed */
+    width: 100%;
+  }
+
+
 .custom-center-container {
     display: flex;
     background-color: #1B0034;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Adjust this if needed */
+    height: 100%; /* Adjust this if needed */
   }
+
   
   .c-proj-imgbx {
     position: relative;
@@ -173,3 +184,7 @@
     margin-right: 5px;
     font-size: 12px; /* Smaller, uniform text size */
 }
+
+
+
+

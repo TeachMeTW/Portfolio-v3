@@ -1,75 +1,50 @@
-import { motion, useScroll, useTransform } from "framer-motion";
-import React, { useRef } from "react";
+import React from "react";
+import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+import { motion } from "framer-motion";
+import '../../App.css';
+
+const subtleBreathingEffect = {
+  animate: {
+    scale: [1, 1.02, 1],
+    transition: {
+      duration: 4,
+      ease: "easeInOut",
+      repeat: Infinity,
+      repeatType: "mirror"
+    }
+  }
+};
+
+const subtleUpDownEffect = {
+  animate: {
+    y: [0, -12, 0, 12, 0],
+    transition: {
+      duration: 4,
+      ease: "easeInOut",
+      repeat: Infinity,
+      repeatType: "mirror"
+    }
+  }
+};
 
 const Personal = () => {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  });
-
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  const mainY = useTransform(scrollYProgress, [0, 1], ["0%", "200%"]);
-  const topY = useTransform(scrollYProgress, [0, 1], ["-50%", "400%"]);
-  const bottomY = useTransform(scrollYProgress, [0, 1], ["0%", "300%"]);
-
   return (
-    <div>
-      <div
-        ref={ref}
-        className="w-full h-screen overflow-hidden relative grid place-items-center"
-      >
-        <motion.h1
-          style={{ y: bottomY }}
-          className="font-bold text-white text-7xl md:text-9xl relative z-10"
-        >
-          
-        </motion.h1>
-
-        <motion.div
-          className="absolute inset-0 z-0"
-          style={{
-            backgroundImage: `url(/image-full.jpg)`,
-            backgroundPosition: "bottom",
-            backgroundSize: "cover",
-            y: backgroundY,
-          }}
-        />
-        <motion.div
-          className="absolute inset-0 z-10"
-          style={{
-            backgroundImage: `url(/image-top.png)`,
-            backgroundPosition: "bottom",
-            backgroundSize: "cover",
-            y: topY,
-          }}
-        />
-        <motion.div
-          className="absolute inset-0 z-20"
-          style={{
-            backgroundImage: `url(/image-main.png)`,
-            backgroundPosition: "bottom",
-            backgroundSize: "cover",
-            y: mainY,
-          }}
-        />
-        <motion.div
-          className="absolute inset-0 z-30"
-          style={{
-            backgroundImage: `url(/image-bottom.png)`,
-            backgroundPosition: "bottom",
-            backgroundSize: "cover",
-            y: bottomY,
-          }}
-        />
-      </div>
-      <motion.div
-        style={{
-          opacity: scrollYProgress,
-          display: scrollYProgress >= 1 ? "block" : "none",
-        }}
-      >
-      </motion.div>
+    <div className="w-full h-screen overflow-hidden relative grid place-items-center">
+      <Parallax pages={1} style={{ top: '0', left: '0' }} className="animation">
+        
+        <ParallaxLayer offset={0} speed={0.25}>
+          <motion.div className="animation_layer parallax" id="background" ></motion.div>
+        </ParallaxLayer>
+        <ParallaxLayer offset={0.005} speed={0.35}>
+          <motion.div className="animation_layer parallax" id="main" {...subtleBreathingEffect}></motion.div>
+        </ParallaxLayer>
+        <ParallaxLayer offset={0} speed={-0.1}>
+          <motion.div className="animation_layer parallax" id="top" {...subtleUpDownEffect}></motion.div>
+        </ParallaxLayer>
+        <ParallaxLayer offset={0} speed={0.3}>
+          <motion.div className="animation_layer parallax" id="bot" {...subtleUpDownEffect}></motion.div>
+        </ParallaxLayer>
+      </Parallax>
     </div>
   );
 };

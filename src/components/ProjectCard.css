@@ -98,3 +98,78 @@
         max-width: 33.333333%;
     }
 }
+
+.custom-center-container {
+    display: flex;
+    background-color: #1B0034;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust this if needed */
+  }
+  
+  .c-proj-imgbx {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    transition: transform 0.3s, background 0.3s;
+    background: #333;
+    height: 80vh; /* Fixed height for uniformity */
+    width: 100%;  /* Ensure it takes full width of the column */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.c-proj-imgbx img {
+    width: 100%; /* Make the image fill the entire container */
+    height: 100%; /* Make the image fill the entire container */
+    object-fit: cover; /* Cover the entire container */
+}
+
+.c-proj-imgbx .c-proj-txtx {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    background: rgba(255, 69, 0, 0.8); /* Initial orange overlay */
+    transition: opacity 0.3s, background 0.3s;
+    opacity: 0;
+    color: #ffffff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Full overlay */
+}
+
+.c-proj-imgbx:hover .c-proj-txtx {
+    opacity: 1;
+    background: rgba(37, 11, 0, 0.8); /* Change hover background color here */
+}
+
+.c-proj-imgbx:hover {
+    transform: scale(1.05);
+}
+
+.c-proj-txtx h4 {
+    margin: 0;
+    color: #ffffff; /* White text color */
+    font-size: 16px; /* Smaller, uniform text size */
+    font-weight: bold;
+}
+
+.c-proj-txtx span {
+    color: #ffffff; /* White text color */
+    display: block;
+    margin-top: 5px;
+    font-size: 12px; /* Smaller, uniform text size */
+}
+
+.c-tags span {
+    display: inline-block;
+    margin-right: 5px;
+    font-size: 12px; /* Smaller, uniform text size */
+}

@@ -106,12 +106,17 @@ import ieee315 from "./IEEE315.pdf";
 import basys3clock from "./basys3clock.pdf";
 import basys3man from "./bsys3man.png";
 import arc from "./arc.png";
-import lanl from "./lanl.png";
+import lanl from "./lanl.pdf";
 import lanllogo from "./lanllogo.jpg";
 import nasafinal from "./document.pdf";
-
+import lanlposter from "./lanlposter.png";
+import nrellogo from "./nrellogo.jpg";
+import nrel from "./nrel.png";
 
 export {
+  nrel,
+  nrellogo,
+  lanlposter,
   nasafinal,
   lanl,
   lanllogo,

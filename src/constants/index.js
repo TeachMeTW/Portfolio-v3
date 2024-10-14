@@ -101,36 +101,39 @@ import {
   basys3man,
   arc,
   lanl,
+  lanlposter,
   lanllogo,
   nasafinal,
+  nrellogo,
+  nrel,
 } from "../assets";
 
 export const navLinks = [
   {
     id: "about",
     title: "Home",
-    path: '/'
+    path: "/",
   },
   {
     id: "work",
     title: "Work",
-    path: '/#work'
+    path: "/#work",
   },
   {
     id: "edu",
     title: "Education",
-    path: '/#edu'
+    path: "/#edu",
   },
   {
     id: "extra",
     title: "Extracurriculars",
-    path: '/#extra'
+    path: "/#extra",
   },
   {
     id: "personal",
     title: "Personal",
-    path: '/personal'
-  }
+    path: "/personal",
+  },
 ];
 
 const services = [];
@@ -228,13 +231,28 @@ const experiences = [
     title: "High Performance Computing Intern",
     company_name: "Los Alamos National Laboratory",
     icon: lanllogo,
-    proj: lanl,
+    proj: lanlposter,
+    link: lanl,
     iconBg: "#E6DEDD",
     date: "June 2024 - August  2024",
     points: [
-      "Assist in the research, design, and implementation of HPC solutions to solve complex scientific and engineering problems.",
-      "Gain hands-on experience with LANL's supercomputing resources, including parallel programming, optimization, and debugging.",
-      "Implement and evaluate performance enhancements for existing HPC software and tools."
+      "Assembled and configured a 10-node HPC Linux cluster with Ansible, utilizing technologies such as Libvirt for network management, AWS S3 for object storage, Cloud-Init for post-boot configurations.",
+      "Leveraged underutilized computational resources in Arista and Mellanox network switches to optimize network functionality and efficiency by deploying containers directly onto the switches via Docker and Podman",
+      "Deployed and tested containers for various scenarios ranging from Telegraf metrics collection to caching.",
+    ],
+  },
+  {
+    title: "Software Engineering Intern",
+    company_name: "Naational Renewable Energy Laboratory",
+    icon: nrellogo,
+    proj: nrel,
+    link: "https://github.com/e-mission",
+    iconBg: "#E6DEDD",
+    date: "September 2024 - December  2024",
+    points: [
+      "Developed and maintained open-source software using Python and Dash Plotly for NREL’s OpenPATH, a platform that tracks travel modes and measures energy use and carbon footprint.",
+      "Contributed to the continuous improvement of the platform through pull requests, code reviews, and collaboration in an Agile environment with active sprint planning and ticket management",
+      "Improved platform performance, data collection, and analysis pipelines, enhancing the system’s scalability, reliability, and user experience.",
     ],
   },
 ];
@@ -344,7 +362,6 @@ const projects = [
         name: "Frequency Analysis",
         color: "#FF8C00",
       },
-
     ],
     image: act,
     source_code_link: ee315,
@@ -391,7 +408,8 @@ const projects = [
       },
     ],
     image: arc,
-    source_code_link: "https://drive.google.com/drive/folders/1ViZY9HVluKxznHpp8NVJi9oHcXKc6xMM?usp=drive_link",
+    source_code_link:
+      "https://drive.google.com/drive/folders/1ViZY9HVluKxznHpp8NVJi9oHcXKc6xMM?usp=drive_link",
   },
   {
     name: "Basys3 Clock",
@@ -456,8 +474,6 @@ const projects = [
     image: vreader,
     source_code_link: "https://github.com/TeachMeTW/VReader",
   },
-
-
 ];
 
 // I know this is not the right name; too lazy to refactor/change right now
@@ -503,7 +519,7 @@ const clubs = [
     company_name: "California Polytechnic State San Luis Obispo",
     icon: calpoly,
     iconBg: "#E6DEDD",
-    date: "August 2023 - June 2025",
+    date: "August 2023 - December 2025",
     points: [
       "Continue studying Computer Engineering at CalPoly SLO through the 'Learn by Doing' philosophy.",
       "Pursuing a minor in Astronomy/Astrophysics.",

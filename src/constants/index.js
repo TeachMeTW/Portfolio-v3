@@ -702,16 +702,34 @@ const involv = [
 
 const internshipData = [
   {
+    title: "LBNL",
+    description: "Presented my summer project on Cybersecurity to the DOE in Washington, DC.",
+    logoFile: "berkeley-logo.png",
+    imageFolder: "internship4",
+  },
+  {
     title: "NASA",
     description: "Got to go to GRC (Glenn Research Center) and AMES.",
     logoFile: "nasa-logo.png", // Name of the logo file in the folder
     imageFolder: "internship1", // Folder name within 'src/assets/'
   },
   {
+    title: "NCUR 2024",
+    description: "Presented my student research on Human-AI Interaction in the Hospitality Field. Located in Long Beach, CA.",
+    logoFile: "ncur-logo.png",
+    imageFolder: "internship3",
+  },
+  {
     title: "Los Alamos",
     description: "Limited photography from this lab (considering its NNSA).",
     logoFile: "lanl-logo.jpg",
     imageFolder: "internship2",
+  },
+  {
+    title: "SC 2024",
+    description: "Presented my HPC work from LANL at Supercomputing 2024 in Atlanta, GA.",
+    logoFile: "sc-logo.png",
+    imageFolder: "internship5",
   },
   // Add more internships as needed
 ];

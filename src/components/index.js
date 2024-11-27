@@ -1,4 +1,4 @@
-import {BallCanvas, ComputersCanvas } from './canvas';
+import { BallCanvas, ComputersCanvas } from "./canvas";
 import Hero from "./Hero";
 import Navbar from "./Navbar";
 import About from "./About";
@@ -8,10 +8,10 @@ import Works from "./Works";
 import Feedbacks from "./Feedbacks";
 import Contact from "./Contact";
 import CanvasLoader from "./Loader";
-import OtherExperience from './OtherExperience';
-import Extra from './Extra';
-import Cursor from './Cursor';
-
+import OtherExperience from "./OtherExperience";
+import Extra from "./Extra";
+import Cursor from "./Cursor";
+import Internships from "./Internships";
 
 export {
   Hero,
@@ -19,6 +19,7 @@ export {
   Navbar,
   About,
   Tech,
+  Internships,
   Experience,
   OtherExperience,
   Works,
@@ -26,6 +27,6 @@ export {
   Extra,
   Contact,
   CanvasLoader,
-  BallCanvas, 
-  ComputersCanvas, 
+  BallCanvas,
+  ComputersCanvas,
 };

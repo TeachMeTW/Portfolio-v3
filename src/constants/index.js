@@ -106,6 +106,8 @@ import {
   nasafinal,
   nrellogo,
   nrel,
+  micrologo,
+  micro,
 } from "../assets";
 
 export const navLinks = [
@@ -128,11 +130,6 @@ export const navLinks = [
     id: "extra",
     title: "Extracurriculars",
     path: "/#extra",
-  },
-  {
-    id: "personal",
-    title: "Personal",
-    path: "/personal",
   },
 ];
 
@@ -243,16 +240,33 @@ const experiences = [
   },
   {
     title: "Software Engineering Intern",
-    company_name: "Naational Renewable Energy Laboratory",
+    company_name: "National Renewable Energy Laboratory",
     icon: nrellogo,
     proj: nrel,
     link: "https://github.com/e-mission",
     iconBg: "#E6DEDD",
-    date: "September 2024 - December  2024",
+    date: "September 2024 - June 2025",
     points: [
       "Developed and maintained open-source software using Python and Dash Plotly for NREL’s OpenPATH, a platform that tracks travel modes and measures energy use and carbon footprint.",
       "Contributed to the continuous improvement of the platform through pull requests, code reviews, and collaboration in an Agile environment with active sprint planning and ticket management",
       "Improved platform performance, data collection, and analysis pipelines, enhancing the system’s scalability, reliability, and user experience.",
+    ],
+  },
+  {
+    title: "Technical Program Manager Intern",
+    company_name: "Microsoft",
+    icon: micrologo,
+    proj: micro,
+    link: "",
+    iconBg: "#E6DEDD",
+    date: "June 2025 - September 2025",
+    points: [
+      "Lead the development and implementation process for products and services typically involving large, complex cross-functional implementation with multiple internal teams or external partners.",
+      "Responsible for specific features in our technology solutions for the product cycle, working on the initial features planning and design, managing the specifications of development.",
+      "Monitor on-going operations to better understand customer experiences.",
+      "Work collaboratively with teammates to ensure our products exceed customer expectations, while delivering on the roadmap.",
+      "Communicate throughout the process to understand progress towards delivery, technical challenges, and to provide clarity on customer needs using a data driven approach.",
+      "Demonstrate an ability to learn and adopt relevant new technologies, tools, methods and processes to leverage in your solutions.",
     ],
   },
 ];
@@ -686,6 +700,21 @@ const involv = [
   },
 ];
 
+const internshipData = [
+  {
+    title: "NASA",
+    description: "Got to go to GRC (Glenn Research Center) and AMES.",
+    logoFile: "nasa-logo.png", // Name of the logo file in the folder
+    imageFolder: "internship1", // Folder name within 'src/assets/'
+  },
+  {
+    title: "Los Alamos",
+    description: "Limited photography from this lab (considering its NNSA).",
+    logoFile: "lanl-logo.jpg",
+    imageFolder: "internship2",
+  },
+  // Add more internships as needed
+];
 export {
   services,
   technologies,
@@ -694,4 +723,5 @@ export {
   projects,
   clubs,
   involv,
+  internshipData,
 };

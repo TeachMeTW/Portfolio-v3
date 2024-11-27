@@ -1,3 +1,4 @@
+// Experience.jsx
 import React from "react";
 import {
   VerticalTimeline,
@@ -10,9 +11,10 @@ import "react-vertical-timeline-component/style.min.css";
 import { styles } from "../styles";
 import { experiences } from "../constants";
 import { SectionWrapper } from "../hoc";
-import { textVariant } from "../utils/motion";
+// Removed duplicate textVariant import
+// import { textVariant } from "../utils/motion"; // Already defined inside Experience component
 
-const ExperienceCard = ({ experience }) => {
+const ExperienceCard = ({ experience, isFirst }) => {
   return (
     <VerticalTimelineElement
       contentStyle={{
@@ -33,6 +35,20 @@ const ExperienceCard = ({ experience }) => {
         </div>
       }
     >
+      {/* Conditionally render "Click Me" Box for the first card */}
+      {isFirst && (
+        <div
+          className="absolute top-0 left-0 mt-2 ml-2 bg-orange-500 text-white px-2 py-1 rounded cursor-pointer shadow-lg hover:bg-orange-600 transition"
+          onClick={() => {
+            // Define what happens when the "Click Me" box is clicked
+            // For example, you might want to open a modal or navigate somewhere
+            alert("Click the image not this button you 5head");
+          }}
+        >
+          Click the images to see more!
+        </div>
+      )}
+
       {/* PDF Thumbnail above the text box */}
       <div className="mb-4 rounded-lg flex-grow border-2 border-orange-500">
         <a href={experience.link} target="_blank" rel="noopener noreferrer">
@@ -53,7 +69,7 @@ const ExperienceCard = ({ experience }) => {
           border: "2px solid #FF4500",
           backgroundImage: "linear-gradient(to bottom right, #1a1a1a, #2a2a2a)",
         }}
-        className="p-4 rounded-lg flex-grow"
+        className="p-4 rounded-lg flex-grow relative" // Added 'relative' for positioning
       >
         <h3 className="text-secondary text-[24px] font-bold">
           {experience.title}
@@ -87,28 +103,30 @@ const Experience = () => {
   };
 
   return (
-    <>
-      {/* Render the motion.div with h2 first */}
-      <div>
+    <div className="relative">
+      {/* Experience Section Content */}
+      <div className="mt-10">
+        <h2
+          className={`${styles.sectionHeadText} text-center text-[40px] font-bold`}
+          style={{ color: "#FF4500" }}
+        >
+          Experience
+        </h2>
+      </div>
 
-    <h2 className={`${styles.sectionHeadText} text-center text-[40px] font-bold`} style={{ color: '#FF4500' }}>
-    Experience
-    </h2>
-
-    </div>
-
-      {/* Then render the timeline */}
+      {/* Timeline */}
       <div className="mt-20 flex flex-col">
         <VerticalTimeline>
           {experiences.map((experience, index) => (
             <ExperienceCard
               key={`experience-${index}`}
               experience={experience}
+              isFirst={index === 0} // Pass isFirst prop
             />
           ))}
         </VerticalTimeline>
       </div>
-    </>
+    </div>
   );
 };
 

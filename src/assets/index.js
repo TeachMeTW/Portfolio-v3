@@ -112,8 +112,12 @@ import nasafinal from "./document.pdf";
 import lanlposter from "./lanlposter.png";
 import nrellogo from "./nrellogo.jpg";
 import nrel from "./nrel.png";
+import micro from "./micro.png";
+import micrologo from "./micrologo.png";
 
 export {
+  micro,
+  micrologo,
   nrel,
   nrellogo,
   lanlposter,

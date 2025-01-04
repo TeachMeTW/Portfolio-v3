@@ -100,22 +100,67 @@
     background-image: url(/aki.png);
   }
   
- /* A container that sets boundaries for the scaled content */
+/* 
+  1) The outer container that defines top/bottom offsets 
+     and scroll boundaries for all screen sizes.
+*/
 .scaled-site-container {
-  position: absolute;   /* or fixed, if you don’t want it to move at all */
-  top: 80px;            /* offset so navbar isn't cut off */
-  bottom: 80px;         /* leave some space at the bottom */
+  position: absolute;
+  top: 80px;
   left: 0;
   right: 0;
-  overflow: auto;       /* scroll inside this container only */
-  margin: 0 auto;       /* center horizontally if desired */
+  bottom: 80px;
+  overflow-y: auto;  /* vertical scroll only */
+  overflow-x: hidden;
 }
 
-/* The actual site, scaled down */
+/*
+  2) The scaled site. 
+     For desktop, scale ~80%. 
+     We use transform-origin: top center so it shrinks from the top.
+*/
 .scaled-site {
-  transform: scale(0.8);         /* scale site to 80% */
-  transform-origin: top center;   /* anchor scaling from top-center */
+  transform: scale(0.8);
+  transform-origin: top center;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
 
-  /* If content is quite wide, ensure it stays centered */
-  width: 100%;      
+/* 3) Make sure the body/html don't cause extra scrolling outside the container */
+html, body {
+  margin: 0; 
+  padding: 0;
+  overflow: hidden; /* all scrolling is handled by .scaled-site-container */
+}
+
+/* 
+  4) Media query for smaller screens (e.g., max-width: 768px). 
+     Adjust top/bottom offsets so you have less “dead space,” 
+     and reduce (or increase) scale as desired.
+*/
+@media (max-width: 768px) {
+  .scaled-site-container {
+    top: 50px;   /* reduce offset on smaller screens */
+    bottom: 50px;
+  }
+
+  .scaled-site {
+    transform: scale(0.7);  /* you can tweak this scale further */
+  }
+}
+
+/* 
+  5) Another breakpoint for very small phones (e.g., 480px).
+   You might want to scale even more or reduce offsets further.
+*/
+@media (max-width: 480px) {
+  .scaled-site-container {
+    top: 30px;
+    bottom: 30px;
+  }
+
+  .scaled-site {
+    transform: scale(0.6);
+  }
 }

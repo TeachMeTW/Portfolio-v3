@@ -1,26 +1,26 @@
+/* src/components/Wrapper.css */
+
 .movie-frame-wrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 999999; /* below cursor but above rest of site */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999999; /* Ensure it's above all other elements except the cursor */
   
-    background: url("/src/assets/movie_frame.png") no-repeat center center;
-    background-size: contain;
-    overflow: hidden;
-  
-    /* Make the frame pass clicks through to the scaled site behind it */
-    pointer-events: none; 
-  }
-  
-  .movie-frame-scroller {
-    pointer-events: none; 
-  }
-  
-  .movie-frame-content {
-    transform: scale(1);
-    transform-origin: top left;
-    box-sizing: border-box;
-  }
-  
+  background: url("/src/assets/movie_frame.png") no-repeat center center;
+  background-size: contain;
+  overflow: hidden;
+
+  /* Allow interactions to pass through the frame */
+  pointer-events: none;
+}
+
+.movie-frame-scroller {
+  /* If you have interactive elements inside the frame, set pointer-events to auto */
+  pointer-events: none; /* Change to 'auto' if needed */
+}
+
+.movie-frame-content {
+  /* Additional styling if necessary */
+}

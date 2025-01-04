@@ -1,0 +1,44 @@
+/* src/components/AutoScaleSite.css */
+
+.autoscale-container {
+    position: fixed; /* Fixed to viewport */
+    left: 0;
+    right: 0;
+    
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: flex-start; /* Align to the top */
+    
+    overflow-y: auto; /* Enable vertical scrolling within the container */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    
+
+    /* Optional: Customize scrollbar appearance for better aesthetics */
+    scrollbar-width: thin; /* For Firefox */
+  }
+  
+  .autoscale-container::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+  }
+  
+  .autoscale-container::-webkit-scrollbar-track {
+    background: transparent; /* Track color */
+  }
+  
+  .autoscale-container::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 69, 0, 0.5); /* Scrollbar thumb color */
+    border-radius: 4px; /* Rounded corners */
+  }
+  
+  .autoscale-content {
+    width: 1200px;  /* Base width of site */
+    height: 860px;  /* Base height of site */
+    
+    box-sizing: border-box;
+    margin: 0; /* Remove any default margins */
+    padding: 0; /* Remove any default padding */
+    
+    /* Optional: Add some transition for smooth scaling */
+    transition: transform 0.3s ease;
+  }
+  

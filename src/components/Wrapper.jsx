@@ -1,15 +1,15 @@
 // src/components/Wrapper.jsx
+
 import React from "react";
 import "./Wrapper.css";
 
 const Wrapper = () => {
   return (
     <div className="movie-frame-wrapper">
-      {/* This extra <div> helps apply absolute centering for the scroller */}
+      {/* If you have interactive elements within the frame, adjust pointer-events accordingly */}
       <div className="movie-frame-scroller">
         <div className="movie-frame-content">
-          {/* bruh momement */}
-          {/* For now it's just the "shell" on top. */}
+          {/* Add any interactive elements within the frame here if needed */}
         </div>
       </div>
     </div>

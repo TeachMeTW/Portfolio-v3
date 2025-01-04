@@ -30,7 +30,7 @@ html, body {
   /* background: -webkit-linear-gradient(to right, #434343, #000000); */
   /* background: linear-gradient(to right, #434343, #000000); */
 
-  /* Add your background image */
+  /* Add background image */
   background-image: url('/src/assets/background.jpg'); /* Adjust the path as needed */
 
   /* Ensure the background covers the entire element */

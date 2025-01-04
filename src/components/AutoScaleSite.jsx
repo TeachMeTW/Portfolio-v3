@@ -20,17 +20,17 @@ export default function AutoScaleSite({ width = 1200, height = 860, children }) 
 
       // Define padding based on viewport width for responsiveness
       if (viewportWidth <= 480) { // Mobile devices
-        paddingTop = 250;
-        paddingBottom = 250;
-        paddingLeftRight = 30;
+        paddingTop = 0;
+        paddingBottom = 0;
+        paddingLeftRight = 0;
       } else if (viewportWidth <= 768) { // Tablets
-        paddingTop = 200;
-        paddingBottom = 200;
-        paddingLeftRight = 50;
+        paddingTop = 25;
+        paddingBottom = 25;
+        paddingLeftRight = 25;
       } else { // Desktops and larger screens
-        paddingTop = 80;
-        paddingBottom = 80;
-        paddingLeftRight = 80;
+        paddingTop = 50;
+        paddingBottom = 50;
+        paddingLeftRight = 50;
       }
 
       setPadding({ top: paddingTop, bottom: paddingBottom, leftRight: paddingLeftRight });

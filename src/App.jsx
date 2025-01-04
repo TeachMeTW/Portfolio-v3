@@ -1,6 +1,6 @@
 // src/App.jsx
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {
   About,
@@ -42,22 +42,75 @@ const MainPage = () => {
 };
 
 const App = () => {
+  const [isLargeScreen, setIsLargeScreen] = useState(true);
+
+  useEffect(() => {
+    function handleResize() {
+      const viewportWidth = window.innerWidth;
+      const viewportHeight = window.innerHeight;
+      const aspectRatio = viewportWidth / viewportHeight;
+
+      // Define your threshold values
+      const minWidth = 500; // Minimum width in pixels to enable scaling and movie frame
+      const minAspectRatio = 4 / 3; // Minimum aspect ratio (width/height)
+
+      if (viewportWidth >= minWidth && aspectRatio >= minAspectRatio) {
+        setIsLargeScreen(true);
+      } else {
+        setIsLargeScreen(false);
+      }
+    }
+
+    // Initial check
+    handleResize();
+
+    // Add event listener for window resize
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup event listener on component unmount
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (isLargeScreen) {
+      // When the movie frame is present, hide global overflow
+      document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
+    } else {
+      // When the movie frame is absent, allow global scrolling
+      document.body.style.overflow = "auto";
+      document.documentElement.style.overflow = "auto";
+    }
+  }, [isLargeScreen]);
+
   return (
     <>
-      {/* Scaled and Centered Site */}
-      <AutoScaleSite width={1200} height={860}>
+      {isLargeScreen ? (
+        <>
+          {/* 1. Scaled and Centered Site */}
+          <AutoScaleSite width={1200} height={860}>
+            <BrowserRouter>
+              <Routes>
+                <Route path="/" element={<MainPage />} />
+                {/* Add other routes here if needed */}
+              </Routes>
+            </BrowserRouter>
+          </AutoScaleSite>
+
+          {/* 2. Movie Frame Overlay */}
+          <Wrapper />
+        </>
+      ) : (
+        // Render the site without scaling and without the movie frame
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<MainPage />} />
             {/* Add other routes here if needed */}
           </Routes>
         </BrowserRouter>
-      </AutoScaleSite>
+      )}
 
-      {/* Movie Frame Overlay */}
-      <Wrapper />
-
-      {/* Custom Cursor */}
+      {/* 3. Custom Cursor remains visible in both cases */}
       <Cursor />
     </>
   );

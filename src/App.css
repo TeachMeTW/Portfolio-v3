@@ -131,7 +131,6 @@
 html, body {
   margin: 0; 
   padding: 0;
-  overflow: hidden; /* all scrolling is handled by .scaled-site-container */
 }
 
 /* 

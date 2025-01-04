@@ -87,7 +87,7 @@ const Hero = () => {
   const shadesOfOrange = generateOrangeShades(text.length);
 
   return (
-    <section className="relative w-full mx-auto bg-primary min-h-screen flex items-center justify-center px-4">
+    <section className="relative w-full mx-auto bg-custom-background min-h-screen flex items-center justify-center px-4">
       <div className="max-w-7xl mx-auto flex flex-col items-start gap-5">
         <div>
           <h1 className="text-4xl md:text-6xl lg:text-8xl text-secondary">

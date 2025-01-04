@@ -1,0 +1,19 @@
+.custom-cursor {
+    position: fixed;
+    /* Adjust size */
+    width: 32px;
+    height: 32px;
+  
+    /* Use cursor.png asset */
+    background: url('/src/assets/cursor.png') center center / contain no-repeat;
+  
+    /* Keeps it above everything */
+    z-index: 9999999;
+  
+    /* Allows clicks to go through to underlying elements */
+    pointer-events: none;
+  
+    /* Usually we center it on the pointer so it doesn't offset from the tip */
+    transform: translate(-50%, -50%);
+  }
+  

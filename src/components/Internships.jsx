@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
 import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
 import { internshipData } from "../constants";
@@ -23,11 +24,11 @@ const importAllImages = () => {
     // Extract folder name using regex
     const match = path.match(/\/internship\d+\//);
     if (match) {
-      const folder = match[0].split("/").filter(Boolean)[0]; // Corrected to [0]
+      const folder = match[0].split("/").filter(Boolean)[0];
       if (!imageMap[folder]) {
         imageMap[folder] = [];
       }
-      const fileName = path.split("/").pop(); // e.g., 'top.jpg'
+      const fileName = path.split("/").pop();
       imageMap[folder].push({
         src: images[path].default,
         name: fileName,
@@ -44,13 +45,12 @@ const InternshipCard = ({
   description,
   logoFile,
   imageFolder,
-  imageMap, // Pass the imageMap to fetch images
+  imageMap,
 }) => {
   const [images, setImages] = useState([]);
   const [logo, setLogo] = useState(null);
 
   useEffect(() => {
-    // Fetch images for this internship from imageMap
     if (imageMap && imageMap[imageFolder]) {
       const fetchedImages = imageMap[imageFolder];
       // Separate logo image from other images
@@ -83,8 +83,8 @@ const InternshipCard = ({
     slidesToScroll: 1,
     adaptiveHeight: true,
     arrows: true,
-    autoplay: true, // Enable autoplay
-    autoplaySpeed: 3000, // 3 seconds per slide
+    autoplay: true,
+    autoplaySpeed: 3000,
   };
 
   // Determine layout based on index for alternating pattern
@@ -107,7 +107,7 @@ const InternshipCard = ({
                   src={imgSrc}
                   alt={`${title} screenshot ${imgIndex + 1}`}
                   className="object-cover rounded-md w-full h-64 sm:h-80"
-                  loading="lazy" // Optimizes image loading
+                  loading="lazy"
                 />
               </div>
             ))}
@@ -117,23 +117,29 @@ const InternshipCard = ({
         )}
       </div>
 
-      {/* Text Content */}
-      <div className="w-full sm:w-1/2 flex flex-col justify-center p-4 bg-[#333] rounded-md">
-        <div className="flex items-center mb-4">
-          {logo ? (
-            <img
-              src={logo}
-              alt={`${title} logo`}
-              className="w-16 h-16 object-contain rounded-md mr-4"
-            />
-          ) : (
-            <div className="w-16 h-16 bg-gray-500 rounded-md mr-4"></div>
-          )}
-          <h3 className={`${styles.sectionHeadText} text-white text-2xl`}>
-            {title}
-          </h3>
+      {/* Text Content with flicker & glitch */}
+      <div className="flex flex-col items-center justify-center w-full sm:w-1/2 p-4">
+        <div className="steinsgate-textbox glitch-box">
+          <div className="flex items-center mb-4">
+            {logo ? (
+              <img
+                src={logo}
+                alt={`${title} logo`}
+                className="w-16 h-16 object-contain rounded-md mr-4"
+              />
+            ) : (
+              <div className="w-16 h-16 bg-gray-500 rounded-md mr-4" />
+            )}
+            {/* Glitch text effect on the title */}
+            <h3
+              className="glitch-text text-2xl font-bold"
+              data-text={title}   // used by pseudo-elements for glitch
+            >
+              {title}
+            </h3>
+          </div>
+          <p className="mb-2">{description}</p>
         </div>
-        <p className="text-white text-base mb-2">{description}</p>
       </div>
     </motion.div>
   );

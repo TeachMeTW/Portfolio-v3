@@ -25,18 +25,43 @@ html, body {
 }
 
 .black-gradient {
-  background: #000000; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #434343,
-    #000000
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #434343,
-    #000000
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /* Remove existing gradient backgrounds */
+  /* background: #000000; */ /* Optional: Remove if not needed */
+  /* background: -webkit-linear-gradient(to right, #434343, #000000); */
+  /* background: linear-gradient(to right, #434343, #000000); */
+
+  /* Add your background image */
+  background-image: url('/src/assets/background.jpg'); /* Adjust the path as needed */
+
+  /* Ensure the background covers the entire element */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  /* Optional: Add a fallback color in case the image doesn't load */
+  background-color: #000000;
+
+  /* Optional: Add an overlay for better text readability */
+  position: relative;
 }
+
+.black-gradient::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Adjust the overlay color and opacity as needed */
+  z-index: 1;
+}
+
+/* Ensure that child elements are above the overlay */
+.black-gradient > * {
+  position: relative;
+  z-index: 2;
+}
+
 
 .violet-gradient {
   background: #804dee;

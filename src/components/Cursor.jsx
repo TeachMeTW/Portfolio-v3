@@ -1,38 +1,28 @@
-import { useState, useEffect } from 'react';
-import cursor from '../assets/cursor.png';
+// src/components/Cursor.jsx
+import React, { useEffect, useState } from 'react';
+import "./Cursor.css"; // import the CSS file we created
 
-function Cursor() {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
+const Cursor = () => {
+  const [pos, setPos] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    const onMouseMove = (e) => {
-      setPosition({ x: e.clientX, y: e.clientY });
+    const handleMouseMove = (e) => {
+      setPos({ x: e.clientX, y: e.clientY });
     };
 
-    document.addEventListener('mousemove', onMouseMove);
-
-    return () => {
-      document.removeEventListener('mousemove', onMouseMove);
-    };
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
   return (
     <div
-      className="cursor"
+      className="custom-cursor"
       style={{
-        position: 'fixed',
-        left: `${position.x}px`,
-        top: `${position.y}px`,
-        width: '50px',
-        height: '50px',
-        background: `url(${cursor}) no-repeat center`,
-        backgroundSize: 'contain',
-        pointerEvents: 'none',
-        zIndex: 9999,
-        rotate: 45,
+        left: `${pos.x}px`,
+        top: `${pos.y}px`,
       }}
     />
   );
-}
+};
 
 export default Cursor;

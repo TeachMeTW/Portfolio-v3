@@ -100,4 +100,22 @@
     background-image: url(/aki.png);
   }
   
-  
+ /* A container that sets boundaries for the scaled content */
+.scaled-site-container {
+  position: absolute;   /* or fixed, if you don’t want it to move at all */
+  top: 80px;            /* offset so navbar isn't cut off */
+  bottom: 80px;         /* leave some space at the bottom */
+  left: 0;
+  right: 0;
+  overflow: auto;       /* scroll inside this container only */
+  margin: 0 auto;       /* center horizontally if desired */
+}
+
+/* The actual site, scaled down */
+.scaled-site {
+  transform: scale(0.8);         /* scale site to 80% */
+  transform-origin: top center;   /* anchor scaling from top-center */
+
+  /* If content is quite wide, ensure it stays centered */
+  width: 100%;      
+}

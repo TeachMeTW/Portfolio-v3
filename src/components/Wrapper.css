@@ -1,0 +1,26 @@
+.movie-frame-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999999; /* below cursor but above rest of site */
+  
+    background: url("/src/assets/movie_frame.png") no-repeat center center;
+    background-size: contain;
+    overflow: hidden;
+  
+    /* Make the frame pass clicks through to the scaled site behind it */
+    pointer-events: none; 
+  }
+  
+  .movie-frame-scroller {
+    pointer-events: none; 
+  }
+  
+  .movie-frame-content {
+    transform: scale(1);
+    transform-origin: top left;
+    box-sizing: border-box;
+  }
+  

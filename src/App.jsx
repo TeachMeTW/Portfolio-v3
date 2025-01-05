@@ -19,6 +19,7 @@ import {
 
 import Wrapper from "./components/Wrapper";
 import AutoScaleSite from "./components/AutoScaleSite";
+import Button from "./components/Button"; // Import the new Button component
 
 import "./App.css";
 import "./components/ProjectCard.css";
@@ -51,7 +52,7 @@ const App = () => {
       const aspectRatio = viewportWidth / viewportHeight;
 
       // Define your threshold values
-      const minWidth = 500; // Minimum width in pixels to enable scaling and movie frame
+      const minWidth = 768; // Minimum width in pixels to enable scaling and movie frame
       const minAspectRatio = 4 / 3; // Minimum aspect ratio (width/height)
 
       if (viewportWidth >= minWidth && aspectRatio >= minAspectRatio) {
@@ -99,6 +100,9 @@ const App = () => {
 
           {/* 2. Movie Frame Overlay */}
           <Wrapper />
+
+          {/* 3. Movie Button */}
+          <Button />
         </>
       ) : (
         // Render the site without scaling and without the movie frame
@@ -110,7 +114,7 @@ const App = () => {
         </BrowserRouter>
       )}
 
-      {/* 3. Custom Cursor remains visible in both cases */}
+      {/* 4. Custom Cursor remains visible in both cases */}
       <Cursor />
     </>
   );

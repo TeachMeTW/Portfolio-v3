@@ -1,6 +1,6 @@
 // src/components/Button.jsx
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom"; // Import ReactDOM for portals
 import "./Button.css";
 import movieBtn from "../assets/movie_btn2.png"; // Ensure the path is correct
@@ -13,6 +13,19 @@ const Button = () => {
   const [currentIndex, setCurrentIndex] = useState(0); // Start at 0
   const [hasSkippedFirstLink, setHasSkippedFirstLink] = useState(false); // To skip first link only on first loop
   const [noiseKey, setNoiseKey] = useState(0); // Unique key for noise overlay
+  const [bgCustomBackground, setBgCustomBackground] = useState(null); // State to hold the target container
+
+  // useEffect to set the bgCustomBackground after component mounts
+  useEffect(() => {
+    const container = document.querySelector(".bg-custom-background");
+    if (container) {
+      setBgCustomBackground(container);
+    } else {
+      console.warn(
+        'Element with class "bg-custom-background" not found in the DOM.'
+      );
+    }
+  }, []); // Empty dependency array ensures this runs once after mount
 
   const handleClick = () => {
     if (isTurningOn || isTurningOff || showNoise) return; // Prevent multiple clicks
@@ -22,9 +35,6 @@ const Button = () => {
     setShowNoise(true);
     const newNoiseKey = Date.now(); // Unique key based on timestamp
     setNoiseKey(newNoiseKey);
-
-    // No need to calculate left and width; overlay covers entire bg-custom-background
-    // Optionally, you can set a state or not, as left and width are set via CSS
 
     // Duration of turning on animation (in milliseconds)
     const turningOnDuration = 1000;
@@ -78,9 +88,6 @@ const Button = () => {
     }, turningOnDuration);
   };
 
-  // Locate the .bg-custom-background container
-  const bgCustomBackground = document.querySelector(".bg-custom-background");
-
   return (
     <>
       {/* Container for Button and Label */}
@@ -120,6 +127,12 @@ const Button = () => {
           }}
         ></div>,
         bgCustomBackground // Render inside .bg-custom-background
+      )}
+
+      {/* Global Noise Overlay */}
+      {bgCustomBackground && ReactDOM.createPortal(
+        <div className="global-noise-overlay"></div>,
+        bgCustomBackground // Render into the same container as noise-overlay
       )}
     </>
   );

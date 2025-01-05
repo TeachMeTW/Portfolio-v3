@@ -222,3 +222,37 @@
     outline-offset: 4px;
   }
   
+  /* -----------------------------------
+   Global Noise Overlay Styling
+----------------------------------- */
+.global-noise-overlay {
+  position: absolute; /* Absolute positioning within .bg-custom-background */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-image: url('../assets/noize2.gif'); /* Ensure the path is correct */
+  background-repeat: repeat;
+  background-size: 100px 100px; /* Adjust based on the size of noize2.gif */
+
+  opacity: 0.15; /* Subtle opacity for global noise */
+  pointer-events: none; /* Allow interactions to pass through */
+
+  z-index: 15; /* Above the existing noise-overlay (z-10) but below interactive elements like the Movie Button (z-1000000) and toggle button (z-1001) */
+
+  /* Prevent blurriness */
+  image-rendering: pixelated;
+
+  /* Optional: Add subtle animation for dynamic noise */
+  animation: globalNoiseAnimation 2s steps(10) infinite;
+}
+
+@keyframes globalNoiseAnimation {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-50px, -50px);
+  }
+}

@@ -131,6 +131,11 @@ export const navLinks = [
     title: "Extracurriculars",
     path: "/#extra",
   },
+  {
+    id: "next",
+    title: "WIP",
+    path: "/#next",
+  },
 ];
 
 const services = [];

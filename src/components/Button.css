@@ -236,7 +236,7 @@
   background-repeat: repeat;
   background-size: 100px 100px; /* Adjust based on the size of noize2.gif */
 
-  opacity: 0.15; /* Subtle opacity for global noise */
+  opacity: 0.1; /* Subtle opacity for global noise */
   pointer-events: none; /* Allow interactions to pass through */
 
   z-index: 15; /* Above the existing noise-overlay (z-10) but below interactive elements like the Movie Button (z-1000000) and toggle button (z-1001) */

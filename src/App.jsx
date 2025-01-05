@@ -15,12 +15,13 @@ import {
   OtherExperience,
   Extra,
   Internships,
+
 } from "./components";
 
 import Wrapper from "./components/Wrapper";
 import AutoScaleSite from "./components/AutoScaleSite";
 import Button from "./components/Button"; // Import the new Button component
-
+import PoliceTapeHero from "./components/PoliceTapeHero"
 import "./App.css";
 import "./components/ProjectCard.css";
 
@@ -38,6 +39,7 @@ const MainPage = () => {
       <Works />
       <OtherExperience />
       <Extra />
+      <PoliceTapeHero />
     </div>
   );
 };

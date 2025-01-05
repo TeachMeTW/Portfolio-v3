@@ -4,11 +4,14 @@ import React, { useEffect, useState } from "react";
 import "./AutoScaleSite.css"; // Ensure this CSS file is properly linked
 
 export default function AutoScaleSite({ width = 1200, height = 860, children }) {
+  const frameAspectRatio = 1360 / 1020; // Aspect ratio of the TV frame
   const [scale, setScale] = useState(1);
+  const [adjustedWidth, setAdjustedWidth] = useState(width); // Track adjusted width
+  const [adjustedHeight, setAdjustedHeight] = useState(height); // Track adjusted height
   const [padding, setPadding] = useState({
-    top: 80,
-    bottom: 80,
-    leftRight: 80,
+    top: 0,
+    bottom: 0,
+    leftRight: 0,
   });
 
   useEffect(() => {
@@ -16,35 +19,30 @@ export default function AutoScaleSite({ width = 1200, height = 860, children }) 
       const viewportWidth = window.innerWidth;
       const viewportHeight = window.innerHeight;
 
-      let paddingTop, paddingBottom, paddingLeftRight;
+      console.log(`Viewport Width: ${viewportWidth}px`);
+      console.log(`Viewport Height: ${viewportHeight}px`);
+      
+      // Ensure content matches the frame's aspect ratio
+      let newWidth = viewportWidth;
+      let newHeight = viewportWidth / frameAspectRatio;
 
-      // Define padding based on viewport width for responsiveness
-      if (viewportWidth <= 480) { // Mobile devices
-        paddingTop = 0;
-        paddingBottom = 0;
-        paddingLeftRight = 0;
-      } else if (viewportWidth <= 768) { // Tablets
-        paddingTop = 25;
-        paddingBottom = 25;
-        paddingLeftRight = 25;
-      } else { // Desktops and larger screens
-        paddingTop = 50;
-        paddingBottom = 50;
-        paddingLeftRight = 50;
+      if (newHeight > viewportHeight) {
+        newHeight = viewportHeight;
+        newWidth = viewportHeight * frameAspectRatio;
       }
 
-      setPadding({ top: paddingTop, bottom: paddingBottom, leftRight: paddingLeftRight });
-
-      // Calculate available width and height within the frame
-      const availableWidth = viewportWidth - 2 * paddingLeftRight;
-      const availableHeight = viewportHeight - paddingTop - paddingBottom;
+      setAdjustedWidth(newWidth);
+      setAdjustedHeight(newHeight);
 
       // Calculate scale based on the smallest ratio to maintain aspect ratio
-      const scaleWidth = availableWidth / width;
-      const scaleHeight = availableHeight / height;
+      const scaleWidth = viewportWidth / newWidth;
+      const scaleHeight = viewportHeight / newHeight;
       const newScale = Math.min(scaleWidth, scaleHeight, 1); // Prevent upscaling beyond 1
 
       setScale(newScale);
+      console.log(`Adjusted Width: ${newWidth}px`);
+      console.log(`Adjusted Height: ${newHeight}px`);
+      console.log(`Calculated Scale: ${newScale.toFixed(2)}`);
     }
 
     // Initial calculation
@@ -53,7 +51,7 @@ export default function AutoScaleSite({ width = 1200, height = 860, children }) 
     // Recalculate on window resize
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, [width, height]);
+  }, [frameAspectRatio]);
 
   return (
     <div
@@ -70,6 +68,8 @@ export default function AutoScaleSite({ width = 1200, height = 860, children }) 
         style={{
           transform: `scale(${scale})`,
           transformOrigin: "top center",
+          width: `${adjustedWidth}px`,
+          height: `${adjustedHeight}px`,
         }}
       >
         {children}

@@ -69,6 +69,7 @@ const Button = () => {
       if (nextIndex >= navLinks.length) {
         nextIndex = 0; // Loop back to start
         // Reset skip flag to allow inclusion of the first link in subsequent loops
+        window.scrollTo({ top: 0, behavior: "smooth" });
         setHasSkippedFirstLink(false);
       }
       setCurrentIndex(nextIndex);

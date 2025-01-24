@@ -20,7 +20,6 @@ import {
 
 import Wrapper from "./components/Wrapper";
 import AutoScaleSite from "./components/AutoScaleSite";
-import Button from "./components/Button"; // Import the new Button component
 import PoliceTapeHero from "./components/PoliceTapeHero"
 import "./App.css";
 import "./components/ProjectCard.css";
@@ -35,7 +34,6 @@ const MainPage = () => {
       <About />
       <Experience />
       <Tech />
-      <Internships />
       <Works />
       <OtherExperience />
       <Extra />
@@ -104,7 +102,7 @@ const App = () => {
           <Wrapper />
 
           {/* 3. Movie Button */}
-          <Button />
+
         </>
       ) : (
         // Render the site without scaling and without the movie frame

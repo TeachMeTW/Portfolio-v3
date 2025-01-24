@@ -14,6 +14,7 @@ import movieBtn from "../assets/movie_btn2.png";
 import { navLinks } from "../constants";
 
 const Wrapper = () => {
+  // State for Tuner Noise
   const [isTurningOn, setIsTurningOn] = useState(false);
   const [isTurningOff, setIsTurningOff] = useState(false);
   const [showNoise, setShowNoise] = useState(false);
@@ -21,6 +22,9 @@ const Wrapper = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [hasSkippedFirstLink, setHasSkippedFirstLink] = useState(false);
+
+  // New state for Constant Noise
+  const [isConstantNoiseEnabled, setIsConstantNoiseEnabled] = useState(true); // Noise is on initially
 
   // We'll measure the bounding rect of the displayed frame image:
   const frameRef = useRef(null);
@@ -31,6 +35,14 @@ const Wrapper = () => {
   useEffect(() => {
     const container = document.querySelector(".bg-custom-background");
     if (container) setBgCustomBackground(container);
+  }, []);
+
+  // Track current window height
+  const [windowHeight, setWindowHeight] = useState(window.innerHeight);
+  useEffect(() => {
+    const handleResize = () => setWindowHeight(window.innerHeight);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   // On mount + window resize, measure the image's bounding box
@@ -66,7 +78,7 @@ const Wrapper = () => {
   };
 
   // ---------- Tuner Button Click ----------
-  const handleClick = () => {
+  const handleTunerClick = () => {
     if (isTurningOn || isTurningOff || showNoise) return;
 
     // Turn ON
@@ -111,19 +123,43 @@ const Wrapper = () => {
     }, 1000);
   };
 
-  // Pin the button to the right edge of the displayed image
-  const offsetX = -30;
-  const offsetY = 500;
-  const buttonStyle = {
-    position: "fixed",
-    zIndex: 100000,
+  // ---------- Constant Noise Toggle ----------
+  const toggleConstantNoise = () => {
+    setIsConstantNoiseEnabled((prev) => !prev);
+  };
+
+  // Decide how to position/scale the buttons based on window height
+  const offsetX = -10;   // how far left from the frame's edge in normal mode
+  const offsetY = 500;   // how far down from the frame's top
+  let buttonContainerStyle = {};
+
+  if (windowHeight < 1000) {
+    // For smaller heights, adjust positioning and scaling
+    buttonContainerStyle = {
+      position: "fixed",
+      zIndex: 100000,
+      pointerEvents: "none", // Allow clicks on buttons
+      top: frameRect.top + offsetY - 200,
+      left: frameRect.left + frameRect.width - 100, 
+      transform: "scale(0.7)",         // scale down
+      transformOrigin: "top right",    // so it shrinks from the top-right corner
+    };
+  } else {
+    // For taller windows, position relative to the image bounding rect
+    buttonContainerStyle = {
+      position: "fixed",
+      zIndex: 100000,
+      pointerEvents: "none", // Allow clicks on buttons
+      top: frameRect.top + offsetY,
+      left: frameRect.left + frameRect.width + offsetX,
+      transform: "translate(-100%, 0)",
+    };
+  }
+
+  // Styles for individual buttons to enable pointer events
+  const individualButtonStyle = {
     pointerEvents: "auto",
-    // Top edge aligns with the top edge of the frame:
-    top: frameRect.top + offsetY,
-    // Left edge is right at the image's right side:
-    left: frameRect.left + frameRect.width + offsetX,
-    // Translate so that the button’s right edge is flush with frame’s right edge
-    transform: "translate(-100%, 0)",
+    marginBottom: "10px", // Space between buttons
   };
 
   return (
@@ -142,26 +178,49 @@ const Wrapper = () => {
         />
       </div>
 
-      {/* The button, pinned to the frame's right edge. */}
-      <div className="movie-button-container" style={buttonStyle}>
-        <button
-          className={`movie-button ${isTurningOn ? "turning-on" : ""} ${
-            isTurningOff ? "turning-off" : ""
-          }`}
-          onClick={handleClick}
-        >
-          <span className="movie-button-inner">
-            <img src={movieBtn} alt="Movie Button" />
-          </span>
-        </button>
-        <div className="movie-button-label">
-          <span className="movie-button-label-line">Channel</span>
-          <span className="movie-button-label-line">Tuner</span>
+      {/* 
+        Container for both buttons, positioned based on the style logic above.
+        pointerEvents is set to 'none' to allow the buttons inside to receive pointer events.
+      */}
+      <div className="movie-button-container" style={buttonContainerStyle}>
+        {/* Channel Tuner Button */}
+        <div style={individualButtonStyle}>
+          <button
+            className={`movie-button ${isTurningOn ? "turning-on" : ""} ${
+              isTurningOff ? "turning-off" : ""
+            }`}
+            onClick={handleTunerClick}
+          >
+            <span className="movie-button-inner">
+              <img src={movieBtn} alt="Movie Button" />
+            </span>
+          </button>
+          <div className="movie-button-label">
+            <span className="movie-button-label-line">Channel</span>
+            <span className="movie-button-label-line">Tuner</span>
+          </div>
+        </div>
+
+        {/* Constant Noise Toggle Button */}
+        <div style={individualButtonStyle}>
+          <button
+            className={`movie-button ${isConstantNoiseEnabled ? "noise-on" : "noise-off"}`}
+            onClick={toggleConstantNoise}
+          >
+            <span className="movie-button-inner">
+              {/* You can use a different icon for the noise button if desired */}
+              <img src={movieBtn} alt="Noise Toggle Button" />
+            </span>
+          </button>
+          <div className="movie-button-label">
+            <span className="movie-button-label-line">Noise</span>
+            <span className="movie-button-label-line">Toggle</span>
+          </div>
         </div>
       </div>
 
       {/* Noise Overlays (Portals) */}
-      {showNoise && bgCustomBackground && 
+      {showNoise && bgCustomBackground &&
         ReactDOM.createPortal(
           <div
             key={noiseKey}
@@ -170,7 +229,8 @@ const Wrapper = () => {
           bgCustomBackground
         )
       }
-      {bgCustomBackground &&
+      {/* Conditionally render the global noise overlay based on isConstantNoiseEnabled */}
+      {isConstantNoiseEnabled && bgCustomBackground &&
         ReactDOM.createPortal(
           <div className="global-noise-overlay" />,
           bgCustomBackground

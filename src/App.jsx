@@ -15,12 +15,11 @@ import {
   OtherExperience,
   Extra,
   Internships,
-
 } from "./components";
 
 import Wrapper from "./components/Wrapper";
 import AutoScaleSite from "./components/AutoScaleSite";
-import PoliceTapeHero from "./components/PoliceTapeHero"
+import PoliceTapeHero from "./components/PoliceTapeHero";
 import "./App.css";
 import "./components/ProjectCard.css";
 
@@ -54,8 +53,14 @@ const App = () => {
       // Define your threshold values
       const minWidth = 768; // Minimum width in pixels to enable scaling and movie frame
       const minAspectRatio = 4 / 3; // Minimum aspect ratio (width/height)
+      const minHeight = 700; // Minimum height in pixels
 
-      if (viewportWidth >= minWidth && aspectRatio >= minAspectRatio) {
+      // Check if all conditions are met
+      if (
+        viewportWidth >= minWidth &&
+        aspectRatio >= minAspectRatio &&
+        viewportHeight >= minHeight
+      ) {
         setIsLargeScreen(true);
       } else {
         setIsLargeScreen(false);
@@ -102,7 +107,7 @@ const App = () => {
           <Wrapper />
 
           {/* 3. Movie Button */}
-
+          {/* Add Movie Button component here if needed */}
         </>
       ) : (
         // Render the site without scaling and without the movie frame

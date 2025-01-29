@@ -140,8 +140,8 @@ const Wrapper = () => {
       zIndex: 100000,
       pointerEvents: "none", // Allow clicks on buttons
       top: frameRect.top + offsetY - 200,
-      left: frameRect.left + frameRect.width - 100, 
-      transform: "scale(0.7)",         // scale down
+      left: frameRect.left + frameRect.width - 115, 
+      transform: "scale(0.6)",         // scale down
       transformOrigin: "top right",    // so it shrinks from the top-right corner
     };
   } else {
@@ -215,6 +215,22 @@ const Wrapper = () => {
           <div className="movie-button-label">
             <span className="movie-button-label-line">Noise</span>
             <span className="movie-button-label-line">Toggle</span>
+          </div>
+        </div>
+
+        <div style={individualButtonStyle}>
+          <button
+            className={`movie-button`}
+            onClick={() => window.location.href = 'https://side.robinttw.com'}
+          >
+            <span className="movie-button-inner">
+              {/* You can use a different icon for the noise button if desired */}
+              <img src={movieBtn} alt="Noise Toggle Button" />
+            </span>
+          </button>
+          <div className="movie-button-label">
+            <span className="movie-button-label-line">Switch</span>
+            <span className="movie-button-label-line">Dimension</span>
           </div>
         </div>
       </div>

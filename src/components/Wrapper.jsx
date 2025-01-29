@@ -230,7 +230,7 @@ const Wrapper = () => {
           </button>
           <div className="movie-button-label">
             <span className="movie-button-label-line">Switch</span>
-            <span className="movie-button-label-line">Dimension</span>
+            <span className="movie-button-label-line">Worldline</span>
           </div>
         </div>
       </div>

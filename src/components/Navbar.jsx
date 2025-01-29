@@ -30,7 +30,10 @@ const Navbar = () => {
     setActive(nav.title);
     setToggle(false);
 
-    if (nav.path === '/personal') {
+    if (nav.path.startsWith("http")) {
+      // External link: Open in new tab
+      window.open(nav.path, "_blank", "noopener,noreferrer");
+    } else if (nav.path === '/personal') {
       navigate(nav.path);
     } else {
       const element = document.getElementById(nav.id);
@@ -38,6 +41,61 @@ const Navbar = () => {
         element.scrollIntoView({ behavior: 'smooth' });
       }
     }
+  };
+
+  const renderNavLink = (nav) => {
+    const isExternal = nav.path.startsWith("http");
+    return isExternal ? (
+      <a
+        href={nav.path}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`${
+          active === nav.title ? "text-white" : "text-secondary"
+        } hover:text-white text-[18px] font-medium cursor-pointer`}
+        onClick={() => setActive(nav.title)}
+      >
+        {nav.title}
+      </a>
+    ) : (
+      <span
+        className={`${
+          active === nav.title ? "text-white" : "text-secondary"
+        } hover:text-white text-[18px] font-medium cursor-pointer`}
+        onClick={() => handleNavClick(nav)}
+      >
+        {nav.title}
+      </span>
+    );
+  };
+
+  const renderMobileNavLink = (nav) => {
+    const isExternal = nav.path.startsWith("http");
+    return isExternal ? (
+      <a
+        href={nav.path}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`font-poppins font-medium cursor-pointer text-[16px] ${
+          active === nav.title ? "text-white" : "text-secondary"
+        }`}
+        onClick={() => {
+          setActive(nav.title);
+          setToggle(false);
+        }}
+      >
+        {nav.title}
+      </a>
+    ) : (
+      <span
+        className={`font-poppins font-medium cursor-pointer text-[16px] ${
+          active === nav.title ? "text-white" : "text-secondary"
+        }`}
+        onClick={() => handleNavClick(nav)}
+      >
+        {nav.title}
+      </span>
+    );
   };
 
   return (
@@ -62,20 +120,16 @@ const Navbar = () => {
           </p>
         </Link>
 
+        {/* Desktop Navigation */}
         <ul className='list-none hidden sm:flex flex-row gap-10'>
           {navLinks.map((nav) => (
-            <li
-              key={nav.id}
-              className={`${
-                active === nav.title ? "text-white" : "text-secondary"
-              } hover:text-white text-[18px] font-medium cursor-pointer`}
-              onClick={() => handleNavClick(nav)}
-            >
-              <a>{nav.title}</a>
+            <li key={nav.id} className={`${active === nav.title ? "text-white" : "text-secondary"} hover:text-white text-[18px] font-medium cursor-pointer`}>
+              {renderNavLink(nav)}
             </li>
           ))}
         </ul>
 
+        {/* Mobile Navigation */}
         <div className='sm:hidden flex flex-1 justify-end items-center'>
           <img
             src={toggle ? close : menu}
@@ -91,14 +145,8 @@ const Navbar = () => {
           >
             <ul className='list-none flex justify-end items-start flex-1 flex-col gap-4'>
               {navLinks.map((nav) => (
-                <li
-                  key={nav.id}
-                  className={`font-poppins font-medium cursor-pointer text-[16px] ${
-                    active === nav.title ? "text-white" : "text-secondary"
-                  }`}
-                  onClick={() => handleNavClick(nav)}
-                >
-                  <a>{nav.title}</a>
+                <li key={nav.id} className={`font-poppins font-medium cursor-pointer text-[16px] ${active === nav.title ? "text-white" : "text-secondary"}`}>
+                  {renderMobileNavLink(nav)}
                 </li>
               ))}
             </ul>

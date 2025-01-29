@@ -112,6 +112,11 @@ import {
 
 export const navLinks = [
   {
+    id: "side",
+    title: "Switch Dimensions!",
+    path: "https://side.robinttw.com",
+  },
+  {
     id: "about",
     title: "Home",
     path: "/",

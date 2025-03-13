@@ -29,19 +29,11 @@ const About = () => {
           variants={fadeIn("", "", 0.1, 1)}
           className="mt-4 text-[#FFFFFF] text-[17px] max-w-3xl leading-[30px]"
         >
-          I am a passionate Computer Engineering student at California
-          Polytechnic State University, San Luis Obispo, set to graduate in
-          December 2025. With a robust foundation in Python and hands-on
-          experience in C++ and Java, I thrive in dynamic environments where I
-          can apply my technical skills to solve complex problems. I am actively
-          seeking internship and full-time opportunities where I can contribute
-          to innovative projects, collaborate with talented teams, and further
-          develop my expertise in software development and engineering. My
-          portfolio showcases a range of projects that demonstrate my ability to
-          design, implement, and optimize solutions effectively. Feel free to
-          explore my experiences and projects to learn more about my work and
-          access my source code. I am excited to connect and discuss how I can
-          add value to your team!
+          Hey there! I'm a Computer Engineering student at Cal Poly SLO (graduating Dec 2025) 
+          with a wild ride through the government - from NASA to national labs, and now 
+          diving into the private sector with Microsoft. Python is my main language, but I'm always 
+          down to learn new things and explore different roles. When I'm not coding, 
+          you can find me on the university's League of Legends team as their top laner.
         </motion.p>
       </div>
       <div className="mt-5 flex space-x-4">

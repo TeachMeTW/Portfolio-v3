@@ -8,6 +8,7 @@ import "./Wrapper.css";
   has transparency if you want to see through the middle.
 */
 import movieFrameImage from "../assets/movie_frame.png";
+import movieFrameImage2 from "../assets/movie_frame2.png";
 import movieBtn from "../assets/movie_btn2.png";
 
 // Adjust if you use navLinks or some other logic
@@ -25,6 +26,9 @@ const Wrapper = () => {
 
   // New state for Constant Noise
   const [isConstantNoiseEnabled, setIsConstantNoiseEnabled] = useState(true); // Noise is on initially
+  
+  // New state to track which frame image to display
+  const [currentFrame, setCurrentFrame] = useState(movieFrameImage);
 
   // We'll measure the bounding rect of the displayed frame image:
   const frameRef = useRef(null);
@@ -126,6 +130,8 @@ const Wrapper = () => {
   // ---------- Constant Noise Toggle ----------
   const toggleConstantNoise = () => {
     setIsConstantNoiseEnabled((prev) => !prev);
+    // Toggle between the two frame images
+    setCurrentFrame(currentFrame === movieFrameImage ? movieFrameImage2 : movieFrameImage);
   };
 
   // Decide how to position/scale the buttons based on window height
@@ -171,7 +177,7 @@ const Wrapper = () => {
       <div className="movie-frame-container">
         <img
           ref={frameRef}
-          src={movieFrameImage}
+          src={currentFrame}
           alt="Movie Frame"
           onLoad={handleFrameLoad}
           className="movie-frame-img"

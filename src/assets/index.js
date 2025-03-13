@@ -114,8 +114,19 @@ import nrellogo from "./nrellogo.jpg";
 import nrel from "./nrel.png";
 import micro from "./micro.png";
 import micrologo from "./micrologo.png";
+import prog3 from "./prog3.gif";
+import prog2 from "./prog2.gif";
+import cnn from "./cnn.png";
+import sc24 from "./sc24.png";
+import sc24g from "./sc24g.png";
+
 
 export {
+  sc24,
+  sc24g,
+  cnn,
+  prog3,
+  prog2,
   micro,
   micrologo,
   nrel,

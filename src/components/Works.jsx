@@ -29,7 +29,16 @@ const ProjectCard = ({
         style={{ textDecoration: 'none', color: 'inherit' }}
       >
         <div className="proj-imgbx animate__animated animate__fadeIn">
-          <img src={imgUrl} alt={title} />
+          <img 
+            src={imgUrl} 
+            alt={title} 
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'fill',
+              display: 'block'
+            }}
+          />
           <div className="proj-txtx">
             <h4>{title}</h4>
             <span>{description}</span>

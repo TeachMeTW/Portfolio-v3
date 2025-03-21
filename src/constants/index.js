@@ -135,16 +135,14 @@ import lanlImg10 from "../assets/lanl/Screen Shot 2024-11-20 at 12.05.22 AM.png"
 import lanlImg11 from "../assets/lanl/Screen Shot 2024-11-20 at 12.05.37 AM.png";
 
 // For the problematic Screenshot files, we'll use a different approach
-// For the Screenshot files, we'll use dynamic URL imports
-const lanlImg12 = new URL('../assets/lanl/sc.png', import.meta.url).href;
-const lanlImg13 = new URL('../assets/lanl/sc2.png', import.meta.url).href;
-const lanlImg14 = new URL('../assets/lanl/sc3.png', import.meta.url).href;
-const lanlImg15 = new URL('../assets/lanl/sc4.png', import.meta.url).href;
+import lanlImg12 from "../assets/lanl/sc.png";
+import lanlImg13 from "../assets/lanl/sc2.png";
+import lanlImg14 from "../assets/lanl/sc3.png";
+import lanlImg15 from "../assets/lanl/sc4.png";
 
 // Microsoft Images
-// Microsoft Images
-const microsoftImg1 = new URL('../assets/microsoft/micro.png', import.meta.url).href;
-const microsoftImg2 = new URL('../assets/microsoft/more.png', import.meta.url).href;
+import microsoftImg1 from "../assets/microsoft/micro.png";
+import microsoftImg2 from "../assets/microsoft/more.png";
 
 // NASA Images
 import nasaImg1 from "../assets/nasa/Screen Shot 2024-11-19 at 11.46.51 PM.png";

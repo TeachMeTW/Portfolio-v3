@@ -115,6 +115,45 @@ import {
   prog2,
 } from "../assets";
 
+// Import images from folders
+// LBNL Images
+import lbnlImg1 from "../assets/lbnl/D74B38AF-BA28-41AF-AD23-564B4B011C0A.JPG";
+import lbnlImg2 from "../assets/lbnl/IMG_2304.png";
+import lbnlImg3 from "../assets/lbnl/IMG_2418.JPG";
+
+// LANL Images
+import lanlImg1 from "../assets/lanl/Screen Shot 2024-11-19 at 11.52.21 PM.png";
+import lanlImg2 from "../assets/lanl/Screen Shot 2024-11-19 at 11.52.36 PM.png";
+import lanlImg3 from "../assets/lanl/Screen Shot 2024-11-19 at 11.53.25 PM.png";
+import lanlImg4 from "../assets/lanl/Screen Shot 2024-11-19 at 11.53.40 PM.png";
+import lanlImg5 from "../assets/lanl/Screen Shot 2024-11-19 at 11.59.22 PM.png";
+import lanlImg6 from "../assets/lanl/Screen Shot 2024-11-19 at 11.59.28 PM.png";
+import lanlImg7 from "../assets/lanl/Screen Shot 2024-11-19 at 11.59.34 PM.png";
+import lanlImg8 from "../assets/lanl/Screen Shot 2024-11-20 at 12.04.52 AM.png";
+import lanlImg9 from "../assets/lanl/Screen Shot 2024-11-20 at 12.04.58 AM.png";
+import lanlImg10 from "../assets/lanl/Screen Shot 2024-11-20 at 12.05.22 AM.png";
+import lanlImg11 from "../assets/lanl/Screen Shot 2024-11-20 at 12.05.37 AM.png";
+
+// For the problematic Screenshot files, we'll use a different approach
+// For the Screenshot files, we'll use dynamic URL imports
+const lanlImg12 = new URL('../assets/lanl/sc.png', import.meta.url).href;
+const lanlImg13 = new URL('../assets/lanl/sc2.png', import.meta.url).href;
+const lanlImg14 = new URL('../assets/lanl/sc3.png', import.meta.url).href;
+const lanlImg15 = new URL('../assets/lanl/sc4.png', import.meta.url).href;
+
+// Microsoft Images
+// Microsoft Images
+const microsoftImg1 = new URL('../assets/microsoft/micro.png', import.meta.url).href;
+const microsoftImg2 = new URL('../assets/microsoft/more.png', import.meta.url).href;
+
+// NASA Images
+import nasaImg1 from "../assets/nasa/Screen Shot 2024-11-19 at 11.46.51 PM.png";
+import nasaImg2 from "../assets/nasa/Screen Shot 2024-11-19 at 11.47.04 PM.png";
+import nasaImg3 from "../assets/nasa/Screen Shot 2024-11-19 at 11.47.13 PM.png";
+import nasaImg4 from "../assets/nasa/Screen Shot 2024-11-19 at 11.47.21 PM.png";
+import nasaImg5 from "../assets/nasa/Screen Shot 2024-11-19 at 11.47.28 PM.png";
+import nasaImg6 from "../assets/nasa/bruh.png";
+
 export const navLinks = [
   {
     id: "side",
@@ -255,7 +294,7 @@ const experiences = [
     proj: nrel,
     link: "https://github.com/e-mission",
     iconBg: "#E6DEDD",
-    date: "September 2024 - June 2025",
+    date: "September 2024 - May 2025",
     points: [
       "Developed open-source software for OpenPATH platform using Python and Dash Plotly",
       "Enhanced data collection and analysis pipelines for tracking travel modes and carbon footprint",
@@ -268,12 +307,149 @@ const experiences = [
     proj: micro,
     link: "",
     iconBg: "#E6DEDD",
-    date: "June 2025 - September 2025",
+    date: "May 2025 - August 2025",
     points: [
       "Led cross-functional implementation of complex product features from planning to delivery",
       "Managed specifications development and monitored operations to improve customer experience",
       "Applied data-driven approach to communicate technical challenges and customer needs across teams",
     ],
+  },
+];
+
+// Detailed experience information for popups
+const experienceDetails = [
+  {
+    id: "anl", // Argonne National Laboratory
+    title: "Critical Infrastructure Simulation Project",
+    company: "Argonne National Laboratory",
+    role: "Computing Intern",
+    duration: "June 2022 - August 2022",
+    tools: ["Python", "React", "Cytoscape.js", "Deck.gl", "PostgreSQL", "Beautiful Soup"],
+    detailed_description: "Worked with the cybersecurity team to develop a standalone application that geolocated critical infrastructure across the United States. The application visualized potential vulnerabilities in the nation's infrastructure network by seeing the connections between critical infrastructure.",
+    images: [cybercity], // Array of images for the carousel
+    achievements: [
+      "Implemented web scraping routines to collect infrastructure data from public sources",
+      "Designed a PostgreSQL database schema to efficiently store geographical and relationship data",
+      "Built interactive visualization components using Cytoscape.js and Deck.gl",
+      "Contributed to a Unity 3D simulation that modeled infrastructure interdependencies",
+      "Presented findings to senior laboratory leadership at project conclusion"
+    ],
+    skills_gained: ["Web scraping", "Geospatial visualization", "Database design", "Network modeling"],
+    testimonial: "Robin's work on the critical infrastructure mapping tool provided valuable insights for our cybersecurity assessment framework."
+  },
+  {
+    id: "lbnl", // Lawrence Berkeley National Laboratory
+    title: "Cybersecurity and IT",
+    company: "Lawrence Berkeley National Laboratory",
+    role: "Information Technology and Cyber Intern",
+    duration: "June 2023 - August 2023",
+    tools: ["ServiceNow", "Crowdstrike", "Splunk", "Wireshark", "Network analysis tools"],
+    detailed_description: "Joined the cybersecurity team to analyze potential threats and update compliance systems across laboratory departments. Conducted extensive security analysis and presented findings to the Department of Energy in Washington D.C.",
+    images: [omni, lbnlImg1, lbnlImg2, lbnlImg3], // Added LBNL folder images
+    achievements: [
+      "Analyzed malware samples to determine attack vectors and potential countermeasures",
+      "Updated over 5,000 systems across 22 laboratory departments to meet compliance standards",
+      "Conducted network traffic analysis to detect unusual patterns indicating potential breaches",
+      "Performed host forensics to recover data and determine intrusion pathways",
+      "Developed automated scripts to streamline security compliance checks"
+    ],
+    skills_gained: ["Malware analysis", "Security compliance", "Network traffic analysis", "Digital forensics"],
+    testimonial: "The security compliance work Robin completed significantly improved our department's security posture."
+  },
+  {
+    id: "llnl", // Lawrence Livermore National Laboratory
+    title: "Data Archive and Analysis Platform Development",
+    company: "Lawrence Livermore National Laboratory",
+    role: "Software Engineer Intern",
+    duration: "June 2023 - August 2023",
+    tools: ["Python", "Angular", "FastAPI", "MongoDB", "ElasticSearch", "Docker", "GitLab CI"],
+    detailed_description: "We love our weapons, but we also love our data. Worked on a team of 8 to develop a data archive for users to store and query importantdata.",
+    images: [DARC],
+    achievements: [
+      "Developed RESTful API endpoints using FastAPI to handle data queries and transformations",
+      "Created Angular components for the front-end interface with responsive design",
+      "Set up Docker containers for consistent development and deployment environments",
+      "Implemented automated tests using pytest to ensure code quality",
+      "Assisted in the database migration process, converting complex queries to the new system"
+    ],
+    skills_gained: ["Full-stack development", "API design", "Database migration", "CI/CD pipelines"],
+    testimonial: "Robin showed exceptional ability in quickly understanding our complex codebase and making meaningful contributions."
+  },
+  {
+    id: "nasa", // NASA
+    title: "Data-Driven Decision Support Systems",
+    company: "NASA",
+    role: "Data & Analytics Intern",
+    duration: "January 2024 - May 2024",
+    tools: ["Python", "Dash Plotly", "Elasticsearch", "Docker"],
+    detailed_description: "Windtunnels are a big deal. They are used to test aircraft and spacecraft designs. I worked on a team of 2 to develop a dashboard to help the leadership make data-driven decisions.",
+    images: [nasal, nasaImg1, nasaImg2, nasaImg3, nasaImg4, nasaImg5, nasaImg6], // Added NASA folder images
+    achievements: [
+      "Designed dashboards visualizing key performance indicators for leadership decision making",
+      "Built data pipelines to integrate information from various sources into a unified system",
+      "Implemented secure access protocols to protect sensitive data while enabling analytics",
+      "Optimized portfolio management workflows through automation and process improvements",
+      "Created documentation and training materials for system users"
+    ],
+    skills_gained: ["Data visualization", "Fullstack development"],
+    testimonial: "The analytics framework developed has become an essential tool for our decision-making process."
+  },
+  {
+    id: "lanl", // Los Alamos National Laboratory
+    title: "High Performance Computing Infrastructure",
+    company: "Los Alamos National Laboratory",
+    role: "High Performance Computing Intern",
+    duration: "June 2024 - August 2024",
+    tools: ["Linux", "Ansible", "Libvirt", "AWS S3", "Cloud-Init", "Docker", "Podman"],
+    detailed_description: "Switches usually don't do anything most of the time. They are idle and do simple routing. Why not use them to do more? Worked on a team of 3 to add more functionality to the switches. Presented at Supercomputing 2024 in Atlanta.",
+    images: [lanlposter, lanlImg1, lanlImg2, lanlImg3, lanlImg4, lanlImg5, lanlImg6, lanlImg7, lanlImg8, lanlImg9, lanlImg10, lanlImg11, lanlImg12, lanlImg13, lanlImg14, lanlImg15], // Prioritize newer screenshots
+    achievements: [
+      "Automated cluster deployment and configuration using Ansible playbooks",
+      "Implemented cloud storage integration with AWS S3 for data persistence",
+      "Deployed specialized containers on network switches to enhance functionality",
+      "Optimized network configuration for high-throughput computing workloads",
+      "Presented research findings at the Supercomputing 2024 conference in Atlanta"
+    ],
+    skills_gained: ["Infrastructure automation", "HPC configuration", "Container orchestration", "Network optimization"],
+    testimonial: "Robin's work on our HPC cluster configuration significantly improved our research capabilities."
+  },
+  {
+    id: "nrel", // National Renewable Energy Laboratory
+    title: "Sustainable Transportation Data Analysis",
+    company: "National Renewable Energy Laboratory",
+    role: "Software Engineering Intern",
+    duration: "September 2024 - May 2025",
+    tools: ["Python", "Dash Plotly", "NumPy", "Pandas", "GeoPandas", "Git"],
+    detailed_description: "Working on the open-source OpenPATH platform to enhance data collection and analysis capabilities for tracking transportation modes. Mainly on the dashboard and e-mission server.",
+    images: [nrel],
+    achievements: [
+      "Developing interactive data visualizations using Dash Plotly to represent travel patterns",
+      "Enhancing data processing pipelines to improve accuracy of mode detection algorithms",
+      "Contributing to open-source codebases through GitHub collaboration",
+      "Creating analytical tools to calculate carbon impact based on transportation choices",
+      "Implementing user feedback mechanisms to improve data quality"
+    ],
+    skills_gained: ["Data visualization", "Fullstack development", "Open-source development"],
+    testimonial: "The visualization components developed have greatly improved our ability to communicate transportation impacts."
+  },
+  {
+    id: "microsoft", // Microsoft
+    title: "Azure Software Project Management",
+    company: "Microsoft",
+    role: "Technical Program Manager Intern",
+    duration: "May 2025 - August 2025",
+    tools: ["Azure DevOps", "Microsoft Teams", "Power Platform", "SQL Server", "Microsoft Office Suite"],
+    detailed_description: "Upcoming in the Summer of 2025.",
+    images: [microsoftImg1, microsoftImg2], // Reordered to show new images first
+    achievements: [
+      "Managing feature development lifecycle from concept to production deployment",
+      "Coordinating between engineering, product management, and customer support teams",
+      "Implementing data-driven approaches to prioritize technical improvements",
+      "Facilitating communication between technical and non-technical stakeholders",
+      "Developing specifications for new features based on customer needs and technical constraints"
+    ],
+    skills_gained: ["Project management", "Cross-functional leadership", "Technical communication", "Requirements gathering"],
+    testimonial: "Robin demonstrates excellent ability to bridge technical and business considerations in project planning."
   },
 ];
 
@@ -845,4 +1021,5 @@ export {
   clubs,
   involv,
   internshipData,
+  experienceDetails,
 };

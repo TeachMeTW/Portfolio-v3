@@ -1,27 +1,35 @@
 // src/App.jsx
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {
-  About,
-  Contact,
-  Cursor,
-  Experience,
-  Feedbacks,
-  Hero,
   Navbar,
-  Tech,
-  Works,
-  OtherExperience,
-  Extra,
-  Internships,
+  Cursor,
+  Hero,
 } from "./components";
 
-import Wrapper from "./components/Wrapper";
-import AutoScaleSite from "./components/AutoScaleSite";
-import PoliceTapeHero from "./components/PoliceTapeHero";
+// Lazy-loaded components
+const About = lazy(() => import("./components/About"));
+const Experience = lazy(() => import("./components/Experience"));
+const Tech = lazy(() => import("./components/Tech"));
+const Works = lazy(() => import("./components/Works"));
+const OtherExperience = lazy(() => import("./components/OtherExperience"));
+const Extra = lazy(() => import("./components/Extra"));
+const PoliceTapeHero = lazy(() => import("./components/PoliceTapeHero"));
+
+// Wrapper components with smaller initial footprint
+const Wrapper = lazy(() => import("./components/Wrapper"));
+const AutoScaleSite = lazy(() => import("./components/AutoScaleSite"));
+
 import "./App.css";
 import "./components/ProjectCard.css";
+
+// Loading spinner component
+const LoadingSpinner = () => (
+  <div className="flex justify-center items-center h-screen">
+    <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-orange-500"></div>
+  </div>
+);
 
 const MainPage = () => {
   return (
@@ -30,13 +38,27 @@ const MainPage = () => {
         <Navbar />
         <Hero />
       </div>
-      <About />
-      <Experience />
-      <Tech />
-      <Works />
-      <OtherExperience />
-      <Extra />
-      <PoliceTapeHero />
+      <Suspense fallback={<LoadingSpinner />}>
+        <About />
+      </Suspense>
+      <Suspense fallback={<LoadingSpinner />}>
+        <Experience />
+      </Suspense>
+      <Suspense fallback={<LoadingSpinner />}>
+        <Tech />
+      </Suspense>
+      <Suspense fallback={<LoadingSpinner />}>
+        <Works />
+      </Suspense>
+      <Suspense fallback={<LoadingSpinner />}>
+        <OtherExperience />
+      </Suspense>
+      <Suspense fallback={<LoadingSpinner />}>
+        <Extra />
+      </Suspense>
+      <Suspense fallback={<LoadingSpinner />}>
+        <PoliceTapeHero />
+      </Suspense>
     </div>
   );
 };
@@ -94,17 +116,19 @@ const App = () => {
       {isLargeScreen ? (
         <>
           {/* 1. Scaled and Centered Site */}
-          <AutoScaleSite width={1200} height={860}>
-            <BrowserRouter>
-              <Routes>
-                <Route path="/" element={<MainPage />} />
-                {/* Add other routes here if needed */}
-              </Routes>
-            </BrowserRouter>
-          </AutoScaleSite>
+          <Suspense fallback={<LoadingSpinner />}>
+            <AutoScaleSite width={1200} height={860}>
+              <BrowserRouter>
+                <Routes>
+                  <Route path="/" element={<MainPage />} />
+                  {/* Add other routes here if needed */}
+                </Routes>
+              </BrowserRouter>
+            </AutoScaleSite>
 
-          {/* 2. Movie Frame Overlay */}
-          <Wrapper />
+            {/* 2. Movie Frame Overlay */}
+            <Wrapper />
+          </Suspense>
 
           {/* 3. Movie Button */}
           {/* Add Movie Button component here if needed */}

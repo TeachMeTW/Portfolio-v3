@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nixie+One&display=swap">
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="src\assets\logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Robin Simpson | CPE Portfolio </title>
+    <title>Robin Simpson | CPE Portfolio</title>
+    
+    <!-- Optimize font loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nixie+One&display=swap">
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" as="image" href="src/assets/logo.svg">
+    <link rel="icon" type="image/svg+xml" href="src/assets/logo.svg" />
+    
+    <!-- Add meta description for SEO -->
+    <meta name="description" content="Robin Simpson's Computer Engineering Portfolio showcasing projects, experience, and skills.">
   </head>
   <body>
     <div id="root"></div>

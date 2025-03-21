@@ -74,7 +74,7 @@ const OtherExperience = () => {
 
       <div className='mt-20 flex flex-col'>
         <VerticalTimeline>
-          {clubs.map((club, index) => (
+          {[...clubs].reverse().map((club, index) => (
             <OtherExperienceCard
               key={`experience-${index}`}
               club={club}

@@ -14,6 +14,9 @@ export default function AutoScaleSite({ width = 1200, height = 860, children }) 
     leftRight: 0,
   });
 
+  // Add zoom out factor - smaller value = more zoomed out
+  const zoomOutFactor = 0.9; 
+
   useEffect(() => {
     function handleResize() {
       const viewportWidth = window.innerWidth;
@@ -37,7 +40,8 @@ export default function AutoScaleSite({ width = 1200, height = 860, children }) 
       // Calculate scale based on the smallest ratio to maintain aspect ratio
       const scaleWidth = viewportWidth / newWidth;
       const scaleHeight = viewportHeight / newHeight;
-      const newScale = Math.min(scaleWidth, scaleHeight, 1); // Prevent upscaling beyond 1
+      // Apply zoom out factor to scale the content slightly smaller
+      const newScale = Math.min(scaleWidth, scaleHeight, 1) * zoomOutFactor; 
 
       setScale(newScale);
       console.log(`Adjusted Width: ${newWidth}px`);
@@ -51,7 +55,7 @@ export default function AutoScaleSite({ width = 1200, height = 860, children }) 
     // Recalculate on window resize
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, [frameAspectRatio]);
+  }, [frameAspectRatio, zoomOutFactor]);
 
   return (
     <div

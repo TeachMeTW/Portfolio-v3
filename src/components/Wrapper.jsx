@@ -27,8 +27,18 @@ const Wrapper = () => {
   // New state for Constant Noise
   const [isConstantNoiseEnabled, setIsConstantNoiseEnabled] = useState(true); // Noise is on initially
   
+  // State to track if disclaimer has been dismissed
+  const [showDisclaimer, setShowDisclaimer] = useState(true);
+  
   // New state to track which frame image to display
   const [currentFrame, setCurrentFrame] = useState(movieFrameImage);
+
+  // Reset disclaimer when noise toggle changes
+  useEffect(() => {
+    if (isConstantNoiseEnabled) {
+      setShowDisclaimer(true); // Show disclaimer when noise is enabled
+    }
+  }, [isConstantNoiseEnabled]);
 
   // We'll measure the bounding rect of the displayed frame image:
   const frameRef = useRef(null);
@@ -170,6 +180,59 @@ const Wrapper = () => {
 
   return (
     <>
+      {/* TV Mode Disclaimer - Only shows when noise is enabled and not dismissed */}
+      {isConstantNoiseEnabled && showDisclaimer && (
+        <div 
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            padding: '8px 16px',
+            backgroundColor: 'rgba(0, 0, 0, 0.75)',
+            color: 'white',
+            textAlign: 'center',
+            zIndex: 9999999, // Higher than frame container
+            boxShadow: '0 2px 10px rgba(0, 0, 0, 0.5)',
+            backdropFilter: 'blur(2px)',
+            borderBottom: '2px solid #FF4500',
+            fontFamily: 'sans-serif',
+            fontSize: '14px',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
+          }}
+        >
+          <p style={{ margin: '0 auto' }}>
+            Having trouble seeing content? Click the <span style={{ color: '#FF4500', fontWeight: 'bold' }}>Noise Toggle</span> button on the right side of the TV to turn off static effect.
+          </p>
+          <button 
+            onClick={() => setShowDisclaimer(false)}
+            style={{
+              background: 'none',
+              border: 'none',
+              color: 'white',
+              fontSize: '18px',
+              fontWeight: 'bold',
+              cursor: 'pointer',
+              marginLeft: '16px',
+              width: '24px',
+              height: '24px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              borderRadius: '50%',
+              backgroundColor: 'rgba(255, 69, 0, 0.4)',
+              transition: 'background-color 0.2s'
+            }}
+            onMouseOver={(e) => e.currentTarget.style.backgroundColor = 'rgba(255, 69, 0, 0.8)'}
+            onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'rgba(255, 69, 0, 0.4)'}
+          >
+            ×
+          </button>
+        </div>
+      )}
+
       {/* 
         Fullscreen overlay that just centers the frame image 
         with NO dark background => transparent 

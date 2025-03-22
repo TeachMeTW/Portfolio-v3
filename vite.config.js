@@ -9,7 +9,8 @@ const skipProblematicFiles = () => {
     name: 'skip-problematic-files',
     transform(code, id) {
       // Skip processing for problematic files
-      if (id.includes('mesa') || id.includes('neet') || id.includes('prog3')) {
+      if (id.includes('mesa') || id.includes('neet') || id.includes('prog3') || 
+          /\.(jpg|jpeg|JPG|JPEG|png|PNG|gif|GIF)$/.test(id)) {
         return {
           code,
           map: null
@@ -24,9 +25,9 @@ export default defineConfig({
   plugins: [
     skipProblematicFiles(),
     react(),
-    // Handle JPG files properly
+    // Handle image files properly
     url({
-      include: ['**/*.jpg', '**/*.JPG', '**/*.jpeg', '**/*.JPEG', '**/*.gif', '**/*.GIF'],
+      include: [/\.(jpg|jpeg|JPG|JPEG|gif|GIF|png|PNG)$/],
       limit: 0 // always emit separate files
     }),
     // Removing imagemin plugin as it causes problems with certain files
@@ -47,18 +48,11 @@ export default defineConfig({
   },
   server: {
   },
-  // Specific handling for problematic file formats
-  assetsInclude: ['**/*.JPG', '**/*.jpg', '**/*.jpeg', '**/*.JPEG', '**/*.gif', '**/*.GIF'],
+  // Specific handling for problematic file formats - using regex patterns instead of globs
+  assetsInclude: [/\.(jpg|jpeg|JPG|JPEG|gif|GIF|png|PNG)$/],
   // Prevent Vite from trying to parse binary files
   optimizeDeps: {
-    exclude: [
-      '**/*.JPG',
-      '**/*.jpg',
-      '**/*.jpeg',
-      '**/*.JPEG',
-      '**/*.gif',
-      '**/*.GIF'
-    ]
+    exclude: []
   },
   resolve: {
     alias: {

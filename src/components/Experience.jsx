@@ -127,8 +127,8 @@ const ExperienceModal = ({ experienceDetail, experience, onClose }) => {
               src={carouselImages[currentSlide]}
               alt={`${experience.title} project fullscreen`}
               style={{
-                maxWidth: '95%',
-                maxHeight: '95%',
+                width: '100%',
+                height: '100%',
                 objectFit: 'contain'
               }}
               loading="lazy"

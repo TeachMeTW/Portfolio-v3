@@ -26,6 +26,12 @@ const ProjectModal = ({ project, onClose }) => {
     };
   }, [onClose]);
 
+  // Function to determine if the file is a video based on extension
+  const isVideo = (url) => {
+    if (!url) return false;
+    return url.endsWith('.webm') || url.endsWith('.mp4') || url.endsWith('.mov');
+  };
+
   // State for carousel and fullscreen
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -88,79 +94,115 @@ const ProjectModal = ({ project, onClose }) => {
             justifyContent: 'center',
           }}
         >
-          {/* Container that matches dimensions and position */}
-          <div 
-            style={{
-              width: 'calc(100vw - 500px)',
-              height: 'calc(100vh - 200px)',
-              position: 'absolute',
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              overflow: 'hidden',
-              backgroundColor: '#111',
-              zIndex: 1000
-            }}
-          >
-            {/* Close button moved inside the frame */}
-            <button 
-              onClick={(e) => {
-                e.stopPropagation();
-                toggleFullscreen();
-              }}
-              className="absolute top-4 right-4 text-white bg-red-600 hover:bg-red-700 rounded-full w-10 h-10 flex items-center justify-center cursor-pointer z-[1002]"
-            >
-              ×
-            </button>
-            
-            {/* Only render the current image in fullscreen mode */}
-            <img
-              src={carouselImages[currentSlide]}
-              alt={`${project.name} fullscreen`}
+          {isVideo(carouselImages[currentSlide]) ? (
+            <div 
               style={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'contain'
+                width: '60%',  // 60% of autoscale-content width
+                height: '60%', // 60% of autoscale-content height
+                maxWidth: 'calc(0.6 * 1200px)', // 60% of the base autoscale-content width (1200px)
+                maxHeight: 'calc(0.6 * 860px)', // 60% of the base autoscale-content height (860px)
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                overflow: 'hidden',
+                backgroundColor: '#111',
+                zIndex: 1000
               }}
-              loading="lazy"
-              onLoad={() => handleImageLoad(`fullscreen-${currentSlide}`)}
-            />
-            
-            {/* Loading indicator */}
-            {!imagesLoaded[`fullscreen-${currentSlide}`] && (
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-orange-500"></div>
-              </div>
-            )}
-            
-            {/* Controls inside the frame */}
-            <div className="absolute bottom-8 left-0 right-0 flex justify-center space-x-4 z-[1001]">
+            >
+              <video
+                src={carouselImages[currentSlide]}
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'contain'
+                }}
+                autoPlay
+                loop
+                muted
+                playsInline
+                controls
+              />
+              {/* Close button inside the modal container */}
+              <button 
+                onClick={(e) => {
+                  e.stopPropagation();
+                  toggleFullscreen();
+                }}
+                className="absolute top-2 right-2 bg-red-600 hover:bg-red-700 text-white rounded-full w-10 h-10 flex items-center justify-center z-[1002]"
+              >
+                ✕
+              </button>
+            </div>
+          ) : (
+            <div 
+              style={{
+                width: '60%',  // 60% of autoscale-content width
+                height: '60%', // 60% of autoscale-content height
+                maxWidth: 'calc(0.6 * 1200px)', // 60% of the base autoscale-content width (1200px)
+                maxHeight: 'calc(0.6 * 860px)', // 60% of the base autoscale-content height (860px)
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                overflow: 'hidden',
+                backgroundColor: '#111',
+                zIndex: 1000
+              }}
+            >
+              <img
+                src={carouselImages[currentSlide]}
+                alt={`${project.name} fullscreen`}
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'contain'
+                }}
+              />
+              {/* Close button inside the modal container */}
+              <button 
+                onClick={(e) => {
+                  e.stopPropagation();
+                  toggleFullscreen();
+                }}
+                className="absolute top-2 right-2 bg-red-600 hover:bg-red-700 text-white rounded-full w-10 h-10 flex items-center justify-center z-[1002]"
+              >
+                ✕
+              </button>
+            </div>
+          )}
+          
+          {/* Navigation controls for fullscreen mode */}
+          {carouselImages.length > 1 && (
+            <>
               <button 
                 onClick={(e) => {
                   e.stopPropagation();
                   prevSlide();
                 }}
-                className="bg-black bg-opacity-75 text-white rounded-full w-12 h-12 flex items-center justify-center hover:bg-opacity-90 text-2xl"
+                className="absolute left-1/4 bg-black bg-opacity-50 text-white rounded-full w-12 h-12 flex items-center justify-center hover:bg-opacity-75 text-2xl z-[1001]"
+                style={{ transform: 'translateX(-60px)' }}
               >
                 &#8249;
               </button>
-              <div className="bg-black bg-opacity-75 text-white px-4 py-2 rounded-full">
-                {currentSlide + 1} / {carouselImages.length}
-              </div>
               <button 
                 onClick={(e) => {
                   e.stopPropagation();
                   nextSlide();
                 }}
-                className="bg-black bg-opacity-75 text-white rounded-full w-12 h-12 flex items-center justify-center hover:bg-opacity-90 text-2xl"
+                className="absolute right-1/4 bg-black bg-opacity-50 text-white rounded-full w-12 h-12 flex items-center justify-center hover:bg-opacity-75 text-2xl z-[1001]"
+                style={{ transform: 'translateX(60px)' }}
               >
                 &#8250;
               </button>
-            </div>
-          </div>
+            </>
+          )}
         </div>
       ) : (
         <div 
@@ -193,17 +235,35 @@ const ProjectModal = ({ project, onClose }) => {
                     key={`slide-${currentSlide}`}
                     className="carousel-slide absolute top-0 left-0 w-full h-full transition-opacity duration-500 ease-in-out opacity-100 z-10"
                   >
-                    <img
-                      src={carouselImages[currentSlide]}
-                      alt={`${project.name} project ${currentSlide + 1}`}
-                      className="w-full h-full object-contain rounded cursor-pointer"
-                      loading="lazy"
-                      onLoad={() => handleImageLoad(currentSlide)}
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        toggleFullscreen();
-                      }}
-                    />
+                    {isVideo(carouselImages[currentSlide]) ? (
+                      <video
+                        src={carouselImages[currentSlide]}
+                        className="w-full h-full object-contain rounded cursor-pointer"
+                        loading="lazy"
+                        onLoadedData={() => handleImageLoad(currentSlide)}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          toggleFullscreen();
+                        }}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        controls
+                      />
+                    ) : (
+                      <img
+                        src={carouselImages[currentSlide]}
+                        alt={`${project.name} project ${currentSlide + 1}`}
+                        className="w-full h-full object-contain rounded cursor-pointer"
+                        loading="lazy"
+                        onLoad={() => handleImageLoad(currentSlide)}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          toggleFullscreen();
+                        }}
+                      />
+                    )}
                     <div className="absolute bottom-2 right-2 z-20 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded">
                       {currentSlide + 1} / {carouselImages.length}
                     </div>
@@ -285,12 +345,20 @@ const ProjectModal = ({ project, onClose }) => {
                           currentSlide === index ? 'border-2 border-orange-500' : 'border border-gray-500 opacity-60 hover:opacity-100'
                         }`}
                       >
-                        <img 
-                          src={src} 
-                          alt={`Thumbnail ${index + 1}`} 
-                          className="w-full h-full object-cover" 
-                          loading="lazy" 
-                        />
+                        {isVideo(src) ? (
+                          <video 
+                            src={src} 
+                            className="w-full h-full object-cover" 
+                            loading="lazy"
+                          />
+                        ) : (
+                          <img 
+                            src={src} 
+                            alt={`Thumbnail ${index + 1}`} 
+                            className="w-full h-full object-cover" 
+                            loading="lazy" 
+                          />
+                        )}
                       </div>
                     );
                   })}
@@ -368,22 +436,45 @@ const ProjectCard = ({
   project,  // Pass the entire project object
   onImageClick,  // Click handler for opening the modal
 }) => {
+  // Function to determine if the file is a video based on extension
+  const isVideo = (url) => {
+    if (!url) return false;
+    return url.endsWith('.webm') || url.endsWith('.mp4') || url.endsWith('.mov');
+  };
+
   return (
     <div className="col size-12 col-sm-6 col-md-4">
       <div 
         className="proj-imgbx animate__animated animate__fadeIn cursor-pointer"
         onClick={() => onImageClick(project)}
       >
-        <img 
-          src={project.image} 
-          alt={project.name} 
-          style={{
-            width: '100%',
-            height: '100%',
-            objectFit: 'fill',
-            display: 'block'
-          }}
-        />
+        {isVideo(project.image) ? (
+          <video 
+            src={project.image}
+            alt={project.name}
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'fill',
+              display: 'block'
+            }}
+            autoPlay
+            loop
+            muted
+            playsInline
+          />
+        ) : (
+          <img 
+            src={project.image} 
+            alt={project.name} 
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'fill',
+              display: 'block'
+            }}
+          />
+        )}
         <div className="proj-txtx">
           <h4>{project.name}</h4>
           <span>{project.description}</span>

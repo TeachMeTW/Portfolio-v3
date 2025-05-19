@@ -115,6 +115,9 @@ import {
   prog2,
 } from "../assets";
 
+// Import KTH logo
+import kth from "../assets/kth/kth.png";
+
 // Import images from folders
 // LBNL Images
 import lbnlImg1 from "../assets/lbnl/D74B38AF-BA28-41AF-AD23-564B4B011C0A.JPG";
@@ -151,6 +154,11 @@ import nasaImg3 from "../assets/nasa/Screen Shot 2024-11-19 at 11.47.13 PM.png";
 import nasaImg4 from "../assets/nasa/Screen Shot 2024-11-19 at 11.47.21 PM.png";
 import nasaImg5 from "../assets/nasa/Screen Shot 2024-11-19 at 11.47.28 PM.png";
 import nasaImg6 from "../assets/nasa/bruh.png";
+
+// Import RSAC images
+import rsaclogo from "../assets/rsaclogo.jpg";
+import rsac1 from "../assets/rsac1.jpg";
+import rsac2 from "../assets/rsac2.jpg";
 
 export const navLinks = [
   {
@@ -307,9 +315,9 @@ const experiences = [
     iconBg: "#E6DEDD",
     date: "May 2025 - August 2025",
     points: [
-      "Led cross-functional implementation of complex product features from planning to delivery",
-      "Managed specifications development and monitored operations to improve customer experience",
-      "Applied data-driven approach to communicate technical challenges and customer needs across teams",
+      "Upcoming internship role starting Summer 2025",
+      "Will be working with the Azure team on program management and feature implementation",
+      "Looking forward to gaining experience in cross-functional leadership and technical communication"
     ],
   },
 ];
@@ -437,17 +445,17 @@ const experienceDetails = [
     role: "Technical Program Manager Intern",
     duration: "May 2025 - August 2025",
     tools: ["Azure DevOps", "Microsoft Teams", "Power Platform", "SQL Server", "Microsoft Office Suite"],
-    detailed_description: "Upcoming in the Summer of 2025.",
-    images: [microsoftImg1, microsoftImg2], // Reordered to show new images first
+    detailed_description: "Upcoming role starting in Summer 2025. I'll be joining Microsoft as a Technical Program Manager Intern to work on Azure-related projects. Details about specific projects and responsibilities will be updated closer to the start date.",
+    images: [microsoftImg1, microsoftImg2],
     achievements: [
-      "Managing feature development lifecycle from concept to production deployment",
-      "Coordinating between engineering, product management, and customer support teams",
-      "Implementing data-driven approaches to prioritize technical improvements",
-      "Facilitating communication between technical and non-technical stakeholders",
-      "Developing specifications for new features based on customer needs and technical constraints"
+      "Will be managing feature development lifecycle from concept to production deployment",
+      "Will coordinate between engineering, product management, and customer support teams",
+      "Looking forward to implementing data-driven approaches to prioritize technical improvements",
+      "Will facilitate communication between technical and non-technical stakeholders",
+      "Will develop specifications for new features based on customer needs and technical constraints"
     ],
     skills_gained: ["Project management", "Cross-functional leadership", "Technical communication", "Requirements gathering"],
-    testimonial: "Robin demonstrates excellent ability to bridge technical and business considerations in project planning."
+    testimonial: "Upcoming internship in Summer 2025"
   },
 ];
 
@@ -793,19 +801,32 @@ const clubs = [
       "Pursuing a minor in Astronomy/Astrophysics.",
     ],
   },
+  {
+    title: "Study Abroad - Computer Science",
+    company_name: "KTH Royal Institute of Technology, Stockholm",
+    icon: kth,
+    iconBg: "#003C71",
+    date: "2025 - 2026",
+    points: [
+      "Participating in study abroad program at one of Europe's leading technical universities.",
+      "Focusing on advanced computer science courses and AI/machine learning research.",
+      "Gaining international perspective through cultural exchange and global tech exposure.",
+      "Collaborating with international students on cross-cultural engineering projects.",
+    ],
+  },
 ];
 
 const involv = [
   {
-    name: "Hack4Impact",
-    position: "",
+    name: "RSAC",
+    position: "Attendee",
     activities:
-      "A student-run organization that empowers engineers, designers, activists, and humanitarians to create lasting social change by developing projects for local nonprofits.",
+      "Attended the RSA Conference, one of the world's leading cybersecurity events. Networked with industry professionals and gained insights into the latest trends, technologies, and challenges in the cybersecurity landscape.",
     tags: [],
     current: true,
-    image: hackfor,
-    galleryImages: [h4ig], // Placeholder for gallery images
-    source_code_link: "https://calpoly.hack4impact.org/",
+    image: rsaclogo,
+    galleryImages: [rsac1, rsac2], 
+    source_code_link: "https://www.rsaconference.com/",
   },
   {
     name: "SLO Climate Coalition",
@@ -819,18 +840,6 @@ const involv = [
     source_code_link:
       "https://sites.google.com/sloclimatecoalition.org/slocc-college-corps/home?authuser=0",
   },
-  {
-    name: "CSAI",
-    position: "Member",
-    activities:
-      "Cal Poly's premier computer science and artificial intelligence club. We are a group of students who are passionate about learning and applying AI to solve real-world problems. Host workshops, projects, and competitions to help students learn about AI and its applications",
-    tags: [],
-    current: true,
-    image: csai,
-    galleryImages: [csaig],
-    source_code_link: "https://csaicalpoly.com/",
-  },
-
   {
     name: "Deep Learning Society (DLS)",
     position: "Vice President",

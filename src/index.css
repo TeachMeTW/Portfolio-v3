@@ -303,3 +303,13 @@ body, h1, h2, h3, h4, h5, h6, p, span, a, li {
     margin-right: 5px;
   }
   
+/* KTH timeline icon fix - position the KTH logo behind the circle */
+.vertical-timeline-element-icon img[src*="kth"] {
+  z-index: -1;
+  position: relative;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transform: scale(0.9); /* Slightly reduce size to ensure it fits within the circle */
+}
+  

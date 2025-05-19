@@ -97,8 +97,10 @@ const ExperienceModal = ({ experienceDetail, experience, onClose }) => {
           {/* Container that matches the TV screen dimensions and position */}
           <div 
             style={{
-              width: 'calc(100vw - 500px)',  // Reduced width even further by increasing subtraction from 300px to 500px
-              height: 'calc(100vh - 200px)', // Kept the same height
+              width: '60%',  // 60% of autoscale-content width
+              height: '60%', // 60% of autoscale-content height
+              maxWidth: 'calc(0.6 * 1200px)', // 60% of the base autoscale-content width (1200px)
+              maxHeight: 'calc(0.6 * 860px)', // 60% of the base autoscale-content height (860px)
               position: 'absolute',
               top: '50%',
               left: '50%',
@@ -117,7 +119,7 @@ const ExperienceModal = ({ experienceDetail, experience, onClose }) => {
                 e.stopPropagation();
                 toggleFullscreen();
               }}
-              className="absolute top-4 right-4 text-white bg-red-600 hover:bg-red-700 rounded-full w-10 h-10 flex items-center justify-center cursor-pointer z-[1002]"
+              className="absolute top-2 right-2 text-white bg-red-600 hover:bg-red-700 rounded-full w-10 h-10 flex items-center justify-center cursor-pointer z-[1002]"
             >
               ×
             </button>

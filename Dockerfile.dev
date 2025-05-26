@@ -1,0 +1,40 @@
+# Development Dockerfile with hot reloading
+FROM node:18-alpine
+
+# Install build dependencies for native modules
+RUN apk add --no-cache \
+    python3 \
+    make \
+    g++ \
+    autoconf \
+    automake \
+    libtool \
+    nasm \
+    libpng-dev \
+    libjpeg-turbo-dev
+
+# Set working directory
+WORKDIR /app
+
+# Copy package files and npm config
+COPY package*.json .npmrc ./
+
+# Set environment variables to skip problematic binary downloads
+ENV SKIP_SASS_BINARY_DOWNLOAD_FOR_CI=true
+ENV SKIP_NODE_SASS_TESTS=true
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+ENV OPTIPNG_BIN_SKIP_INSTALL=true
+ENV GIFSICLE_BIN_SKIP_INSTALL=true
+ENV PNGQUANT_BIN_SKIP_INSTALL=true
+
+# Install dependencies using yarn with ignore-scripts
+RUN yarn install --ignore-scripts || yarn install --ignore-scripts --legacy-peer-deps
+
+# Copy source code
+COPY . .
+
+# Expose development port
+EXPOSE 3000
+
+# Start development server
+CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0"] 

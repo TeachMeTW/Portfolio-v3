@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navbar } from "./components";
 import Cursor from "./components/Cursor"; // Import directly to avoid circular dependencies
 import OptimizedSuspense from "./components/OptimizedSuspense";
+import NixieLoadingScreen from "./components/NixieTubeClock";
 
 // Loading spinner component (defined locally to avoid extra imports)
 const LoadingSpinner = () => (
@@ -48,9 +49,6 @@ const MainPageContent = () => (
       <Experience />
     </OptimizedSuspense>
     <OptimizedSuspense fallback={<MinimalPlaceholder />}>
-      <Tech />
-    </OptimizedSuspense>
-    <OptimizedSuspense fallback={<MinimalPlaceholder />}>
       <Works />
     </OptimizedSuspense>
     <OptimizedSuspense fallback={<MinimalPlaceholder />}>
@@ -82,6 +80,7 @@ const MainPage = () => {
 const App = () => {
   const [isLargeScreen, setIsLargeScreen] = useState(true);
   const [layoutReady, setLayoutReady] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   // Optimized screen size check with debounce
   useEffect(() => {
@@ -140,6 +139,16 @@ const App = () => {
       document.documentElement.style.overflow = "auto";
     }
   }, [isLargeScreen]);
+  
+  // Show Nixie loading screen
+  if (isLoading) {
+    return (
+      <NixieLoadingScreen 
+        onComplete={() => setIsLoading(false)}
+        loadingSpeed={20}
+      />
+    );
+  }
   
   // Show loading spinner until layout is determined
   if (!layoutReady) {

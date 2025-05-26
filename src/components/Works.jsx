@@ -443,7 +443,7 @@ const ProjectCard = ({
   };
 
   return (
-    <div className="col size-12 col-sm-6 col-md-4">
+    <div className="col col-12 col-sm-6 col-md-4">
       <div 
         className="proj-imgbx animate__animated animate__fadeIn cursor-pointer"
         onClick={() => onImageClick(project)}
@@ -523,7 +523,7 @@ const Works = () => {
     <section className="project" id="projects">
       <div className="container">
         <div className="row">
-          <div className="col size-12">
+          <div className="col col-12">
             <div className="animate__animated animate__fadeIn">
               <h2 className={`${styles.sectionHeadText} font-bold`} style={{ color: "#FF4500", fontSize: "40px" }}>
                 Projects

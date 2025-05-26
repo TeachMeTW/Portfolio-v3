@@ -58,8 +58,7 @@ export default defineConfig({
       output: {
         manualChunks: {
           'react-vendor': ['react', 'react-dom', 'react-router-dom'],
-          'three-vendor': ['three', '@react-three/fiber', '@react-three/drei'],
-          'animation-vendor': ['framer-motion', 'react-vertical-timeline-component', 'react-tilt'],
+          'animation-vendor': ['framer-motion', 'react-vertical-timeline-component'],
           'ui-vendor': ['@fortawesome/react-fontawesome', '@fortawesome/fontawesome-svg-core', '@fortawesome/free-brands-svg-icons'],
         }
       }

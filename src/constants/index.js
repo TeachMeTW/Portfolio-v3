@@ -34,7 +34,6 @@ import {
   berk,
   llnl,
   sql,
-  arid,
   onlybikes,
   wvw,
   vreader,
@@ -47,7 +46,7 @@ import {
   ctc,
   dls,
   darcpdf,
-  DARC,
+  darc,
   omni,
   omnipdf,
   cybercity,
@@ -120,22 +119,22 @@ import kth from "../assets/kth/kth.png";
 
 // Import images from folders
 // LBNL Images
-import lbnlImg1 from "../assets/lbnl/D74B38AF-BA28-41AF-AD23-564B4B011C0A.JPG";
-import lbnlImg2 from "../assets/lbnl/IMG_2304.png";
-import lbnlImg3 from "../assets/lbnl/IMG_2418.JPG";
+import lbnlImg1 from "../assets/lbnl/d74b38af-ba28-41af-ad23-564b4b011c0a.jpg";
+import lbnlImg2 from "../assets/lbnl/img_2304.png";
+import lbnlImg3 from "../assets/lbnl/img_2418.jpg";
 
 // LANL Images
-import lanlImg1 from "../assets/lanl/Screen Shot 2024-11-19 at 11.52.21 PM.png";
-import lanlImg2 from "../assets/lanl/Screen Shot 2024-11-19 at 11.52.36 PM.png";
-import lanlImg3 from "../assets/lanl/Screen Shot 2024-11-19 at 11.53.25 PM.png";
-import lanlImg4 from "../assets/lanl/Screen Shot 2024-11-19 at 11.53.40 PM.png";
-import lanlImg5 from "../assets/lanl/Screen Shot 2024-11-19 at 11.59.22 PM.png";
-import lanlImg6 from "../assets/lanl/Screen Shot 2024-11-19 at 11.59.28 PM.png";
-import lanlImg7 from "../assets/lanl/Screen Shot 2024-11-19 at 11.59.34 PM.png";
-import lanlImg8 from "../assets/lanl/Screen Shot 2024-11-20 at 12.04.52 AM.png";
-import lanlImg9 from "../assets/lanl/Screen Shot 2024-11-20 at 12.04.58 AM.png";
-import lanlImg10 from "../assets/lanl/Screen Shot 2024-11-20 at 12.05.22 AM.png";
-import lanlImg11 from "../assets/lanl/Screen Shot 2024-11-20 at 12.05.37 AM.png";
+import lanlImg1 from "../assets/lanl/screen_shot_2024-11-19_at_11.52.21_pm.png";
+import lanlImg2 from "../assets/lanl/screen_shot_2024-11-19_at_11.52.36_pm.png";
+import lanlImg3 from "../assets/lanl/screen_shot_2024-11-19_at_11.53.25_pm.png";
+import lanlImg4 from "../assets/lanl/screen_shot_2024-11-19_at_11.53.40_pm.png";
+import lanlImg5 from "../assets/lanl/screen_shot_2024-11-19_at_11.59.22_pm.png";
+import lanlImg6 from "../assets/lanl/screen_shot_2024-11-19_at_11.59.28_pm.png";
+import lanlImg7 from "../assets/lanl/screen_shot_2024-11-19_at_11.59.34_pm.png";
+import lanlImg8 from "../assets/lanl/screen_shot_2024-11-20_at_12.04.52_am.png";
+import lanlImg9 from "../assets/lanl/screen_shot_2024-11-20_at_12.04.58_am.png";
+import lanlImg10 from "../assets/lanl/screen_shot_2024-11-20_at_12.05.22_am.png";
+import lanlImg11 from "../assets/lanl/screen_shot_2024-11-20_at_12.05.37_am.png";
 
 // For the problematic Screenshot files, we'll use a different approach
 import lanlImg12 from "../assets/lanl/sc.png";
@@ -148,11 +147,11 @@ import microsoftImg1 from "../assets/microsoft/micro.png";
 import microsoftImg2 from "../assets/microsoft/more.png";
 
 // NASA Images
-import nasaImg1 from "../assets/nasa/Screen Shot 2024-11-19 at 11.46.51 PM.png";
-import nasaImg2 from "../assets/nasa/Screen Shot 2024-11-19 at 11.47.04 PM.png";
-import nasaImg3 from "../assets/nasa/Screen Shot 2024-11-19 at 11.47.13 PM.png";
-import nasaImg4 from "../assets/nasa/Screen Shot 2024-11-19 at 11.47.21 PM.png";
-import nasaImg5 from "../assets/nasa/Screen Shot 2024-11-19 at 11.47.28 PM.png";
+import nasaImg1 from "../assets/nasa/screen_shot_2024-11-19_at_11.46.51_pm.png";
+import nasaImg2 from "../assets/nasa/screen_shot_2024-11-19_at_11.47.04_pm.png";
+import nasaImg3 from "../assets/nasa/screen_shot_2024-11-19_at_11.47.13_pm.png";
+import nasaImg4 from "../assets/nasa/screen_shot_2024-11-19_at_11.47.21_pm.png";
+import nasaImg5 from "../assets/nasa/screen_shot_2024-11-19_at_11.47.28_pm.png";
 import nasaImg6 from "../assets/nasa/bruh.png";
 
 // Import RSAC images
@@ -256,7 +255,7 @@ const experiences = [
     company_name: "Lawrence Livermore National Laboratory",
     icon: llnl,
     iconBg: "#E6DEDD",
-    proj: DARC,
+    proj: darc,
     link: darcpdf,
     date: "June 2023 - August 2023",
     points: [
@@ -370,7 +369,7 @@ const experienceDetails = [
     duration: "June 2023 - August 2023",
     tools: ["Python", "Angular", "FastAPI", "MongoDB", "ElasticSearch", "Docker", "GitLab CI"],
     detailed_description: "We love our weapons, but we also love our data. Worked on a team of 8 to develop a data archive for users to store and query importantdata.",
-    images: [DARC],
+    images: [darc],
     achievements: [
       "Developed RESTful API endpoints using FastAPI to handle data queries and transformations",
       "Created Angular components for the front-end interface with responsive design",

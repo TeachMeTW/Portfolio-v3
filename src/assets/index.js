@@ -7,7 +7,7 @@ import github from "./github.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
 
-import anl from "./company/ANL.png";
+import anl from "./company/anl.png";
 import css from "./tech/css.png";
 import docker from "./tech/docker.png";
 import figma from "./tech/figma.png";
@@ -35,7 +35,7 @@ import llnl from "./company/llnl.png";
 import py from "./tech/py.png";
 import cpp from "./tech/cpp.png";
 import sql from "./sql.png";
-import arid from "./arid.png";
+
 import onlybikes from "./onlybikes.png";
 import wvw from "./worldview.png";
 import vreader from "./vreader.png";
@@ -43,19 +43,19 @@ import pcc from "./company/pcc.png";
 import dvc from "./company/dvc.png";
 import clark from "./company/clark.png";
 import calpoly from "./company/calpoly.png";
-import ctc from "./codethechange.png";
+import ctc from "./ctc.jpg";
 import cycf from "./cycf.png";
-import dls from "./DLS_Banner.png";
+import dls from "./dls_banner.png";
 import mesa from "./mesa.png";
 import pb from "./project.png";
 import dl from "./dl.png";
 import omni from "./omni.png";
-import DARC from "./darc.png";
+import darc from "./darc.png";
 import omnipdf from "./omnipdf.pdf";
 import darcpdf from "./darcpdf.pdf";
 import cybercity from "./cybercity.png";
 import cyberdoc from "./cyberdoc.pdf";
-import whointed from "./WhoIntedMe.png";
+import whointed from "./whointedme.png";
 import portfolio from "./portfolio.png";
 import lau from "./kan.png";
 import neet from "./neet.gif";
@@ -93,16 +93,16 @@ import calhacksp from "./calhacksp.png";
 import cosam from "./cosam.pdf";
 import clas from "./cla.pdf";
 import javap from "./optimized/javaprj.webm";
-import ee215 from "./EE215.pdf";
-import fs from "./FS.png";
-import ieeesc from "./IEEE_SC.png";
-import ieee215 from "./EE215_IEEE.pdf";
+import ee215 from "./ee215.pdf";
+import fs from "./fs.png";
+import ieeesc from "./ieee_sc.png";
+import ieee215 from "./ee215_ieee.pdf";
 import cpe133 from "./cpe133.pdf";
 import basys3 from "./basys3.png";
-import ee315 from "./315_Final.pdf";
+import ee315 from "./315_final.pdf";
 import act from "./act.png";
 import vca from "./vca.png";
-import ieee315 from "./IEEE315.pdf";
+import ieee315 from "./ieee315.pdf";
 import basys3clock from "./basys3clock.pdf";
 import basys3man from "./bsys3man.png";
 import arc from "./arc.png";
@@ -190,7 +190,7 @@ export {
   cybercity,
   omnipdf,
   darcpdf,
-  DARC,
+  darc,
   omni,
   dl,
   pb,
@@ -205,7 +205,6 @@ export {
   wvw,
   vreader,
   onlybikes,
-  arid,
   sql,
   py,
   cpp,

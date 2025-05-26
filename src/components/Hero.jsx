@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { styles } from "../styles";
-import { ComputersCanvas } from "./canvas";
 import React, { useState, useEffect } from "react";
 
 const generateOrangeShades = (length) => {

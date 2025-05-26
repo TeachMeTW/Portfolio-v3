@@ -19,13 +19,10 @@
     "@fortawesome/free-brands-svg-icons": "^6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@react-spring/parallax": "^9.7.3",
-    "@react-three/drei": "^9.56.24",
-    "@react-three/fiber": "^8.11.1",
     "animate.css": "^4.1.1",
     "caniuse-lite": "^1.0.30001521",
     "clsx": "^2.1.1",
     "framer-motion": "^9.1.7",
-    "maath": "^0.5.2",
     "mini-svg-data-uri": "^1.4.4",
     "package.json": "^2.0.1",
     "react": "^18.2.0",
@@ -33,12 +30,10 @@
     "react-router-dom": "^6.8.1",
     "react-slick": "^0.29.0",
     "react-tabs": "^6.0.2",
-    "react-tilt": "^0.1.4",
     "react-vertical-timeline-component": "^3.6.0",
     "slick-carousel": "^1.8.1",
     "swiper": "^11.2.0",
-    "tailwind-merge": "^2.4.0",
-    "three": "^0.149.0"
+    "tailwind-merge": "^2.4.0"
   },
   "devDependencies": {
     "@rollup/plugin-url": "^8.0.2",

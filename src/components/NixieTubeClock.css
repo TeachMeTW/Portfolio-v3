@@ -2537,6 +2537,42 @@ body {
     white-space: nowrap;
 }
 
+/* Mobile responsive styles for loading text */
+@media (max-width: 768px) {
+    .loading-text .main-title {
+        font-size: 1.8em;
+    }
+    
+    .loading-text .disclaimer {
+        font-size: 0.5em;
+        white-space: normal;
+        max-width: 90vw;
+        line-height: 1.3;
+    }
+}
+
+@media (max-width: 480px) {
+    .loading-text .main-title {
+        font-size: 1.4em;
+    }
+    
+    .loading-text .disclaimer {
+        font-size: 0.4em;
+        max-width: 95vw;
+    }
+}
+
+@media (max-width: 320px) {
+    .loading-text .main-title {
+        font-size: 1.2em;
+    }
+    
+    .loading-text .disclaimer {
+        font-size: 0.35em;
+        max-width: 98vw;
+    }
+}
+
 .loading-bar {
     width: 100%;
     height: 8px;

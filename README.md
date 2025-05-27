@@ -34,6 +34,12 @@ npm install --force
 npm run dev
 ```
 
+Inspiration and assets from:
+
+- https://github.com/utsavpatel562/CSS-JavaScript
+- https://www.youtube.com/watch?v=E-fdPfRxkzQ
+- https://steinsgate.jp/
+
 ## Demo
 robinttw.com
 

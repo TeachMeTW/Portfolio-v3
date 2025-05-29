@@ -396,17 +396,32 @@ const ProjectModal = ({ project, onClose }) => {
               
               {/* Links and buttons */}
               <div className="flex justify-between items-center mt-6">
-                {/* Link to the project */}
-                {project.source_code_link && (
-                  <a 
-                    href={project.source_code_link} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="inline-block px-3 py-1 bg-orange-500 text-white rounded hover:bg-orange-600 transition text-xs"
-                  >
-                    View Project
-                  </a>
-                )}
+                {/* Project links */}
+                <div className="flex gap-2">
+                  {/* Main project link */}
+                  {project.source_code_link && (
+                    <a 
+                      href={project.source_code_link} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-block px-3 py-1 bg-orange-500 text-white rounded hover:bg-orange-600 transition text-xs"
+                    >
+                      View Demo
+                    </a>
+                  )}
+                  
+                  {/* PDF link */}
+                  {project.pdf_link && (
+                    <a 
+                      href={project.pdf_link} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-block px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 transition text-xs"
+                    >
+                      View Report
+                    </a>
+                  )}
+                </div>
                 
                 {/* Close button */}
                 <button 

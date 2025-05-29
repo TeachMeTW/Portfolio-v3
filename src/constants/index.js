@@ -112,6 +112,7 @@ import {
   micro,
   prog3,
   prog2,
+  nix,
 } from "../assets";
 
 // Import KTH logo
@@ -461,6 +462,37 @@ const experienceDetails = [
 const testimonials = [];
 
 const projects = [
+  {
+    name: "Nixie Hydrogemeter",
+    category: "EE",
+    description:
+      "Developed a digital hydrogemeter using Nixie tubes for display. This project combines analog sensor readings with vintage digital display technology to create a unique water density measurement device. Features STM32 microcontroller, high-voltage power supply for Nixie tubes, and precision sensor calibration.",
+    tags: [
+      {
+        name: "STM32",
+        color: "#03234B",
+      },
+      {
+        name: "Arduino",
+        color: "#00979D",
+      },
+      {
+        name: "High Voltage",
+        color: "#FFD93D",
+      },
+      {
+        name: "Sensor Integration",
+        color: "#6BCF7F",
+      },
+      {
+        name: "Nixie Tubes",
+        color: "#FF8C42",
+      },
+    ],
+    image: nix,
+    source_code_link: "https://www.youtube.com/watch?v=C5qYtAkZYkM",
+    pdf_link: "https://drive.google.com/file/d/1cAyQNP5QKBG0FeMMmelgKykKj01bZJhR/view",
+  },
   {
     name: "Cisco Neural Networks",
     category: "CS",

@@ -119,9 +119,11 @@ import prog2 from "./optimized/prog2.webm";
 import cnn from "./cnn.png";
 import sc24 from "./sc24.png";
 import sc24g from "./sc24g.png";
+import nix from "./nix.webm";
 
 
 export {
+  nix,
   sc24,
   sc24g,
   cnn,

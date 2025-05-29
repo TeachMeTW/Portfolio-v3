@@ -6,6 +6,7 @@ import { Navbar } from "./components";
 import Cursor from "./components/Cursor"; // Import directly to avoid circular dependencies
 import OptimizedSuspense from "./components/OptimizedSuspense";
 import NixieLoadingScreen from "./components/NixieTubeClock";
+import Hero from "./components/Hero"; // Import Hero directly for immediate loading
 
 // Loading spinner component (defined locally to avoid extra imports)
 const LoadingSpinner = () => (
@@ -20,9 +21,6 @@ const MinimalPlaceholder = () => (
     <div className="animate-pulse w-full h-64 bg-gray-300/10"></div>
   </div>
 );
-
-// Preload critical components
-const Hero = lazy(() => import("./components/Hero"));
 
 // Fully lazy-loaded components 
 const About = lazy(() => import("./components/About"));
@@ -40,39 +38,46 @@ import "./App.css";
 import "./components/ProjectCard.css";
 
 // Create smaller chunks of UI for better code-splitting
-const MainPageContent = () => (
-  <>
-    <OptimizedSuspense fallback={<MinimalPlaceholder />}>
-      <About />
-    </OptimizedSuspense>
-    <OptimizedSuspense fallback={<MinimalPlaceholder />}>
-      <Experience />
-    </OptimizedSuspense>
-    <OptimizedSuspense fallback={<MinimalPlaceholder />}>
-      <Works />
-    </OptimizedSuspense>
-    <OptimizedSuspense fallback={<MinimalPlaceholder />}>
-      <OtherExperience />
-    </OptimizedSuspense>
-    <OptimizedSuspense fallback={<MinimalPlaceholder />}>
-      <Extra />
-    </OptimizedSuspense>
-    <OptimizedSuspense fallback={<MinimalPlaceholder />}>
-      <PoliceTapeHero />
-    </OptimizedSuspense>
-  </>
-);
+const MainPageContent = ({ isMobile }) => {
+  // Use smaller threshold for mobile devices for better performance
+  const threshold = isMobile ? 100 : 200;
+  
+  return (
+    <>
+      <OptimizedSuspense 
+        fallback={<MinimalPlaceholder />} 
+        threshold={threshold}
+        priority={isMobile} // Load About immediately on mobile for better UX
+      >
+        <About />
+      </OptimizedSuspense>
+      <OptimizedSuspense fallback={<MinimalPlaceholder />} threshold={threshold}>
+        <Experience />
+      </OptimizedSuspense>
+      <OptimizedSuspense fallback={<MinimalPlaceholder />} threshold={threshold}>
+        <Works />
+      </OptimizedSuspense>
+      <OptimizedSuspense fallback={<MinimalPlaceholder />} threshold={threshold}>
+        <OtherExperience />
+      </OptimizedSuspense>
+      <OptimizedSuspense fallback={<MinimalPlaceholder />} threshold={threshold}>
+        <Extra />
+      </OptimizedSuspense>
+      <OptimizedSuspense fallback={<MinimalPlaceholder />} threshold={threshold}>
+        <PoliceTapeHero />
+      </OptimizedSuspense>
+    </>
+  );
+};
 
-const MainPage = () => {
+const MainPage = ({ isMobile }) => {
   return (
     <div className="relative z-0 bg-custom-background">
       <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
         <Navbar />
-        <Suspense fallback={<LoadingSpinner />}>
-          <Hero />
-        </Suspense>
+        <Hero />
       </div>
-      <MainPageContent />
+      <MainPageContent isMobile={isMobile} />
     </div>
   );
 };
@@ -164,7 +169,7 @@ const App = () => {
             <AutoScaleSite width={1200} height={860}>
               <BrowserRouter>
                 <Routes>
-                  <Route path="/" element={<MainPage />} />
+                  <Route path="/" element={<MainPage isMobile={!isLargeScreen} />} />
                 </Routes>
               </BrowserRouter>
             </AutoScaleSite>
@@ -177,7 +182,7 @@ const App = () => {
         // Render the site without scaling and without the movie frame
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<MainPage />} />
+            <Route path="/" element={<MainPage isMobile={!isLargeScreen} />} />
           </Routes>
         </BrowserRouter>
       )}

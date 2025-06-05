@@ -415,17 +415,6 @@ const ExperienceCard = ({ experience, isFirst, onImageClick, isMobile }) => {
     >
       {/* PDF Thumbnail above the text box */}
       <div className="flex flex-col">
-        {/* Conditionally render "Click Me" message above the image */}
-        {isFirst && (
-          <div
-            className="mb-2 bg-orange-500 text-white px-2 py-1 rounded cursor-pointer shadow-lg hover:bg-orange-600 transition text-center"
-            onClick={() => {
-              alert("Click the image to see more details!");
-            }}
-          >
-            Click the images to see more!
-          </div>
-        )}
         
         <div className="mb-4 rounded-lg flex-grow border-2 border-orange-500">
           <div 

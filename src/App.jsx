@@ -52,16 +52,16 @@ const MainPageContent = ({ isMobile }) => {
         <About />
       </OptimizedSuspense>
       <OptimizedSuspense fallback={<MinimalPlaceholder />} threshold={threshold}>
-        <Experience />
+        <Experience isMobile={isMobile} />
       </OptimizedSuspense>
       <OptimizedSuspense fallback={<MinimalPlaceholder />} threshold={threshold}>
-        <Works />
+        <Works isMobile={isMobile} />
       </OptimizedSuspense>
       <OptimizedSuspense fallback={<MinimalPlaceholder />} threshold={threshold}>
         <OtherExperience />
       </OptimizedSuspense>
       <OptimizedSuspense fallback={<MinimalPlaceholder />} threshold={threshold}>
-        <Extra />
+        <Extra isMobile={isMobile} />
       </OptimizedSuspense>
       <OptimizedSuspense fallback={<MinimalPlaceholder />} threshold={threshold}>
         <PoliceTapeHero />

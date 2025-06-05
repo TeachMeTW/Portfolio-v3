@@ -506,7 +506,7 @@ const ProjectCard = ({
   );
 };
 
-const Works = () => {
+const Works = ({ isMobile }) => {
   const [selectedCategory, setSelectedCategory] = useState(categories.all);
   const [selectedProject, setSelectedProject] = useState(null);
 
@@ -522,6 +522,7 @@ const Works = () => {
 
   // Handler for opening the modal
   const handleProjectClick = (project) => {
+    if (isMobile) return; // Disable modal on mobile
     setSelectedProject(project);
     // Disable scrolling on the body when modal is open
     document.body.style.overflow = 'hidden';

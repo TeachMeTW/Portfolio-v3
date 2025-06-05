@@ -382,8 +382,9 @@ const ExperienceModal = ({ experienceDetail, experience, onClose }) => {
   );
 };
 
-const ExperienceCard = ({ experience, isFirst, onImageClick }) => {
+const ExperienceCard = ({ experience, isFirst, onImageClick, isMobile }) => {
   const handleClick = () => {
+    if (isMobile) return;
     console.log("Image clicked for:", experience.title);
     if (typeof onImageClick === 'function') {
       onImageClick(experience);
@@ -487,7 +488,7 @@ const ExperienceCard = ({ experience, isFirst, onImageClick }) => {
   );
 };
 
-const Experience = () => {
+const Experience = ({ isMobile }) => {
   // State to manage which experience modal is shown
   const [selectedExperience, setSelectedExperience] = useState(null);
   const [selectedExperienceDetail, setSelectedExperienceDetail] = useState(null);
@@ -508,6 +509,7 @@ const Experience = () => {
 
   // Handler for opening the modal
   const handleImageClick = (experience) => {
+    if (isMobile) return; // Disable modal on mobile
     console.log("handleImageClick called with:", experience.title);
     
     // Extract company name to match with the id in experienceDetails
@@ -568,6 +570,7 @@ const Experience = () => {
               experience={experience}
               isFirst={index === 0} // Pass isFirst prop
               onImageClick={handleImageClick}
+              isMobile={isMobile}
             />
           ))}
         </VerticalTimeline>

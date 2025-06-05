@@ -395,11 +395,12 @@ const ClubCard = ({
   );
 };
 
-const ClubCarousel = ({ clubs }) => {
+const ClubCarousel = ({ clubs, isMobile }) => {
   const [selectedClub, setSelectedClub] = useState(null);
 
   // Handler for opening the modal
   const handleClubClick = (club) => {
+    if (isMobile) return; // Disable modal on mobile
     setSelectedClub(club);
     // Disable scrolling on the body when modal is open
     document.body.style.overflow = 'hidden';
@@ -452,7 +453,7 @@ const ClubCarousel = ({ clubs }) => {
   );
 };
 
-const Works = () => {
+const Works = ({ isMobile }) => {
   // Combine all clubs into a single array
   const allClubs = involv;
 
@@ -468,7 +469,7 @@ const Works = () => {
         </p>
       </motion.div>
       
-      <ClubCarousel clubs={allClubs} />
+      <ClubCarousel clubs={allClubs} isMobile={isMobile} />
     </>
   );
 };

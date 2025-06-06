@@ -160,6 +160,9 @@ import rsaclogo from "../assets/rsaclogo.jpg";
 import rsac1 from "../assets/rsac1.jpg";
 import rsac2 from "../assets/rsac2.jpg";
 
+// Import exp image
+import exp from "../assets/exp.png";
+
 export const navLinks = [
   {
     id: "side",
@@ -463,10 +466,22 @@ const testimonials = [];
 
 const projects = [
   {
+    name: "Expedition Journal",
+    category: "CS",
+    description: "Text/audio journal inspired by Expedition 33.",
+    tags: [
+      { name: "Svelte", color: "#FF3E00" },
+      { name: "AKS", color: "#0078D4" },
+      { name: "Cloud", color: "#00BFFF" },
+    ],
+    image: exp,
+    source_code_link: 'https://expeditionjournal.net',
+  },
+  {
     name: "Nixie Hydrogemeter",
     category: "EE",
     description:
-      "Developed a digital hydrogemeter using Nixie tubes for display. This project combines analog sensor readings with vintage digital display technology to create a unique water density measurement device. Features STM32 microcontroller, high-voltage power supply for Nixie tubes, and precision sensor calibration.",
+      "Water density meter with Nixie tube display and STM32.",
     tags: [
       {
         name: "STM32",
@@ -497,7 +512,7 @@ const projects = [
     name: "Cisco Neural Networks",
     category: "CS",
     description:
-      "Developed a platform for Cisco engineers to easily train autoencoders without Python expertise. The application allows engineers to load and modify data, train neural network models, visualize results, and save their work efficiently. Built with Streamlit for the frontend UI and MongoDB for the backend database, with CI/CD pipeline for automatic deployment.",
+      "Web tool for training and visualizing neural networks.",
     tags: [
       {
         name: "Python",
@@ -521,13 +536,13 @@ const projects = [
       },
     ],
     image: cnn,
-    source_code_link: "https://cisconeural.net",
+    source_code_link: "https://github.com/TeachMeTW/CNN",
   },
   {
     name: "Chat Program",
     category: "CPE",
     description:
-      "Developed a TCP-based chat application with client-server architecture. Implemented a custom protocol with packet headers, message routing, and multiple communication modes (direct messaging, multicast, broadcast). The server acts as a message router between clients, maintaining a dynamic handle table and supporting concurrent connections through poll().",
+      "TCP chat app with direct and group messaging.",
     tags: [
       {
         name: "C",
@@ -549,7 +564,7 @@ const projects = [
     name: "Rcopy and Server",
     category: "CPE",
     description:
-      "Developed a reliable file transfer system with sliding window flow control, selective repeat for retransmission, checksums for error detection, and sequence numbers for packet ordering. The client-server architecture handles packet loss, corruption, and reordering with a custom protocol design.",
+      "File transfer with custom protocol and error correction.",
     tags: [
       {
         name: "C",
@@ -571,8 +586,7 @@ const projects = [
     name: "Neethub",
     category: "CS",
     description:
-      "Developed a video streaming platform with Typescript, MongoDB, Prisma.",
-
+      "Typescript video streaming site.",
     tags: [
       {
         name: "Typescript",
@@ -594,8 +608,7 @@ const projects = [
     name: "SQL From Scratch",
     category: "CS",
     description:
-      "Developed a program that can read and write data into txt files in SQL format using SQL commands. Features standard SQL commands; select, create, update, insert, drop. Integrated automatic batch line processor as well as manual command input.",
-
+      "C++ SQL interpreter for text files.",
     tags: [
       {
         name: "C++",
@@ -617,8 +630,7 @@ const projects = [
     name: "Portfolio Sites",
     category: "CS",
     description:
-      "Developed with React, Tailwind, and Vite. See side.robinttw.com or league.robinttw.com (WIP) for more.",
-
+      "React/Tailwind personal websites.",
     tags: [
       {
         name: "Vite React Javascript",
@@ -636,8 +648,7 @@ const projects = [
     name: "Virtual World",
     category: "CS",
     description:
-      "Developed a Java OOP project for CSC203. Implemented A* pathfinding algorithm.",
-
+      "Java project with A* pathfinding.",
     tags: [
       {
         name: "Java",
